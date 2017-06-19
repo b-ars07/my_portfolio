@@ -10,6 +10,7 @@ global.$ = {
     app: require('./gulp/paths/app.js')
   },
   gulp: require('gulp'),
+  merge: require('merge-stream'),
   del: require('del'),
   browserSync: require('browser-sync').create(),
   gp: require('gulp-load-plugins')()
