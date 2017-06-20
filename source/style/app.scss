@@ -1,8 +1,9 @@
-body {
-  margin: 0;
-}
-
-@import 'common/greating';
 @import 'helpers/fonts';
 @import 'helpers/sprite';
+
+//Settings style
+@import 'helpers/settings';
+
+//Common style
+@import "sections/welcome";
 

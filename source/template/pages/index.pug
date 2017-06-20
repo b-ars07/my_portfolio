@@ -1,7 +1,24 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+  - var title = 'Арсений Березин|Frontend-developer'
 
 block content
-  include ../common/_greating
+  section.welcome
+      .welcome__inner
+        button.welcome__auth-btn Авторизоваться
+        .welcome__card
+          section.card
+            .card__content
+              .card__photo
+              h1.card__name Березин Арсений
+              p.card__prof Личный сайт веб разработчика
+              +ul('social', {
+                  vk: "https://vk.com/ars_34",
+                  github: "https://github.com/b-ars07",
+                  in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"
+              })
+            +nav('welcome-menu', {'Мои работы':'./portfolio.html', 'Обо мне':'./about.html', 'Блог':'./blog.html'})
+          //-form.card_autorization
+        footer.welcome__footer
+          p © Березин Арсений | Создано с любовью в LoftSchool | 2017
