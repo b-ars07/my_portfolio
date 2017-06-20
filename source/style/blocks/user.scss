@@ -1,0 +1,25 @@
+.user {
+  &__photo {
+    width: 141px;
+    height: 141px;
+    background: url('../img/ava.jpg') no-repeat center/cover, #e2e2e2;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+  }
+
+  &__name {
+    color: $white;
+    font-size: 28px;
+    font-weight: $mediumWeight;
+    line-height: 1.1;
+    margin-bottom: 9px;
+  }
+
+  &__prof {
+    opacity: .8;
+    color: $white;
+    font-size: $middleFont;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+}

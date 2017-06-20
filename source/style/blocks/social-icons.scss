@@ -1,0 +1,40 @@
+//-Style for social icons
+
+.social {
+  display: inline-flex;
+
+  &__item {
+    display: inline-flex;
+    margin-left: 27px;
+    vertical-align: middle;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__icon {
+    max-height: 22px;
+    max-width: 31px;
+    opacity: .5;
+    vertical-align: top;
+    fill: #ffffff;
+
+    &:hover {
+      fill: $greenHover;
+      opacity: 1;
+    }
+    &_github {
+      max-height: 22px;
+      max-width: 26px;
+    }
+    &_in {
+      max-width: 24px;
+      max-height: 22px;
+    }
+  }
+}

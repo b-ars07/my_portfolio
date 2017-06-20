@@ -1,5 +1,5 @@
-mixin ul (className, items)
-    ul(class=`${className}`)
+mixin ul (className, modificator, items)
+    ul(class=`${className} ${className}--${modificator}`)
         each link, item in items
             li(class=`${className}__item`)
                 a(class=`${className}__link` href=`${link}` target='_blank')

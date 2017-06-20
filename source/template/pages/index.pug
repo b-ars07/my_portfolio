@@ -1,19 +1,20 @@
 extends ../_template
 
 block variables
-  - var title = 'Арсений Березин|Frontend-developer'
+  -
+    var
+        title = title = 'Главная|Арсений Березин frontend developer'
 
 block content
-  section.welcome
-      .welcome__inner
+  section.section.welcome
+      .welcome__inner.section__wrapper
         button.welcome__auth-btn Авторизоваться
         .welcome__card
           section.card
             .card__content
-              .card__photo
-              h1.card__name Березин Арсений
-              p.card__prof Личный сайт веб разработчика
-              +ul('social', {
+              +user()
+              +ul('social', 'welcom',
+              {
                   vk: "https://vk.com/ars_34",
                   github: "https://github.com/b-ars07",
                   in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"

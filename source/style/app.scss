@@ -1,9 +1,22 @@
+//variables
+@import "helpers/variables";
+
+//-fonts
 @import 'helpers/fonts';
+
+//-sprite
 @import 'helpers/sprite';
 
-//Settings style
+//-Settings style
 @import 'helpers/settings';
 
-//Common style
-@import "sections/welcome";
+//-Mixins
+@import 'helpers/mixins';
+
+//-Blocks
+@import "blocks/social-icons";
+@import "blocks/user";
+
+//-Pages style
+@import "pages/index";
 
