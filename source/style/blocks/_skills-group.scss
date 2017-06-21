@@ -1,0 +1,15 @@
+.skills-group {
+  margin-top: 56px;
+
+  &__item {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    color: #566358;
+    font-family: 'roboto', sans-serif;
+    font-size: 28px;
+    font-weight: $mediumWeight;
+    margin-bottom: 20px;
+  }
+}

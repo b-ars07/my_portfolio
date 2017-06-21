@@ -2,9 +2,22 @@
 $lightGreen: #6c9c5a;
 $greenHover: #4e8839;
 $white: #ffffff;
+$sectionTitleColor: #373e42;
 
 //-Text
 $lightWeight: 300;
+$regularWeight: 400;
 $mediumWeight: 500;
 $middleFont: 16px;
+$smallFont: 14px;
 
+
+//-Hamburger-icon
+$height-icon: 50px;
+$width-line: 100px;
+$height-line: 8px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;

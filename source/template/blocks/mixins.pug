@@ -1,0 +1,34 @@
+mixin ul (className, modificator, items)
+    ul(class=`${className} ${className}--${modificator}`)
+        each link, item in items
+            li(class=`${className}__item`)
+                a(class=`${className}__link` href=`${link}` target='_blank')
+                    svg(class=`${className}__icon ${className}__icon--${item}`)
+                        use(xlink:href="assets/img/sprite.svg#" + item)
+
+mixin nav(className, items)
+    nav(class=`${className}`)
+        ul(class=`${className}__list`)
+            each link, item in items
+                li(class=`${className}__item`)
+                    a(class=`${className}__link`, href=`${link}`)=item
+
+mixin sectionTitle(svgName, title)
+    .section-title
+        svg.section-title__img
+            use(xlink:href="assets/img/sprite.svg#" + svgName)
+        h2.section-title__text=title
+
+mixin blockTitle(title)
+    h4.block-title
+        span.block-title__text=title
+
+mixin skills(items)
+    ul.skills__list
+        each item, modificator in items
+            li.skills__item
+                .skill
+                    svg.skill__circle
+                        circle.skill__circle-under(cx="50%" cy="50%" r=50)
+                        circle.skill__circle-above(class=`skill__circle-above--${modificator}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                    span.skill__title=item

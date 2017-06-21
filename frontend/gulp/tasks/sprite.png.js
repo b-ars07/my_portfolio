@@ -5,7 +5,7 @@ module.exports = function() {
         var sprite = $.gulp.src('../source/sprite/*.png')
             .pipe($.gp.spritesmith({
                 imgName: 'sprite.png',
-                cssName: 'sprite.scss',
+                cssName: '_sprite.scss',
                 padding: 10
             }));
 
@@ -13,7 +13,7 @@ module.exports = function() {
             .pipe($.gulp.dest($.config.root + '/assets/img'));
 
         var cssStream = sprite.css
-            .pipe($.gulp.dest($.config.root + '/assets/css/helpers'));
+            .pipe($.gulp.dest('../source/style/helpers'));
 
         return $.merge(imgStream, cssStream);
     });

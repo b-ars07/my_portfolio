@@ -38,3 +38,10 @@
     }
   }
 }
+
+//-Style for social icons in section of hero
+.social--header {
+  .social__icon {
+    fill: $white;
+  }
+}

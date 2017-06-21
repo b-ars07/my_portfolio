@@ -23,3 +23,15 @@
     margin-bottom: 30px;
   }
 }
+
+
+//-Style for user-block in section of hero
+.user--header {
+  color: $white;
+  .user__name {
+    font-size: 35px;
+  }
+  .user__prof {
+    font-weight: $lightWeight;
+  }
+}

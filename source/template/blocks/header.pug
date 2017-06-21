@@ -1,0 +1,18 @@
+include hamburger
+
+mixin header(svgName)
+    section.section.header
+        .section__wrapper.header__inner
+            +ul('social', 'header',
+            {
+                vk: "https://vk.com/ars_34",
+                github: "https://github.com/b-ars07",
+                in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"
+            })
+            +hamburger()
+            .header__content
+                svg(class=`header__${svgName}`, viewBox="0 0 1175.495 313.961")
+                    use(xlink:href="assets/img/sprite.svg#" + `${svgName}__header`)
+                +user('header')
+            svg.header__arrow.js-header-arrow(viewBox="0 0 25.18 16.164")
+                use(xlink:href="assets/img/sprite.svg#arrow_down")
