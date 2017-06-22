@@ -12,52 +12,70 @@ block content
         +header('portfolio')
         section.section.about
             .about__col.about__col--left
-                svg.about__triangle.about__triangle--left(viewBox="0 0 900.006 1013.986" preserveAspectRatio="none")
+                svg.about__triangle(viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,0 0,110 1000,110")
+                //-svg.about__triangle.about__triangle--left(viewBox="0 0 900.006 1013.986" preserveAspectRatio="none")
                     use(xlink:href="assets/img/sprite.svg#about_bg_left")
                 .about__wrapper.about__wrapper--left
                     +sectionTitle('about_header', 'Обо мне')
-                    .about
-                        .about__photo(style="background: url('assets/img/ava.jpg')")
-                        +blockTitle('Кто я')
-                        .about__info
+                    .about-me
+                        .about-me__photo(style="background: url('assets/img/ava.jpg')")
+                        +blockTitle('Кто я','line')
+                        .about-me__info
                             p
                                 | Я веб разработчик из Волгограда. Мне 22 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                                 | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .about__col.about__col--right
-                svg.about__triangle.about__triangle--right(viewBox="0 0 900.331 1009.986" preserveAspectRatio="none")
+                svg.about__triangle(viewbox="0 0 1000 110" preserveAspectRatio="none")
+                    polygon(points="0,110 1000,110 1000,0")
+                //-svg.about__triangle.about__triangle--right(viewBox="0 0 900.331 1009.986" preserveAspectRatio="none")
                     use(xlink:href="assets/img/sprite.svg#about_bg_right")
                 .about__wrapper.about__wrapper--right
                     .skills
-                        +blockTitle('Чем я вам могу быть полезен')
-                        .about__info
+                        +blockTitle('Чем я вам могу быть полезен','line')
+                        .about-me__info
                             p
                                 |Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                        ul.skills-group
-                            li.skills-group__item
-                                span.skills-group__title Frontend
-                                +skills({
+                        +skills('Frontend',{
                                     html: 'HTML5',
                                     css: 'CSS3',
                                     js: 'JavaScript',
                                     jquery: 'jQuery',
                                     svg: 'SVG'
                                 })
-                            li.skills-group__item
-                                span.skills-group__title Backend
-                                +skills({
+                        +skills('Backend',{
                                     php: 'PHP',
                                     mySQL: 'MySQL',
                                     postgres: 'PostgreSQL',
                                     nodeJS: 'Node.JS',
                                     mongo: 'MongoDB'
                                 })
-                            li.skills-group__item
-                                span.skills-group__title Workflow
-                                +skills({
+                        +skills('Workflow',{
                                     git: 'Git',
                                     gulp: 'Gulp',
                                     bower: 'Bower',
                                     yarn: 'Yarn',
                                     webpack: 'webpack'
                                 })
-        section.section.map#map
+        section.section.map
+            .google-map#map
+            .contacts-card
+                +blockTitle('Контакты')
+                ul.contacts
+                    li.contacts__item
+                        a.contacts__link.c-contacts__link--skype(href='skype:arsloko') arsloko
+                            svg.contacts__icon
+                                use(xlink:href="assets/img/sprite.svg#skype")
+                    li.contacts__item
+                        a.contacts__link.contacts__link--mail(href='mailto:b-ars07@yandex.ru') b-ars07@yandex.ru
+                            svg.contacts__icon
+                                use(xlink:href="assets/img/sprite.svg#envelope")
+                    li.contacts__item
+                        a.contacts__link.contacts__linlk--tel(href='tel:+7(968)283-26-38') +7(968)283-26-38
+                            svg.contacts__icon
+                                use(xlink:href="assets/img/sprite.svg#phone")
+                    li.contacts__item
+                        a.contacts__link.contacts__link--address г.Волгоград, ул. Кирова, д.109А, кв. 83
+                            svg.contacts__icon
+                                use(xlink:href="assets/img/sprite.svg#map_marker")
+        +footer()

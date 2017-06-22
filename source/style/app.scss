@@ -17,16 +17,18 @@
 @import "blocks/social-icons";
 @import "blocks/user";
 @import "blocks/hamburger";
-@import "blocks/welcom";
 @import "blocks/skills-list";
-@import "blocks/skills-group";
 @import "blocks/section-title";
 @import "blocks/welcom-nav";
 @import "blocks/map";
 @import "blocks/header";
 @import "blocks/card";
 @import "blocks/block-title";
+@import "blocks/block-text";
+@import "blocks/footer";
 
-//-Pages style
-@import "pages/index";
+//-Pages
+@import "pages/welcom";
+@import "pages/about";
+
 

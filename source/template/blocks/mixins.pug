@@ -19,12 +19,17 @@ mixin sectionTitle(svgName, title)
             use(xlink:href="assets/img/sprite.svg#" + svgName)
         h2.section-title__text=title
 
-mixin blockTitle(title)
-    h4.block-title
-        span.block-title__text=title
+mixin blockTitle(title, status)
+    if status=='line'
+        h4.block-title--line
+            span.block-title__text=title
+    else
+        h4.block-title
+            span.block-title__text=title
 
-mixin skills(items)
+mixin skills(title, items)
     ul.skills__list
+        span.skills__title=title
         each item, modificator in items
             li.skills__item
                 .skill

@@ -1,22 +1,24 @@
 .hamburger {
   cursor: pointer;
   float: right;
+  position: relative;
+  z-index: 2;
 }
 .hamburger-icon {
-  width:$width-line;
+  display:block;
   height:$height-icon;
   position:relative;
-  display:block;
+  width:$width-line;
 
   &__line {
-    display:block;
     background:$white;
-    width:$width-line;
-    height:$height-line;
-    position:absolute;
-    left:0;
     border-radius:($height-line / 2);
+    display:block;
+    height:$height-line;
+    left:0;
+    position:absolute;
     transition: all $transition-time;
+    width:$width-line;
 
     &--top {
       top:0;

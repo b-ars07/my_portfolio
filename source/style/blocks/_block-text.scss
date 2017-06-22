@@ -1,0 +1,18 @@
+.about-me {
+  color: $blockTitleColor;
+  font-size: $middleFont;
+  line-height: 1.8;
+
+  &__info {
+    color: $blockTitleColor;
+    padding: 0 5px;
+    margin-bottom: 56px;
+  }
+  p {
+    padding-bottom: 10px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

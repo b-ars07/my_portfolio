@@ -2,6 +2,8 @@
 
 .social {
   display: inline-flex;
+  position: relative;
+  z-index: 2;
 
   &__item {
     display: inline-flex;
@@ -39,10 +41,26 @@
   }
 }
 
-//-Style for social icons in section of hero
+//-Style for social icons in section header
 .social--header {
   .social__icon {
     fill: $white;
     opacity: 1;
+
+    &:hover {
+      fill: $greenHover;
+    }
+  }
+}
+
+//-Style for social icons in section footer
+.social--footer {
+  .social__icon {
+    fill: $white;
+    opacity: 1;
+
+    &:hover {
+      fill: $greenHover;
+    }
   }
 }

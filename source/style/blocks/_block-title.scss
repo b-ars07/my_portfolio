@@ -1,5 +1,44 @@
 .block-title {
   color: $blockTitleColor;
   font-size: 35px;
-  @include roboto;
+  @include sansusWebssimo;
+  text-align: center;
+  font-weight: $regularWeight;
+  line-height: 1;
+  margin-bottom: 20px;
+
+  &__text {
+    max-width: 253px;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  &--line {
+    color: $blockTitleColor;
+    font-size: 35px;
+    @include sansusWebssimo;
+    position: relative;
+    text-align: center;
+    margin-bottom: 44px;
+    font-weight: $regularWeight;
+    line-height: 1;
+
+    &__text {
+      max-width: 253px;
+      display: inline-block;
+      margin: 0 auto;
+      padding-bottom: 28px;
+    }
+
+    &:after {
+      background: $sectionTitleColor;
+      content: '';
+      height: 3px;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%);
+      width: 89px;
+      bottom: -23px;
+    }
+  }
 }
