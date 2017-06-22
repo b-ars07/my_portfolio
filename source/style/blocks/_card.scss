@@ -1,0 +1,13 @@
+.card {
+  border-radius: 4px 5px 5px 4px;
+  background-color: rgba(#122620, .6);
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  display: block;
+
+  &__content {
+    padding: 40px 66px;
+  }
+
+}

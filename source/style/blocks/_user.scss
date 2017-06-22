@@ -1,10 +1,12 @@
 .user {
   &__photo {
-    width: 141px;
-    height: 141px;
     background: url('../img/ava.jpg') no-repeat center/cover, #e2e2e2;
     border-radius: 50%;
+    height: 141px;
     margin: 0 auto 15px;
+    //position: relative;
+    width: 141px;
+    //z-index: 10;
   }
 
   &__name {
@@ -16,11 +18,11 @@
   }
 
   &__prof {
-    opacity: .8;
     color: $white;
     font-size: $middleFont;
     line-height: 1.5;
     margin-bottom: 30px;
+    opacity: .8;
   }
 }
 

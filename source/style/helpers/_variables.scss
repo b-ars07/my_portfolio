@@ -3,6 +3,7 @@ $lightGreen: #6c9c5a;
 $greenHover: #4e8839;
 $white: #ffffff;
 $sectionTitleColor: #373e42;
+$blockTitleColor: #566358;
 
 //-Text
 $lightWeight: 300;
@@ -13,10 +14,9 @@ $smallFont: 14px;
 
 
 //-Hamburger-icon
-$height-icon: 50px;
-$width-line: 100px;
-$height-line: 8px;
-
+$height-icon: 35px;
+$width-line: 40px;
+$height-line: 4px;
 $transition-time: 0.4s;
 $rotation: 45deg;
 $translateY: ($height-icon / 2);

@@ -12,7 +12,7 @@ mixin header(svgName)
             +hamburger()
             .header__content
                 svg(class=`header__${svgName}`, viewBox="0 0 1175.495 313.961")
-                    use(xlink:href="assets/img/sprite.svg#" + `${svgName}__header`)
+                    use(xlink:href="assets/img/sprite.svg#" + `${svgName}_header`)
                 +user('header')
             svg.header__arrow.js-header-arrow(viewBox="0 0 25.18 16.164")
                 use(xlink:href="assets/img/sprite.svg#arrow_down")

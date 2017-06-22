@@ -1,10 +1,12 @@
-
+.hamburger {
+  cursor: pointer;
+  float: right;
+}
 .hamburger-icon {
   width:$width-line;
   height:$height-icon;
   position:relative;
   display:block;
-  margin: ($height-icon * 2) auto $height-icon auto;
 
   &__line {
     display:block;
