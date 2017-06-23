@@ -12,12 +12,9 @@ block content
         +header('portfolio')
         section.section.about
             .about__col.about__col--left
-                svg.about__triangle(viewbox="0 0 1000 110" preserveAspectRatio="none")
-                    polygon(points="0,0 0,110 1000,110")
-                //-svg.about__triangle.about__triangle--left(viewBox="0 0 900.006 1013.986" preserveAspectRatio="none")
-                    use(xlink:href="assets/img/sprite.svg#about_bg_left")
+                +leftTriangle('about')
                 .about__wrapper.about__wrapper--left
-                    +sectionTitle('about_header', 'Обо мне')
+                    +sectionTitle('about_header', 'Обо мне', 'about')
                     .about-me
                         .about-me__photo(style="background: url('assets/img/ava.jpg')")
                         +blockTitle('Кто я','line')
@@ -26,10 +23,7 @@ block content
                                 | Я веб разработчик из Волгограда. Мне 22 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                                 | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .about__col.about__col--right
-                svg.about__triangle(viewbox="0 0 1000 110" preserveAspectRatio="none")
-                    polygon(points="0,110 1000,110 1000,0")
-                //-svg.about__triangle.about__triangle--right(viewBox="0 0 900.331 1009.986" preserveAspectRatio="none")
-                    use(xlink:href="assets/img/sprite.svg#about_bg_right")
+                +rightTriangle('about')
                 .about__wrapper.about__wrapper--right
                     .skills
                         +blockTitle('Чем я вам могу быть полезен','line')
@@ -79,4 +73,4 @@ block content
                             svg.contacts__icon
                                 use(xlink:href="assets/img/sprite.svg#map_marker")
         +footer()
-        +copyright('any-pages')
+        +copyright('about')

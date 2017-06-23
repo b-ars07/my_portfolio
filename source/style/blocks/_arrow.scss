@@ -1,0 +1,23 @@
+.arrow {
+  display: block;
+  opacity: .7;
+  fill: $white;
+  max-width: 26px;
+  max-height: 16px;
+  cursor: pointer;
+  z-index: 11;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &--header {
+    position: absolute;
+    @include centered(x);
+    bottom: 70px;
+  }
+  &--feedback {
+    margin: 0 auto;
+  }
+}

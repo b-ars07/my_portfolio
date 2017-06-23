@@ -1,59 +1,42 @@
 .about {
   display: flex;
+}
 
-  &__col {
-    width: 50%;
-    position: relative;
+.about__col {
+  width: 50%;
+  position: relative;
+}
 
-    &--left {
-      background: $bgAboutLeft;
+.about__col--left {
+    background: $bgAboutLeft;
+}
 
-      .about__triangle {
-        left: 0;
-        fill: $bgAboutLeft;
-      }
-    }
+.about__col--right {
+    background: $bgAboutRight;
+}
 
-    &--right {
-      background: $bgAboutRight;
+.about__wrapper {
+  max-width: 900px;
+}
 
-      .about__triangle {
-        right: 0;
-        fill: $bgAboutRight;
-      }
-    }
-  }
-
-  &__triangle {
-    bottom: 100%;
-    display: block;
-    height: 110px;
-    position: absolute;
-    width: 100%;
-  }
-
-  &__wrapper {
-    max-width: 900px;
-
-    &--left {
+.about__wrapper--left {
       margin-left: auto;
       display: flex;
       justify-content: space-between;
       padding: 20px;
     }
 
-    &--right {
+.about__wrapper--right {
       margin-right: auto;
       padding: 20px 40px;
     }
-  }
-}
 
 .about-me {
   max-width: 443px;
   width: 54%;
+}
 
-  &__photo {
+.about-me__photo {
     height: 390px;
     width: 100%;
     background-position: center;
@@ -61,6 +44,3 @@
     background-size: cover;
     margin-bottom: 40px;
   }
-
-
-}

@@ -13,20 +13,22 @@
 //-Mixins
 @import 'helpers/mixins';
 
-//-Blocks
-@import "blocks/social-icons";
-@import "blocks/user";
-@import "blocks/hamburger";
-@import "blocks/skills-list";
-@import "blocks/section-title";
-@import "blocks/welcom-nav";
-@import "blocks/map";
-@import "blocks/header";
-@import "blocks/card";
-@import "blocks/block-title";
-@import "blocks/block-text";
-@import "blocks/footer";
-@import "blocks/copyright";
+////-Blocks
+//@import "blocks/social-icons";
+//@import "blocks/user";
+//@import "blocks/hamburger";
+//@import "blocks/skills-list";
+//@import "blocks/section-title";
+//@import "blocks/welcom-nav";
+//@import "blocks/map";
+//@import "blocks/header";
+//@import "blocks/card";
+//@import "blocks/block-title";
+//@import "blocks/block-text";
+//@import "blocks/footer";
+//@import "blocks/copyright";
+
+@import "blocks/*";
 
 //-Pages
 @import "pages/welcom";
