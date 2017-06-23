@@ -57,10 +57,11 @@
 .social--footer {
   .social__icon {
     fill: $white;
-    opacity: 1;
+    opacity: .5;
 
     &:hover {
-      fill: $greenHover;
+      fill: $white;
+      opacity: 1;
     }
   }
 }
