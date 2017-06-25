@@ -1,0 +1,88 @@
+.feedback {
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  max-width: 380px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.feedback__inner {
+  //-background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(#dadbd6,.6);
+  position: relative;
+  padding: 30px 20px 20px;
+}
+
+.feedback-form__item {
+  border: none;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.feedback-form__input,
+.feedback-form__textarea {
+  background-color: rgba($white, .85);
+  border: 1px solid $white;
+  border-radius: 30px;
+  color: $darkGrey;
+  font-size: $middleFont;
+  line-height: 1;
+  outline: none;
+  overflow: hidden;
+  padding: 16px 20px;
+  @include roboto;
+  width: 100%;
+
+  &::-webkit-input-placeholder {
+    @include roboto;
+    color: $darkGrey;
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #6c9c5a;
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.feedback-form__textarea {
+  height: 140px;
+}
+
+.feedback-buttons {
+  display: flex;
+  width: 100%;
+}
+
+.feedback-button {
+  width: 50%;
+  color: $white;
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-size: $middleFont;
+  cursor: pointer;
+  text-align: center;
+}
+
+.feedback-button--send {
+  background-color: $lightGreen;
+  border-right: 2px solid rgba(#dee3e7, .5);
+
+}
+
+.feedback-button--clear {
+  background-color: $greenHover;
+}
+

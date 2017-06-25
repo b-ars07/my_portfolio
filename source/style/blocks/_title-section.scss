@@ -6,7 +6,6 @@
 
   &__img {
     opacity: .1;
-    max-width: 357px;
     width: 100%;
   }
 
@@ -29,5 +28,22 @@
       position: absolute;
       width: 89px;
     }
+  }
+}
+
+.section-title--about {
+ .section-title__img {
+   width:auto;
+  }
+}
+
+.section-title--works {
+  padding-bottom: 24px;
+}
+.section-title--reviews {
+    margin-bottom: 68px;
+
+  .section-title__text {
+    max-width: 350px;
   }
 }

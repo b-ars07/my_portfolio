@@ -1,0 +1,33 @@
+.works {
+  position: relative;
+  background-color: $bgAboutRight;
+}
+
+.works__content {
+  display: flex;
+}
+
+.works__col--left {
+  background-color: #ebefe2;
+  position: relative;
+  width: 50%;
+}
+
+.works__col--right {
+  background-color: #e1e4d7;
+  position: relative;
+  width: 50%;
+}
+
+.works__wrapper {
+  max-width: 900px;
+}
+
+.works__wrapper--left {
+  margin-left: auto;
+  padding: 20px;
+}
+
+.works__wrapper--right {
+  margin-right: auto;
+}

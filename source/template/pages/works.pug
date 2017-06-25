@@ -35,31 +35,34 @@ block content
                                 .works-slider-list__image(style='background-image: url(assets/img/work-2.png)')
                                 a.works-slider-arrow
                                     i.works-slider-arrow__img.works-slider-arrow__img--bottom
+                                        +arrow('slider')
                             li.works-slider-list__item
                                 .works-slider-list__image(style='background-image: url(assets/img/work-3.png)')
                                 a.works-slider-arrow
                                     i.works-slider-arrow__img.works-slider-arrow__img--top
+                                        +arrow('slider')
 
         section.section.reviews
             +sectionTitle('about_header', 'Что обо мне говорят', 'reviews')
             ul.reviews__list
                 li.reviews__item
                     i.reviews__item-icon
-                    p.reviews__item-text
-                        | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых
-                        |тяжелых испытаний и бессонных ночей!
+
                     .reviews-person
                         img.reviews-person__image(src='assets/img/koval.png')
+                        p.reviews-person__text
+                            | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых
+                            | тяжелых испытаний и бессонных ночей!
                         .reviews-person__info
                             p.reviews-person__name Ковальчук Дмитрий
                             p.reviews-person__prof основатель Loftschool
                 li.reviews__item
                     i.reviews__item-icon
-                    p.reviews__item-text
-                        | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых
-                        | браузерах!
                     .reviews-person
                         img.reviews-person__image(src='assets/img/saba.png')
+                        p.reviews-person__text
+                            | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых
+                            | браузерах!
                         .reviews-person__info
                             p.reviews-person__name Сабанцев Владимир
                             p.reviews-person__prof преподаватель Loftschool

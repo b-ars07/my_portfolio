@@ -4,8 +4,9 @@
   display: inline-flex;
   position: relative;
   z-index: 2;
+}
 
-  &__item {
+.social__item {
     display: inline-flex;
     margin-left: 27px;
     vertical-align: middle;
@@ -13,33 +14,33 @@
     &:first-child {
       margin-left: 0;
     }
-  }
+}
 
-  &__link {
+.social__link {
     display: block;
   }
 
-  &__icon {
-    max-height: 22px;
-    max-width: 31px;
-    opacity: .5;
-    vertical-align: top;
-    fill: #ffffff;
+.social__icon {
+  max-height: 22px;
+  max-width: 31px;
+  opacity: .5;
+  vertical-align: top;
+  fill: #ffffff;
 
-    &:hover {
-      fill: $greenHover;
-      opacity: 1;
-    }
-    &_github {
-      max-height: 22px;
-      max-width: 26px;
-    }
-    &_in {
-      max-width: 24px;
-      max-height: 22px;
-    }
+  &:hover {
+    fill: $greenHover;
+    opacity: 1;
   }
 }
+.social__icon_github {
+      max-height: 22px;
+      max-width: 26px;
+}
+.social__icon_in {
+      max-width: 24px;
+      max-height: 22px;
+}
+
 
 //-Style for social icons in section header
 .social--header {

@@ -1,37 +1,10 @@
-//variables
-@import "helpers/variables";
+//-Helpers
+@import 'helpers/*';
 
-//-fonts
-@import 'helpers/fonts';
-
-//-sprite
-@import 'helpers/sprite';
-
-//-Settings style
-@import 'helpers/settings';
-
-//-Mixins
-@import 'helpers/mixins';
-
-////-Blocks
-//@import "blocks/social-icons";
-//@import "blocks/user";
-//@import "blocks/hamburger";
-//@import "blocks/skills-list";
-//@import "blocks/section-title";
-//@import "blocks/welcom-nav";
-//@import "blocks/map";
-//@import "blocks/header";
-//@import "blocks/card";
-//@import "blocks/block-title";
-//@import "blocks/block-text";
-//@import "blocks/footer";
-//@import "blocks/copyright";
-
+//-Blocks
 @import "blocks/*";
 
 //-Pages
-@import "pages/welcom";
-@import "pages/about";
+@import "pages/*";
 
 
