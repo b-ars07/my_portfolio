@@ -1,12 +1,10 @@
 .user {
   &__photo {
-    background: url('../img/ava.jpg') no-repeat center/cover, #e2e2e2;
     border-radius: 50%;
     height: 141px;
     margin: 0 auto 15px;
-    //position: relative;
     width: 141px;
-    //z-index: 10;
+    display: block;
   }
 
   &__name {

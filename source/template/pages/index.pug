@@ -13,17 +13,18 @@ block content
                 .card__welcome.card__welcome--active
                     .card__content
                         +user()
-                        +ul('social', 'welcome',
+                        +ul('social', '',
                         {
                             vk: "https://vk.com/ars_34",
                             github: "https://github.com/b-ars07",
                             in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"
                         })
-                    +nav('welcome-menu', {
+                    .card__nav
+                        +nav('welcome-menu', {
                         'Мои работы': './works.html',
                         'Обо мне': './about.html',
                         'Блог': './blog.html'
-                    })
+                        })
                 .card__auth
                     .card__content
                         +blockTitle('Авторизуйтесь','line','auth')

@@ -2,8 +2,7 @@
 
 .social {
   display: inline-flex;
-  position: relative;
-  z-index: 2;
+
 }
 
 .social__item {
@@ -45,6 +44,9 @@
 
 //-Style for social icons in section header
 .social--header {
+  position: relative;
+  z-index: 2;
+
   .social__icon {
     fill: $white;
     opacity: 1;

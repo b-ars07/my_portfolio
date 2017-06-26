@@ -8,7 +8,7 @@ include blocks/copyright
 block variables
 
 doctype html
-html
+html(lang="ru_RU")
     head
         meta(charset="utf-8")
         title #{title}
@@ -30,8 +30,8 @@ html
         script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
         <![endif]-->
 
-    body.wrapper
-
-        block content
-        block footer
+    body
+        .wrapper
+            block content
+            block footer
 

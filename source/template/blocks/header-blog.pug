@@ -9,9 +9,9 @@ mixin header-blog()
             })
             +hamburger()
             .header__content
+                img.user__photo(src="assets/img/ava.jpg")
                 .section-title.section-title--blog
                     svg(class='section-title__img', viewBox="0 0 302.193 208.012")
                         use(xlink:href="assets/img/sprite.svg#blog_header")
-                    .user__photo
                     h2.section-title__text Блог
                     p.section-title__subtext Статьи которые я написал
