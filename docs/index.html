@@ -10,23 +10,23 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="assets/js/foundation.js" defer></script>
+    <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body>
+  <body class="wrapper">
     <section class="section welcome">
-      <div class="welcome__inner section__wrapper">
-        <button class="welcome__auth-btn">Авторизоваться</button>
-        <div class="welcome__card">
-          <section class="card">
+      <button class="welcome__auth-btn">Авторизоваться</button>
+      <div class="card__wrapper">
+        <section class="card">
+          <div class="card__welcome card__welcome--active">
             <div class="card__content">
               <div class="user user--undefined">
                 <div class="user__photo"></div>
                 <h1 class="user__name">Березин Арсений</h1>
                 <p class="user__prof">Личный сайт веб разработчика</p>
               </div>
-              <ul class="social social--welcom">
+              <ul class="social social--welcome">
                 <li class="social__item"><a class="social__link" href="https://vk.com/ars_34" target="_blank">
                     <svg class="social__icon social__icon--vk">
                       <use xlink:href="assets/img/sprite.svg#vk"></use>
@@ -48,12 +48,61 @@
                 <li class="welcome-menu__item"><a class="welcome-menu__link" href="./blog.html">Блог</a></li>
               </ul>
             </nav>
-          </section>
-        </div>
+          </div>
+          <div class="card__auth">
+            <div class="card__content">
+              <h4 class="block-title--line block-title--auth"><span class="block-title__text">Авторизуйтесь</span></h4>
+              <form class="form-authorization" method="post" action="">
+                <fieldset class="form-authorization__item">
+                  <label class="form-authorization__label">
+                    <input class="form-authorization__input" name="text" type="text" placeholder="Логин" required="required"/>
+                  </label>
+                </fieldset>
+                <fieldset class="form-authorization__item">
+                  <label class="form-authorization__label">
+                    <input class="form-authorization__input" name="password" type="password" placeholder="Пароль" required="required"/>
+                  </label>
+                </fieldset>
+              </form>
+              <div class="checkbox">
+                <div class="checkbox__elem checkbox__elem--checkbox">
+                  <input class="checkbox__input checkbox__person" name="person" type="checkbox"/>
+                  <label class="checkbox__label"></label>
+                </div>
+                <p class="checkbox__text">Я человек</p>
+              </div>
+              <p class="card__content-text">Вы точно не робот?</p>
+              <div class="card__content-radio">
+                <div class="checkbox">
+                  <div class="checkbox__elem checkbox__elem--radio">
+                    <input class="checkbox__input checkbox__radio" value="1" name="radio" type="radio"/>
+                    <label class="checkbox__label"></label>
+                  </div>
+                  <p class="checkbox__text">Да</p>
+                </div>
+                <div class="checkbox">
+                  <div class="checkbox__elem checkbox__elem--radio">
+                    <input class="checkbox__input checkbox__radio" value="0" name="radio" type="radio"/>
+                    <label class="checkbox__label"></label>
+                  </div>
+                  <p class="checkbox__text">Не уверен (O_O)</p>
+                </div>
+              </div>
+            </div>
+            <nav class="welcome-menu">
+              <ul class="welcome-menu__list">
+                <li class="welcome-menu__item"><a class="welcome-menu__link" href="./index.html">На главную</a></li>
+                <li class="welcome-menu__item"><a class="welcome-menu__link" href="">Войти</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
       </div>
     </section>
-    <section class="section copyright copyright--index-page">
-      <p class="copyright__info">© Березин Арсений | Создано с любовью в LoftSchool | 2017</p>
-    </section>
+    <footer class="footer-index">
+      <section class="section copyright copyright--index-page">
+        <p class="copyright__info">© Березин Арсений | Создано с любовью в LoftSchool | 2017</p>
+      </section>
+    </footer>
   </body>
 </html>
