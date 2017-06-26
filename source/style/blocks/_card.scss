@@ -28,11 +28,11 @@
 
 .card__welcome {
     z-index: 2;
-    display: none;
     transform: rotateY(0deg);
   }
 
 .card__auth {
+    display: none;
     transform: rotateY(0deg);
   }
 
