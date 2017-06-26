@@ -1,24 +1,49 @@
 extends ../_template
 
 block variables
-  -
-    var
+    -
+        var
         title = title = 'Главная|Арсений Березин frontend developer'
 
 block content
-  section.section.welcome
-      .welcome__inner.section__wrapper
+    section.section.welcome
         button.welcome__auth-btn Авторизоваться
-        .welcome__card
-          section.card
-            .card__content
-              +user()
-              +ul('social', 'welcom',
-              {
-                  vk: "https://vk.com/ars_34",
-                  github: "https://github.com/b-ars07",
-                  in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"
-              })
-            +nav('welcome-menu', {'Мои работы':'./works.html', 'Обо мне':'./about.html', 'Блог':'./blog.html'})
-          //-form.card_autorization
-  +copyright('index-page')
+        .card__wrapper
+            section.card
+                .card__welcome.card__welcome--active
+                    .card__content
+                        +user()
+                        +ul('social', 'welcome',
+                        {
+                            vk: "https://vk.com/ars_34",
+                            github: "https://github.com/b-ars07",
+                            in: "https://www.linkedin.com/in/arseny-berezin-b58567113/"
+                        })
+                    +nav('welcome-menu', {
+                        'Мои работы': './works.html',
+                        'Обо мне': './about.html',
+                        'Блог': './blog.html'
+                    })
+                .card__auth
+                    .card__content
+                        +blockTitle('Авторизуйтесь','line','auth')
+                        +form('form-authorization',
+                            {
+                                'Логин':'text',
+                                'Пароль':'password'
+                            },
+                            {}
+                        )
+                        +checkbox('person', 'Я человек', 'checkbox')
+                        p.card__content-text Вы точно не робот?
+                        .card__content-radio
+                            +checkbox('radio','Да','radio','1')
+                            +checkbox('radio','Не уверен (O_O)','radio','0')
+                    +nav('welcome-menu',
+                        {
+                          'На главную':'./index.html',
+                          'Войти':''
+                        })
+block footer
+    footer.footer-index
+        +copyright('index-page')

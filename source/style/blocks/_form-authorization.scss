@@ -1,0 +1,63 @@
+.form-authorization {
+  margin-bottom: 20px;
+}
+
+.form-authorization__item {
+  border: none;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-left: 45px;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    width:45px;
+    height: 45px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #f0efe9;
+    background-position: -20px 14px;
+    background-repeat: no-repeat;
+    background-image: url('../img/sprite.png');
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(2):before {
+    background-position: 17px 14px;
+  }
+}
+
+.form-authorization__input {
+  width: 100%;
+  height: 45px;
+  padding-left: 18px;
+  border: none;
+  background-color: $white;
+  color: $sectionTitleColor;
+  line-height: 1;
+  @include roboto;
+  outline: none;
+  font-size: $middleFont;
+
+  &::-webkit-input-placeholder {
+    color: rgba($sectionTitleColor, .5);
+    @include roboto;
+  }
+
+  &:focus {
+    outline: none;
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+}

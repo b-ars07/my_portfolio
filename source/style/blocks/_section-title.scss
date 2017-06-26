@@ -39,11 +39,47 @@
 
 .section-title--works {
   padding-bottom: 24px;
+  background: #f8f9f5;
 }
+
 .section-title--reviews {
     margin-bottom: 68px;
 
   .section-title__text {
     max-width: 350px;
+  }
+}
+
+.section-title--blog {
+  margin-bottom: 14px;
+  display: inline-block;
+
+  .section-title__img {
+    fill: $white;
+    @include centered(both);
+    width:303px;
+    top:69%;
+  }
+
+  .user__photo {
+    margin: 0 auto 32px;
+  }
+
+  .section-title__text {
+    color: $white;
+    position: relative;
+    transform: none;
+    left: 0;
+    top:0;
+    margin-bottom: 63px;
+
+    &:before, &:after {
+      background-color: $white;
+    }
+  }
+  .section-title__subtext {
+    color: $white;
+    font-size: $middleFont;
+    letter-spacing: -0.5px;
   }
 }

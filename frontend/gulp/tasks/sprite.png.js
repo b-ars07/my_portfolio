@@ -6,7 +6,7 @@ module.exports = function() {
             .pipe($.gp.spritesmith({
                 imgName: 'sprite.png',
                 cssName: '_sprite.scss',
-                padding: 10
+                padding: 20
             }));
 
         var imgStream = sprite.img

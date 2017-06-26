@@ -10,6 +10,14 @@
   position:relative;
   width:$width-line;
 
+  &:hover {
+    .hamburger-icon__line--top,
+    .hamburger-icon__line--middle,
+    .hamburger-icon__line--bottom {
+      background: $greenHover;
+    }
+  }
+
   &__line {
     background:$white;
     border-radius:($height-line / 2);

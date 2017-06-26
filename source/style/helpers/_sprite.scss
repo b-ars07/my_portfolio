@@ -9,33 +9,33 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$koval-name: 'koval';
-$koval-x: 87px;
-$koval-y: 0px;
-$koval-offset-x: -87px;
-$koval-offset-y: 0px;
-$koval-width: 77px;
-$koval-height: 77px;
-$koval-total-width: 164px;
-$koval-total-height: 78px;
-$koval-image: 'sprite.png';
-$koval: (87px, 0px, -87px, 0px, 77px, 77px, 164px, 78px, 'sprite.png', 'koval', );
-$saba-name: 'saba';
-$saba-x: 0px;
-$saba-y: 0px;
-$saba-offset-x: 0px;
-$saba-offset-y: 0px;
-$saba-width: 77px;
-$saba-height: 78px;
-$saba-total-width: 164px;
-$saba-total-height: 78px;
-$saba-image: 'sprite.png';
-$saba: (0px, 0px, 0px, 0px, 77px, 78px, 164px, 78px, 'sprite.png', 'saba', );
-$spritesheet-width: 164px;
-$spritesheet-height: 78px;
+$login-name: 'login';
+$login-x: 38px;
+$login-y: 0px;
+$login-offset-x: -38px;
+$login-offset-y: 0px;
+$login-width: 15px;
+$login-height: 17px;
+$login-total-width: 53px;
+$login-total-height: 17px;
+$login-image: 'sprite.png';
+$login: (38px, 0px, -38px, 0px, 15px, 17px, 53px, 17px, 'sprite.png', 'login', );
+$password-name: 'password';
+$password-x: 0px;
+$password-y: 0px;
+$password-offset-x: 0px;
+$password-offset-y: 0px;
+$password-width: 18px;
+$password-height: 17px;
+$password-total-width: 53px;
+$password-total-height: 17px;
+$password-image: 'sprite.png';
+$password: (0px, 0px, 0px, 0px, 18px, 17px, 53px, 17px, 'sprite.png', 'password', );
+$spritesheet-width: 53px;
+$spritesheet-height: 17px;
 $spritesheet-image: 'sprite.png';
-$spritesheet-sprites: ($koval, $saba, );
-$spritesheet: (164px, 78px, 'sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($login, $password, );
+$spritesheet: (53px, 17px, 'sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

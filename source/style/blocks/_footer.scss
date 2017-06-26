@@ -79,6 +79,7 @@
       font-size: $middleFont;
       font-weight: $mediumWeight;
       line-height: 1.5;
+      transition: all $transition-time;
 
       &:hover {
         opacity: .5;
@@ -102,4 +103,9 @@
       font-weight: $hardWeight;
     }
   }
+}
+
+.footer-index {
+  display: flex;
+  justify-content: center;
 }

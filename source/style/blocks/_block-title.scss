@@ -6,14 +6,25 @@
   font-weight: $regularWeight;
   line-height: 1;
   margin-bottom: 20px;
+}
 
-  &__text {
-    max-width: 265px;
+.block-title--blog {
+  color: $blockTitleColor;
+  font-size: 35px;
+  @include sansusWebssimo;
+  text-align: left;
+  font-weight: $regularWeight;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.block-title__text {
+    max-width: 320px;
     display: inline-block;
     margin: 0 auto;
-  }
+}
 
-  &--line {
+.block-title--line {
     color: $blockTitleColor;
     font-size: 35px;
     @include sansusWebssimo;
@@ -40,5 +51,12 @@
       width: 89px;
       bottom: -23px;
     }
+  }
+
+.block-title--auth {
+  color: $white;
+
+  &:after {
+    background: $white;
   }
 }

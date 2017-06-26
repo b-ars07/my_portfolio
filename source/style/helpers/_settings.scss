@@ -16,15 +16,7 @@ html {
 	font-smoothing: antialiased;
 }
 
-body {
-	font-family: 'roboto', sans-serif;
-	height: 100%;
-	min-width: 300px;
-	padding: 0;
-	width: 100%;
-	position: relative;
-	display: table;
-}
+
 
 h1,
 h2,
@@ -67,9 +59,13 @@ button {
 }
 
 .wrapper {
-	min-height: 100%;
-	overflow: hidden;
+	font-family: 'roboto', sans-serif;
+	min-width: 300px;
+	padding: 0;
 	position: relative;
+	width: 100%;
+	display: table;
+	height: 100%;;
 }
 
 

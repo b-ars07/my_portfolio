@@ -26,6 +26,7 @@
   opacity: .5;
   vertical-align: top;
   fill: #ffffff;
+  transition: all $transition-time;
 
   &:hover {
     fill: $greenHover;
