@@ -6,13 +6,14 @@ block variables
         title = 'Обо мне|Арсений Березин frontend developer'
 block content
     +header('portfolio')
-    section.section.about
+    section.section.about.js-section-content
         .about__col.about__col--left
             +leftTriangle('about')
             .about__wrapper.about__wrapper--left
                 +sectionTitle('about_header', 'Обо мне', 'about')
                 .about-me
-                    .about-me__photo(style="background: url('assets/img/ava.jpg')")
+                    .about-me__photo
+                        img(src='assets/img/ava.jpg')
                     +blockTitle('Кто я','line')
                     .about-me__info
                         p

@@ -1,6 +1,5 @@
 .section-title {
   align-self: flex-start;
-  flex-grow: 1;
   position: relative;
   text-align: center;
 
@@ -32,7 +31,8 @@
 }
 
 .section-title--about {
- .section-title__img {
+  flex: 45%;
+  .section-title__img {
    width:auto;
   }
 }

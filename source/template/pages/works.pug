@@ -8,7 +8,7 @@ block variables
 block content
     .works__inner
         +header('portfolio')
-        section.section.works
+        section.section.works.js-section-content
             +leftTriangle('works')
             +rightTriangle('works')
             +sectionTitle('works_header','Мои работы','works')
@@ -31,13 +31,13 @@ block content
                             li.works-slider-list__item
                                 .works-slider-list__image(style='background-image: url(assets/img/work-2.png)')
                                 a.works-slider-arrow
-                                    i.works-slider-arrow__img.works-slider-arrow__img--bottom
-                                        +arrow('slider')
+                                    svg.works-slider-arrow__img
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
                             li.works-slider-list__item
                                 .works-slider-list__image(style='background-image: url(assets/img/work-3.png)')
                                 a.works-slider-arrow
-                                    i.works-slider-arrow__img.works-slider-arrow__img--top
-                                        +arrow('slider')
+                                    svg.works-slider-arrow__img.works-slider-arrow__img--top
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         section.section.reviews
             img(src="assets/img/leaf1.png" alt="leaf 1").leaf1

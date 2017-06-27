@@ -1,7 +1,25 @@
-(function() {
-  'use strict';
+var arrow = (function () {
+  return {
+    init: function () {
+        const scrollHeight = $('.js-section-content').offset().top;
 
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
+        $('.arrow').on('click', function () {
+
+            $('body').animate({
+                scrollTop: scrollHeight
+            }, 1800);
+
+            return false;
+        });
+    }
+  }
 })();
+
+$(function () {
+  if ($('.arrow').length) {
+    arrow.init();
+  }
+});
+
+
+
