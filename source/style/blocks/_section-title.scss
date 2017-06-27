@@ -1,8 +1,8 @@
 .section-title {
+  align-self: flex-start;
+  flex-grow: 1;
   position: relative;
   text-align: center;
-  flex-grow: 1;
-  align-self: flex-start;
 
   &__img {
     opacity: .1;
@@ -12,10 +12,10 @@
   &__text {
     color: $sectionTitleColor;
     @include sansusWebssimo;
+    display: inline-flex;
     font-size: 63px;
     font-weight: $regularWeight;
     line-height: 1;
-    display: inline-flex;
     text-transform: uppercase;
     @include centered();
 
@@ -38,8 +38,8 @@
 }
 
 .section-title--works {
-  padding-bottom: 24px;
   background: #f8f9f5;
+  padding-bottom: 24px;
 }
 
 .section-title--reviews {
@@ -51,14 +51,14 @@
 }
 
 .section-title--blog {
-  margin-bottom: 14px;
   display: inline-block;
+  margin-bottom: 14px;
 
   .section-title__img {
-    fill: $white;
+    top:69%;
     @include centered(both);
     width:303px;
-    top:69%;
+    fill: $white;
   }
 
   .user__photo {
@@ -67,11 +67,11 @@
 
   .section-title__text {
     color: $white;
-    position: relative;
-    transform: none;
     left: 0;
-    top:0;
     margin-bottom: 63px;
+    position: relative;
+    top:0;
+    transform: none;
 
     &:before, &:after {
       background-color: $white;

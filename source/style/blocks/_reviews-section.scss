@@ -1,7 +1,20 @@
 .reviews {
-  background: url('../img/bg-works.png') no-repeat center/cover;
   padding: 70px 20px 320px;
   width: 100%;
+  position: relative;
+
+}
+
+.reviews-background {
+  @include centered(full);
+  top: 330px;
+  z-index: 0;
+}
+
+.reviews-background__img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .reviews__list {
@@ -13,22 +26,31 @@
   margin-bottom: 70px;
   max-width: 800px;
   width: 100%;
+
+
 }
 
 .reviews__item {
   list-style: none;
   margin-right: 25px;
   width: 48%;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 61px;
+    top: 80px;
+    left: 0;
+    background: url('../img/quote.png');
+    opacity: .9;
+  }
 
   &:last-child {
     margin-right: 0;
   }
 }
-
-.reviews__item-icon {
-
-}
-
 
 .reviews-person {
   display: flex;
