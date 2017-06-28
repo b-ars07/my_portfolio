@@ -10,6 +10,11 @@
   position:relative;
   width:$width-line;
 
+  @include phones() {
+    width: 26px;
+    height: 23px;
+  }
+
   &:hover {
     .hamburger-icon__line--top,
     .hamburger-icon__line--middle,

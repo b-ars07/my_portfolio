@@ -3,6 +3,16 @@
   max-width: 420px;
   width: 100%;
   text-align: center;
+
+  @include tablets() {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0);
+    left: 0;
+  }
 }
 
 .work__technologies {
@@ -12,12 +22,17 @@
   font-weight: $mediumWeight;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+
+  @include tablets() {
+    margin-bottom: 20px;
+  }
+
 }
 
 .work__link {
   background: $lightGreen;
-  width: 100%;
+  display: inline-block;
   padding: 13px 18px;
   color: $white;
   @include roboto;

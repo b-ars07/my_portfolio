@@ -28,7 +28,11 @@ mixin sectionTitle(svg, title, modificator)
         h2.section-title__text=title
 
 mixin blockTitle(title, status, modificator)
-    if status=='line' && modificator
+    if status == 'line'
+        h4.block-title--line
+            span.block-title__text=title
+        return
+    else if status=='line' && modificator
         h4.block-title--line(class=`block-title--${modificator}`)
             span.block-title__text=title
     else if modificator

@@ -17,6 +17,10 @@
     padding-top: 55px;
     text-align: center;
 
+    @include phones() {
+      padding-top: 35px;
+    }
+
     &--active .card{
       transform: rotateY(180deg);
     }

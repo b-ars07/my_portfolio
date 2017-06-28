@@ -110,5 +110,15 @@
   justify-content: center;
   position: absolute;
   bottom: 40px;
-  @include centered(x)
+  @include centered(x);
+  
+  @include tablets() {
+    bottom: 70px;
+    width: 80%;
+  }
+
+  @include phones() {
+    line-height: 2;
+    font-size: 14px;
+  }
 }

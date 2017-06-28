@@ -3,6 +3,10 @@
   height: 110px;
   position: absolute;
   bottom: 100%;
+
+  @include tablets() {
+    height: 70px;
+  }
 }
 
 .triangle__left {

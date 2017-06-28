@@ -8,6 +8,13 @@
   justify-content: space-between;
   padding: 20px 20px 105px 20px;
 
+  @include tablets() {
+    padding: 20px 20px 145px 20px;
+  }
+  @include phones() {
+    padding: 20px 20px 255px 20px;
+  }
+
 
   &__auth-btn {
     align-self: flex-end;
@@ -24,6 +31,10 @@
     padding: 5px 29px;
     transition: all .5s;
 
+    @include phones() {
+      align-self: center;
+    }
+
     &:hover {
       background: $greenHover;
       border: 1px solid #729e19;
@@ -34,11 +45,4 @@
     margin: auto;
     display: block;
   }
-
-  //&__footer {
-  //  color: $white;
-  //  font-weight: $lightWeight;
-  //  text-align: center;
-  //  margin-top: 30px;
-  //}
 }

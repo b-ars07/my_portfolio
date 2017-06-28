@@ -1,11 +1,24 @@
-.clearfix {
-  &:before,
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
+@mixin desctop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablets() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin smallPhones() {
+  @media screen and (max-width: 320px) {
+    @content;
   }
 }
 
@@ -35,3 +48,4 @@
     top:0;
   }
 }
+

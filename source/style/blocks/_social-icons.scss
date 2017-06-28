@@ -10,6 +10,10 @@
     margin-left: 27px;
     vertical-align: middle;
 
+  @include phones() {
+    margin-left: 29px;
+  }
+
     &:first-child {
       margin-left: 0;
     }
@@ -50,6 +54,21 @@
   .social__icon {
     fill: $white;
     opacity: 1;
+
+      @include phones() {
+         max-width: 24px;
+         max-height: 17px;
+
+           &--github {
+             max-width: 21px;
+             max-height: 17px;
+
+          }
+           &--in {
+            max-width: 19px;
+            max-height: 17px;
+          }
+  }
 
     &:hover {
       fill: $greenHover;

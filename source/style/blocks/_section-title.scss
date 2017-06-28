@@ -2,13 +2,14 @@
   align-self: flex-start;
   position: relative;
   text-align: center;
+}
 
-  &__img {
+.section-title__img {
     opacity: .1;
     width: 100%;
-  }
+}
 
-  &__text {
+.section-title__text {
     color: $sectionTitleColor;
     @include sansusWebssimo;
     display: inline-flex;
@@ -17,6 +18,14 @@
     line-height: 1;
     text-transform: uppercase;
     @include centered();
+
+  @include tablets() {
+    font-size: 48px;
+  }
+
+  @include phones() {
+    font-size: 35px;
+  }
 
     &:after {
       background: $sectionTitleColor;
@@ -27,7 +36,6 @@
       position: absolute;
       width: 89px;
     }
-  }
 }
 
 .section-title--about {
@@ -45,8 +53,16 @@
 .section-title--reviews {
     margin-bottom: 68px;
 
+  @include tablets() {
+    margin-bottom: 55px;
+  }
+
   .section-title__text {
     max-width: 350px;
+
+    @include tablets() {
+      max-width: 100%;
+    }
   }
 }
 
