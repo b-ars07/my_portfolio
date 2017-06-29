@@ -5,13 +5,26 @@
   max-width: 380px;
   overflow: hidden;
   width: 100%;
+
+  @include tablets() {
+    max-width: 349px;
+    margin-bottom: 100px;
+  }
+
+  @include phones() {
+    max-width: 299px;
+    margin-bottom: 40px;
+  }
 }
 
 .feedback__inner {
-  //-background-color: rgba(255, 255, 255, 0.15);
   background-color: rgba(#dadbd6,.6);
   position: relative;
   padding: 30px 20px 20px;
+
+  @include phones() {
+    padding: 37px 20px 21px;
+  }
 }
 
 .feedback-form__item {
@@ -19,6 +32,10 @@
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
+
+  @include  phones() {
+    margin-bottom: 24px;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -38,6 +55,10 @@
   padding: 16px 20px;
   @include roboto;
   width: 100%;
+
+  @include phones() {
+    padding: 15px 19px;
+  }
 
   &::-webkit-input-placeholder {
     @include roboto;

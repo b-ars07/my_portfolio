@@ -2,6 +2,14 @@
   background-color: $white;
   padding: 66px 180px 242px;
   position: relative;
+
+  @include desctop() {
+    padding: 70px 100px 242px;
+  }
+
+  @include tablets() {
+    padding: 57px 36px 318px 25px;
+  }
 }
 
 .blog__inner {
@@ -16,6 +24,15 @@
   margin-right: 100px;
   text-align: right;
   width: 275px;
+
+  @include desctop() {
+    width: 24%;
+    margin-right: 9%;
+  }
+
+  @include tablets() {
+    display: none;
+  }
 }
 
 .blog-sidebar__list {
@@ -45,6 +62,10 @@
 
 .blog-article {
   width: 60%;
+
+  @include tablets() {
+    width: 100%;
+  }
 }
 
 .blog-article__item {
@@ -65,4 +86,8 @@
   font-weight: $regularWeight;
   margin-bottom: 25px;
   @include roboto;
+
+  @include tablets() {
+    margin-bottom: 16px;
+  }
 }

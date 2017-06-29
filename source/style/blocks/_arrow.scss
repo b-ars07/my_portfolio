@@ -16,10 +16,18 @@
     position: absolute;
     @include centered(x);
     bottom: 70px;
+
+    @include tablets() {
+      bottom: 50px;
+    }
   }
   &--feedback {
     margin: 0 auto;
     transform: rotate(180deg);
+
+    @include tablets() {
+      position: relative;
+    }
   }
 }
 
@@ -28,4 +36,16 @@
   height: 27px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
   opacity: 1;
+}
+
+.arrow--blog {
+  position: absolute;
+  @include centered(x);
+  bottom: 70px;
+  display: none;
+
+  @include tablets() {
+    display: block;
+    bottom: 50px;
+  }
 }
