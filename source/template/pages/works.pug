@@ -12,39 +12,36 @@ block content
             +leftTriangle('works')
             +rightTriangle('works')
             +sectionTitle('works_header','Мои работы','works')
-            .works__content
-                .works__col--left
-                    .works__wrapper.works__wrapper--left
-                        .work
-                            +blockTitle('Сайт школы онлайн Образования','line', '')
-                            p.work__technologies HTML , CSS, JAVASCRIPT
-                            a.work__link(href='https://www.loftschool.com' target='_blank')
-                                span.work__link-text Посмотреть сайт
-                                    svg.work__link-icon
-                                        use(xlink:href="assets/img/sprite.svg#link")
+            .works-slider
+                .works-slider__desc
+                    +blockTitle('Сайт школы онлайн Образования','line', '')
+                    p.works-slider__technologies HTML , CSS, JAVASCRIPT
+                    a.works-slider__link(href='https://www.loftschool.com' target='_blank')
+                        span.works-slider__link-text Посмотреть сайт
+                            svg.works-slider__link-icon
+                                use(xlink:href="assets/img/sprite.svg#link")
 
-                .works__col--right
-                    .works__wrapper.works-slider.works__wrapper--right
-                        .works-slider__image-wrapper
-                            .works-slider__image(style='background-image: url(assets/img/work-1.png)')
-                        ul.works-slider-list
-                            li.works-slider-list__item
-                                .works-slider-list__image(style='background-image: url(assets/img/work-2.png)')
-                                a.works-slider-arrow
-                                    svg.works-slider-arrow__img
-                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
-                            li.works-slider-list__item
-                                .works-slider-list__image(style='background-image: url(assets/img/work-3.png)')
-                                a.works-slider-arrow
-                                    svg.works-slider-arrow__img.works-slider-arrow__img--top
-                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
+                
+                .works-slider__image-wrapper
+                    img.works-slider__image(src='assets/img/work-1.png')
+                ul.works-slider-list
+                    li.works-slider-list__item
+                        img.works-slider-list__image(src='assets/img/work-2.png')
+                        a.works-slider-arrow
+                            svg.works-slider-arrow__img
+                                use(xlink:href="assets/img/sprite.svg#arrow_down")
+                    li.works-slider-list__item
+                        img.works-slider-list__image(src='assets/img/work-3.png')
+                        a.works-slider-arrow
+                            svg.works-slider-arrow__img.works-slider-arrow__img--top
+                                use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         section.section.reviews
             img(src="assets/img/leaf1.png" alt="leaf 1").leaf.leaf1
             img(src="assets/img/leaf2.png" alt="leaf 2").leaf.leaf2
             img(src="assets/img/leaf3.png" alt="leaf 3").leaf.leaf3
             .reviews-background
-                img.reviews-background__img(src="assets/img/bg-works.png")
+                //-img.reviews-background__img(src="assets/img/bg-works.png")
             +sectionTitle('about_header', 'Что обо мне говорят', 'reviews')
             ul.reviews__list
                 li.reviews__item
@@ -57,7 +54,7 @@ block content
                             | тяжелых испытаний и бессонных ночей!
                         .reviews-person__info
                             p.reviews-person__name Ковальчук Дмитрий
-                            p.reviews-person__prof основатель Loftschool
+                            p.reviews-person__prof - основатель Loftschool
                 li.reviews__item
                     i.reviews__item-icon
                     .reviews-person

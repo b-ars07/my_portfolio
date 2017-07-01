@@ -1,101 +1,121 @@
 .section-title {
-  align-self: flex-start;
-  position: relative;
-  text-align: center;
+    align-self: flex-start;
+    position: relative;
+    text-align: center;
 }
 
 .section-title__img {
     opacity: .1;
     width: 100%;
+    @include tablets() {
+        @include centered(both);
+    }
+    @include phones() {
+        width: 60%;
+    }
 }
 
 .section-title__text {
     color: $sectionTitleColor;
     @include sansusWebssimo;
     display: inline-flex;
-    font-size: 63px;
+    font-size: rem(63px);
     font-weight: $regularWeight;
     line-height: 1;
     text-transform: uppercase;
     @include centered();
-
-  @include tablets() {
-    font-size: 48px;
-  }
-
-  @include phones() {
-    font-size: 35px;
-  }
-
+    top: 56%;
+    @include tablets() {
+        font-size: rem(48px);
+        position: relative;
+        transform: translate(0, 0);
+        left: 0;
+    }
+    @include phones() {
+        font-size: rem(35px);
+    }
     &:after {
-      background: $sectionTitleColor;
-      bottom: -21px;
-      content: '';
-      height: 3px;
-      @include centered('x');
-      position: absolute;
-      width: 89px;
+        background: $sectionTitleColor;
+        bottom: rem(-21px);
+        content: '';
+        height: 3px;
+        @include centered('x');
+        position: absolute;
+        width: 89px;
+        @include phones() {
+            bottom: rem(-29px);
+            width: 56px;
+            left: rem(146px);
+        }
     }
 }
 
 .section-title--about {
-  flex: 45%;
-  .section-title__img {
-   width:auto;
-  }
+    flex: 45%;
+    .section-title__img {
+        width: auto;
+    }
 }
 
 .section-title--works {
-  background: #f8f9f5;
-  padding-bottom: 24px;
+    background: #f8f9f5;
+    padding-bottom: rem(24px);
+    @include tablets() {
+        padding-top: rem(36px);
+        padding-bottom: rem(36px);
+    }
+    @include phones() {
+        padding-top: rem(27px);
+        padding-bottom: rem(31px);
+    }
+    .section-title__img {
+        fill: #a4c43a;
+    }
 }
 
 .section-title--reviews {
-    margin-bottom: 68px;
-
-  @include tablets() {
     margin-bottom: 55px;
-  }
-
-  .section-title__text {
-    max-width: 350px;
-
     @include tablets() {
-      max-width: 100%;
+        margin-bottom: 40px;
     }
-  }
+    @include phones() {
+        margin-bottom: 53px;
+    }
+    .section-title__img {
+        fill: #a4c43a;
+    }
+    .section-title__text {
+        max-width: 350px;
+    }
 }
 
 .section-title--blog {
-  display: inline-block;
-  margin-bottom: 14px;
-
-  .section-title__img {
-    top:69%;
-    @include centered(both);
-    width:303px;
-    fill: $white;
-  }
-
-  .user__photo {
-    margin: 0 auto 32px;
-  }
-
-  .section-title__text {
-    color: $white;
-    left: 0;
-    margin-bottom: 63px;
-    position: relative;
-    top:0;
-    transform: none;
-
-    &:before, &:after {
-      background-color: $white;
+    display: inline-block;
+    margin-bottom: 14px;
+    .section-title__img {
+        top: 69%;
+        @include centered(both);
+        width: 303px;
+        fill: $white;
     }
-  }
-  .section-title__subtext {
-    color: $white;
-    font-size: $middleFont;
-    letter-spacing: -0.5px;
-  }
+    .user__photo {
+        margin: 0 auto 32px;
+    }
+    .section-title__text {
+        color: $white;
+        left: 0;
+        margin-bottom: 63px;
+        position: relative;
+        top: 0;
+        transform: none;
+        &:before,
+        &:after {
+            background-color: $white;
+        }
+    }
+    .section-title__subtext {
+        color: $white;
+        font-size: $middleFont;
+        letter-spacing: -0.5px;
+    }
 }

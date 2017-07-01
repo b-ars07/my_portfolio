@@ -1,12 +1,11 @@
 .triangle {
-  display: block;
-  height: 110px;
-  position: absolute;
-  bottom: 100%;
-
-  @include tablets() {
-    height: 70px;
-  }
+    display: block;
+    height: 110px;
+    position: absolute;
+    bottom: 100%;
+    @include tablets() {
+        height: 68px;
+    }
 }
 
 .triangle__left {
@@ -18,22 +17,22 @@
 }
 
 .triangle--about {
-  width: 100%;
-
-  &.triangle__left {
-    fill: $bgAboutLeft;;
-  }
-
-  &.triangle__right {
-    fill: $bgAboutRight;
-  }
+    width: 100%;
+    &.triangle__left {
+        fill: $bgAboutLeft;
+        ;
+    }
+    &.triangle__right {
+        fill: $bgAboutRight;
+    }
 }
+
 .triangle--works {
-  width: 50%;
-  fill: #f8f9f5;
+    width: 50%;
+    fill: #f8f9f5;
 }
 
 .triangle--blog {
-  width: 50%;
-  fill: $white;
+    width: 50%;
+    fill: $white;
 }

@@ -1,60 +1,61 @@
 .header {
-  height: 100vh;
-  position: relative;
-  width: 100%;
-
-  @include desctop() {
-    min-height: 620px;
-    height: auto;
-  }
-
-  @include tablets() {
-    min-height: 515px;
-  }
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    @include desctop() {
+        min-height: 600px;
+        height: auto;
+    }
+    @include tablets() {
+        min-height: 510px;
+    }
+    @include phones() {
+        min-height: 555px;
+    }
 }
 
 .header-background {
-  @include centered(full);
-  z-index:0;
-  height: 1280px;
-  overflow: hidden;
-
-  @include tablets() {
-    height: 660px;
-  }
-
-  &:after {
-    background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
-    content: "";
-    height: 248px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+    @include centered(full);
+    z-index: 0;
+    height: 1272px;
+    overflow: hidden;
+    @include tablets() {
+        height: 650px;
+    }
+    &:after {
+        background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+        content: "";
+        height: 248px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 }
 
 .header-background__img {
-  max-width: 180%;
-  display: block;
-  margin: 0 auto;
-  min-width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  @include tablets() {
-    height: 100%;
-  }
+    max-width: 180%;
+    display: block;
+    margin: 0 auto;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include tablets() {
+        height: 100%;
+    }
 }
 
 .header__inner {
     z-index: 2;
     padding: 30px;
-
-  @include tablets() {
-    padding: 29px 29px 29px 30px;
-  }
+    @include tablets() {
+        padding: 29px 29px 29px 30px;
+    }
+    @include smallPhones() {
+        padding: 11px 7px 0 15px;
+    }
 }
 
 .header__portfolio,
@@ -69,27 +70,26 @@
     left: 0;
     right: 0;
     z-index: -1;
-
     @include phones() {
-      display: none;
+        display: none;
     }
-  }
+}
+
 .header__content {
     width: 100%;
     text-align: center;
     left: 0;
     @include centered(y);
-    top: 46%;
+    top: 48%;
 }
 
 .header--blog {
-  height: 430px;
-  padding: 14px 30px;
-
-
-  .header__content {
-    position: relative;
-    transform: none;
-    margin-top: 30px;
-  }
+    height: 405px;
+    min-height: 405px;
+    padding: 14px 30px;
+    .header__content {
+        position: relative;
+        transform: none;
+        margin-top: 30px;
+    }
 }
