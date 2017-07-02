@@ -81,5 +81,6 @@
     color: $white;
     &:after {
         background: $white;
+        bottom: rem(-6px);
     }
 }

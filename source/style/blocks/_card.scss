@@ -7,6 +7,7 @@
     height: 426px;
     position: relative;
     transition: 0.6s;
+    transform-style: preserve-3d;
     width: 393px;
     @include desctop() {
         width: 377px;
@@ -32,7 +33,7 @@
     @include phones() {
         padding-top: rem(35px);
     }
-    &--active .card {
+    &.active .card {
         transform: rotateY(180deg);
     }
 }
@@ -56,8 +57,7 @@
 }
 
 .card__auth {
-    display: none;
-    transform: rotateY(0deg);
+    transform: rotateY(180deg);
 }
 
 .card__content {
