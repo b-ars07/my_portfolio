@@ -16,7 +16,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <section class="section header">
+      <section class="section header" id="paralaxScroll">
+        <div class="header-background js-bg-header"><img class="header-background__img js-header-background__img" src="assets/img/bg-header.png"/></div>
         <div class="section__wrapper header__inner">
           <ul class="social social--header">
             <li class="social__item"><a class="social__link" href="https://vk.com/ars_34" target="_blank">
@@ -32,12 +33,12 @@
                   <use xlink:href="assets/img/sprite.svg#in"></use>
                 </svg></a></li>
           </ul>
-          <div class="hamburger"><a class="hamburger-icon"><span class="hamburger-icon__line hamburger-icon__line--top"></span><span class="hamburger-icon__line hamburger-icon__line--middle"></span><span class="hamburger-icon__line hamburger-icon__line--bottom"></span></a></div>
+          <div class="hamburger"><a id="hamburger-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></a></div>
           <div class="header__content">
-            <svg class="header__portfolio" viewBox="0 0 1175.495 313.961">
+            <svg class="js-header-title header__portfolio" viewBox="0 0 1175.495 313.961">
               <use xlink:href="assets/img/sprite.svg#portfolio_header"></use>
             </svg>
-            <div class="user user--header"><img class="user__photo" src="assets/img/ava.jpg"/>
+            <div class="user js-user user--header"><img class="user__photo" src="assets/img/ava.jpg"/>
               <h1 class="user__name">Березин Арсений</h1>
               <p class="user__prof">Личный сайт веб разработчика</p>
             </div>
@@ -47,21 +48,23 @@
           </svg>
         </div>
       </section>
-      <section class="section about">
+      <section class="section about js-section-content">
         <div class="about__col about__col--left">
           <svg class="triangle triangle__left triangle--about" viewbox="0 0 1000 110" preserveAspectRatio="none">
             <polygon points="0,0 0,110 1000, 110"></polygon>
           </svg>
           <div class="about__wrapper about__wrapper--left">
-            <div class="section-title section-title--about">
-              <svg class="section-title__img">
-                <use xlink:href="assets/img/sprite.svg#about_header"></use>
-              </svg>
-              <h2 class="section-title__text">Обо мне</h2>
+            <div class="about__title">
+              <div class="section-title section-title--about">
+                <svg class="section-title__img">
+                  <use xlink:href="assets/img/sprite.svg#about_header"></use>
+                </svg>
+                <h2 class="section-title__text">Обо мне</h2>
+              </div>
             </div>
             <div class="about-me">
-              <div class="about-me__photo" style="background: url('assets/img/ava.jpg');"></div>
-              <h4 class="block-title"><span class="block-title__text">Кто я</span></h4>
+              <div class="about-me__photo"><img src="assets/img/ava.jpg"></div>
+              <h4 class="block-title--line"><span class="block-title__text">Кто я</span></h4>
               <div class="about-me__info">
                 <p>
                   Я веб разработчик из Волгограда. Мне 22 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -77,134 +80,145 @@
           </svg>
           <div class="about__wrapper about__wrapper--right">
             <div class="skills">
-              <h4 class="block-title"><span class="block-title__text">Чем я вам могу быть полезен</span></h4>
+              <h4 class="block-title--line"><span class="block-title__text">Чем я вам могу быть полезен</span></h4>
               <div class="about-me__info">
                 <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
               </div>
-              <ul class="skills__list"><span class="skills__title">Frontend</span>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">HTML5</span>
-                  </div>
+              <ul class="skills-group">
+                <li class="skills-group__item">
+                  <div class="skills-group__title">Frontend</div>
+                  <ul class="skills__list">
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">HTML5</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--css" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">CSS3</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--js" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">JavaScript</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--jquery" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">jQuery</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--svg" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">SVG</span>
+                      </div>
+                    </li>
+                  </ul>
                 </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--css" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">CSS3</span>
-                  </div>
+                <li class="skills-group__item">
+                  <div class="skills-group__title">Backend        </div>
+                  <ul class="skills__list">
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--php" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">PHP</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--mySQL" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">MySQL</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--postgres" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">PostgreSQL</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--nodeJS" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">Node.JS</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--mongo" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">MongoDB</span>
+                      </div>
+                    </li>
+                  </ul>
                 </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--js" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">JavaScript</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--jquery" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">jQuery</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--svg" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">SVG</span>
-                  </div>
-                </li>
-              </ul>
-              <ul class="skills__list"><span class="skills__title">Backend</span>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--php" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">PHP</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--mySQL" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">MySQL</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--postgres" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">PostgreSQL</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--nodeJS" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">Node.JS</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--mongo" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">MongoDB</span>
-                  </div>
-                </li>
-              </ul>
-              <ul class="skills__list"><span class="skills__title">Workflow</span>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--git" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">Git</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--gulp" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">Gulp</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--bower" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">Bower</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--yarn" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">Yarn</span>
-                  </div>
-                </li>
-                <li class="skills__item">
-                  <div class="skill">
-                    <svg class="skill__circle">
-                      <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
-                      <circle class="skill__circle-above skill__circle-above--webpack" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
-                    </svg><span class="skill__title">webpack</span>
-                  </div>
+                <li class="skills-group__item">   
+                  <div class="skills-group__title">Workflow</div>
+                  <ul class="skills__list">
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--git" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">Git</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--gulp" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">Gulp</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--bower" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">Bower</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--yarn" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">Yarn</span>
+                      </div>
+                    </li>
+                    <li class="skills__item">
+                      <div class="skill">
+                        <svg class="skill__circle">
+                          <circle class="skill__circle-under" cx="50%" cy="50%" r="50"></circle>
+                          <circle class="skill__circle-above skill__circle-above--webpack" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)"></circle>
+                        </svg><span class="skill__title">webpack</span>
+                      </div>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -214,7 +228,7 @@
       <section class="section map">
         <div class="google-map" id="map"></div>
         <div class="contacts-card">
-          <h4 class="block-title"><span class="block-title__text">Контакты</span></h4>
+          <h4 class="block-title--line"><span class="block-title__text">Контакты</span></h4>
           <ul class="contacts">
             <li class="contacts__item"><a class="contacts__link c-contacts__link--skype" href="skype:arsloko">arsloko
                 <svg class="contacts__icon">

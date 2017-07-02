@@ -17,12 +17,15 @@
   <body>
     <div class="wrapper">
       <section class="section welcome">
+        <div class="welcome-background">
+          <canvas class="welcome-background-canvas"></canvas>
+        </div>
         <button class="welcome__auth-btn">Авторизоваться</button>
         <div class="card__wrapper">
           <section class="card">
             <div class="card__welcome card__welcome--active">
               <div class="card__content">
-                <div class="user user--undefined"><img class="user__photo" src="assets/img/ava.jpg"/>
+                <div class="user js-user user--welcome"><img class="user__photo" src="assets/img/ava.jpg"/>
                   <h1 class="user__name">Березин Арсений</h1>
                   <p class="user__prof">Личный сайт веб разработчика</p>
                 </div>
@@ -53,7 +56,7 @@
             </div>
             <div class="card__auth">
               <div class="card__content">
-                <h4 class="block-title--line block-title--auth"><span class="block-title__text">Авторизуйтесь</span></h4>
+                <h4 class="block-title--auth block-title--line"><span class="block-title__text">Авторизуйтесь</span></h4>
                 <form class="form-authorization" method="post" action="">
                   <fieldset class="form-authorization__item">
                     <label class="form-authorization__label">
@@ -91,10 +94,10 @@
                   </div>
                 </div>
               </div>
-              <nav class="welcome-menu">
-                <ul class="welcome-menu__list">
-                  <li class="welcome-menu__item"><a class="welcome-menu__link" href="./index.html">На главную</a></li>
-                  <li class="welcome-menu__item"><a class="welcome-menu__link" href="">Войти</a></li>
+              <nav class="welcome-menu-auth">
+                <ul class="welcome-menu-auth__list">
+                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">На главную</a></li>
+                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">Войти</a></li>
                 </ul>
               </nav>
             </div>
