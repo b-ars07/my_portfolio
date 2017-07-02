@@ -5,70 +5,58 @@
     z-index: 2;
 }
 
-.hamburger-icon {
-    display: block;
+#hamburger-icon {
+    width: $width-line;
     height: $height-icon;
     position: relative;
-    width: $width-line;
+    display: block;
     @include phones() {
         width: 26px;
         height: 23px;
     }
-    &:hover {
-        .hamburger-icon__line--top,
-        .hamburger-icon__line--middle,
-        .hamburger-icon__line--bottom {
-            background: $greenHover;
-        }
-    }
-    &__line {
-        background: $white;
-        border-radius: ($height-line / 2);
+    .line {
         display: block;
-        height: $height-line;
-        left: 0;
-        position: absolute;
-        transition: all $transition-time;
+        background: $white;
         width: $width-line;
-        @include phones() {
-            width: 26px;
-        }
-        &--top {
+        height: $height-line;
+        position: absolute;
+        left: 0;
+        border-radius: ($height-line / 2);
+        transition: all $transition-time;
+        -webkit-transition: all $transition-time;
+        -moz-transition: all $transition-time;
+        &.line-1 {
             top: 0;
-            @include phones() {
-                top: rem(-4px);
-            }
         }
-        &--middle {
+        &.line-2 {
             top: 50%;
-            @include phones() {
-                top: 28%;
-            }
         }
-        &--bottom {
+        &.line-3 {
             top: 100%;
-            @include phones() {
-                top: 70%;
-            }
         }
     }
     &:hover,
     &:focus {
-        &--top {
+        .line-1 {
             transform: translateY($height-line / 2 * -1);
+            background: $greenHover;
         }
-        &--bottom {
+        .line-2 {
+            background: $greenHover;
+        }
+        .line-3 {
             transform: translateY($height-line / 2);
+            background: $greenHover;
         }
     }
     &.active {
-        &--top {
+        .line-1 {
             transform: translateY($translateY) translateX($translateX) rotate($rotation);
         }
-        &--middle {
+        .line-2 {
             opacity: 0;
         }
-        &--bottom {
+        .line-3 {
             transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
         }
     }

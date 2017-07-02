@@ -24,12 +24,12 @@
     text-transform: uppercase;
     @include centered();
     top: 56%;
-    min-width: 230px;
     @include tablets() {
         font-size: rem(48px);
         position: relative;
         transform: translate(0, 0);
         left: 0;
+        min-width: 0
     }
     @include phones() {
         font-size: rem(35px);
@@ -116,6 +116,10 @@
         position: relative;
         top: 0;
         transform: none;
+        @include tablets() {
+            margin-bottom: rem(91px);
+            top: rem(27px);
+        }
         &:before,
         &:after {
             background-color: $white;

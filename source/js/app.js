@@ -24,7 +24,7 @@ $(function() {
 $(function() {
     var
         auth_btn = $('.welcome__auth-btn'),
-        main_btn = $('.welcome-menu__link'),
+        main_btn = $('.welcome-menu-auth__item:first-child'),
         card = $('.card__wrapper');
 
     auth_btn.on('click', function(evt) {
@@ -44,5 +44,16 @@ $(function() {
             card.toggleClass('active');
         }, 400);
 
+    });
+});
+
+$(function() {
+    var hamburger = $('#hamburger-icon');
+
+    hamburger.on('click', function(evt) {
+        evt.preventDefault();
+
+        hamburger.toggleClass('active');
+        return false;
     });
 });

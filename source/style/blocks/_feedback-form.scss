@@ -1,8 +1,11 @@
-.feedback {
+.feedback__wrapper {
+    position: relative;
+    z-index: 0;
     border-radius: 5px;
     margin: 0 auto;
     margin-bottom: 70px;
     max-width: 380px;
+    min-height: 461px;
     overflow: hidden;
     width: 100%;
     @include tablets() {
@@ -14,10 +17,21 @@
     }
 }
 
+.feedback__background {
+    filter: blur(20px);
+    background-image: url('../img/bg-works.png');
+    @include centered(full);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 946px;
+    z-index: -1;
+}
+
 .feedback__inner {
-    background-color: rgba(#dadbd6, .6);
+    // background-color: rgba(#dadbd6, .6);
     position: relative;
-    padding: rem(30px) rem(20px) rem(11px);
+    z-index: 0;
+    padding: rem(30px) rem(20px) rem(30px);
     @include phones() {
         padding: rem(37px) rem(8px) rem(14px) rem(18px);
         text-align: center;
@@ -30,6 +44,8 @@
     margin: 0;
     margin-bottom: rem(20px);
     padding: 0;
+    overflow: hidden;
+    border-radius: 4px;
     @include phones() {
         margin-bottom: rem(19px);
     }

@@ -1,12 +1,14 @@
 .welcome-menu {}
 
-.welcome-menu__list {
+.welcome-menu__list,
+.welcome-menu-auth__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.welcome-menu__item {
+.welcome-menu__item,
+.welcome-menu-auth__item {
     background-color: #6c9c5a;
     display: inline-flex;
     position: relative;
@@ -39,7 +41,8 @@
     }
 }
 
-.welcome-menu__link {
+.welcome-menu__link,
+.welcome-menu-auth__link {
     color: #fff;
     display: block;
     flex: 100%;

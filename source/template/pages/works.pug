@@ -40,13 +40,11 @@ block content
             img(src="assets/img/leaf1.png" alt="leaf 1").leaf.leaf1
             img(src="assets/img/leaf2.png" alt="leaf 2").leaf.leaf2
             img(src="assets/img/leaf3.png" alt="leaf 3").leaf.leaf3
-            .reviews-background
+            .reviews-background.js-reviews-background
                 //-img.reviews-background__img(src="assets/img/bg-works.png")
             +sectionTitle('about_header', 'Что обо мне говорят', 'reviews')
             ul.reviews__list
                 li.reviews__item
-                    i.reviews__item-icon
-
                     .reviews-person
                         img.reviews-person__image(src='assets/img/koval.png')
                         p.reviews-person__text
@@ -56,7 +54,6 @@ block content
                             p.reviews-person__name Ковальчук Дмитрий
                             p.reviews-person__prof - основатель Loftschool
                 li.reviews__item
-                    i.reviews__item-icon
                     .reviews-person
                         img.reviews-person__image(src='assets/img/saba.png')
                         p.reviews-person__text
@@ -65,20 +62,22 @@ block content
                         .reviews-person__info
                             p.reviews-person__name Сабанцев Владимир
                             p.reviews-person__prof преподаватель Loftschool
-            .feedback
-                .feedback__inner
-                    +blockTitle('Связаться со мной','line','works')
-                    +form('feedback-form',
-                    {
-                        'Имя': 'text',
-                        'Email': 'email'
-                    },
-                    {
-                        'Ваше сообщение': 'textarea'
-                    })
-                .feedback-buttons
-                    button.feedback-button.feedback-button--send(type='submit') Отправить
-                    button.feedback-button.feedback-button--clear(type='button') Очистить
+            .feedback__wrapper.js-feedback-wrapper#feedbackForm
+                    .feedback__background.js-feedback-background
+                    .feedback
+                        .feedback__inner
+                            +blockTitle('Связаться со мной','line','works')
+                            +form('feedback-form',
+                            {
+                                'Имя': 'text',
+                                'Email': 'email'
+                            },
+                            {
+                                'Ваше сообщение': 'textarea'
+                            })
+                        .feedback-buttons
+                            button.feedback-button.feedback-button--send(type='submit') Отправить
+                            button.feedback-button.feedback-button--clear(type='button') Очистить
             +arrow('feedback')
 block footer
     +footer()

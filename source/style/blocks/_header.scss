@@ -9,6 +9,7 @@
     }
     @include tablets() {
         min-height: 510px;
+        background: url('../img/bg-header.png') no-repeat center/cover;
     }
     @include phones() {
         min-height: 555px;
@@ -21,7 +22,8 @@
     height: 1272px;
     overflow: hidden;
     @include tablets() {
-        height: 650px;
+        // height: 650px;
+        display: none;
     }
     &:after {
         background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
@@ -87,6 +89,9 @@
     height: 405px;
     min-height: 405px;
     padding: 14px 30px;
+    @include tablets() {
+        background: url('../img/bg-header.png') no-repeat center/cover;
+    }
     .header__content {
         position: relative;
         transform: none;

@@ -5,9 +5,9 @@
      */
     var parallax = (function() {
         var
-            bg = document.querySelector('.header-background'),
-            user = document.querySelector('.user--header'),
-            sectionText = document.querySelector('.header__portfolio');
+            bg = document.querySelector('.js-bg-header'),
+            user = document.querySelector('.js-user'),
+            sectionText = document.querySelector('.js-header-title');
 
         return {
             move: function(block, windowScroll, strafeAmount) {
