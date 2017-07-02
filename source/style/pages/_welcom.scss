@@ -1,5 +1,5 @@
 .welcome {
-    background: url("../img/bg-forest.png") no-repeat center/cover;
+    //-background: url("../img/bg-forest.png") no-repeat center/cover;
     height: 100%;
     width: 100%;
     display: flex;
@@ -29,6 +29,7 @@
         line-height: 2.1;
         overflow: hidden;
         padding: 5px 29px;
+        position: relative;
         transition: all .5s;
         @include phones() {
             align-self: center;
