@@ -1,46 +1,107 @@
 .about {
-  display: flex;
+    display: flex;
+    position: relative;
+    @include tablets() {
+        flex-direction: column;
+    }
 }
 
 .about__col {
-  width: 50%;
-  position: relative;
+    width: 50%;
+    padding-bottom: rem(45px);
 }
 
 .about__col--left {
     background: $bgAboutLeft;
+    @include tablets() {
+        padding-bottom: 20px;
+        width: 100%;
+    }
 }
 
 .about__col--right {
     background: $bgAboutRight;
+    width: 100%;
 }
 
 .about__wrapper {
-  max-width: 900px;
+    max-width: 900px;
 }
 
 .about__wrapper--left {
-      margin-left: auto;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 rem(20px) rem(20px);
+    @include desctop() {
+        flex-direction: column;
+        align-items: center;
     }
+    @include tablets() {
+        padding-top: 42px;
+    }
+    @include phones() {
+        padding: 0;
+        padding-top: 2.143rem;
+    }
+}
 
 .about__wrapper--right {
-      margin-right: auto;
-      padding: 20px 40px;
+    margin-right: auto;
+    padding: rem(10px) rem(40px) rem(20px);
+    @include tablets() {
+        padding-top: rem(45px);
+        padding-bottom: 0;
     }
+    @include phones() {
+        padding: 2rem .7rem 0;
+    }
+}
+
+.about__title {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+    align-self: flex-start;
+    min-height: 50px;
+    @include desctop() {
+        width: 100%;
+    }
+    @include tablets() {
+        min-height: 0;
+    }
+}
 
 .about-me {
-  max-width: 443px;
-  flex: 54%;
+    width: 54%;
+    max-width: 443px;
+    margin-top: rem(20px);
+    @include desctop() {
+        width: 100%;
+        margin-top: 75px;
+    }
+    @include tablets() {
+        margin-top: 42px;
+        max-width: 470px;
+    }
+    @include phones() {
+        margin-top: 1.428rem;
+    }
 }
 
 .about-me__photo {
     height: 390px;
     width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     margin-bottom: 40px;
-  }
+    @include desctop() {
+        margin-bottom: rem(32px);
+    }
+    @include tablets() {
+        height: 420px;
+        margin-bottom: 2.7rem;
+    }
+    @include phones() {
+        height: 20.36rem;
+        margin-bottom: 1.9rem;
+    }
+}

@@ -1,105 +1,178 @@
 .skills {
+    margin-top: rem(5px);
+    .about-me__info {
+        @include tablets() {
+            width: 71%;
+            margin: 0 auto;
+        }
+        @include phones() {
+            width: 100%;
+        }
+    }
+}
 
-  &__item {
+.skills-group {
+    margin-top: 47px;
+    @include tablets() {
+        margin-top: 42px;
+        margin-bottom: -40px;
+    }
+    @include phones() {
+        margin-top: 1.5rem;
+    }
+    &__item {
+        margin-bottom: 30px;
+        list-style: none;
+        @include tablets() {
+            margin-bottom: 40px;
+        }
+        @include phones() {
+            margin-bottom: 0
+        }
+    }
+}
+
+.skills__item {
     display: inline-block;
     list-style: none;
-    margin-right: 37px;
-    margin-bottom: 40px;
-  }
+    margin-right: rem(37px);
+    margin-bottom: rem(40px);
+    @include desctop() {
+        margin-right: 1.6rem;
+    }
+    @include tablets() {
+        margin-bottom: 2.5rem;
+        margin-right: rem(37px);
+    }
+}
 
-  &__title {
+.skills__title {
     color: #566358;
     display: block;
     font-family: 'roboto', sans-serif;
-    font-size: 28px;
+    font-size: rem(28px);
     font-weight: $mediumWeight;
-    margin-bottom: 20px;
-  }
+    margin-bottom: rem(15px);
+    @include tablets() {
+        text-align: center;
+        font-size: 21px;
+    }
+    @include phones() {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
 }
 
+.skills__list {
+    margin-right: -2.3125rem;
+    @include tablets() {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 
 .skill {
-  position: relative;
-
-  &__title {
-    color: $greenHover;
-    @include centered();
-    font-family: 'roboto', sans-serif;
-    font-size: 13px;
-    font-weight: $mediumWeight;
-    padding: 20px;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  &__circle {
-    display: block;
-    height: 120px;
-    width: 120px;
-    fill: none;
-    stroke-width: 20;
-
-    &-under {
-      stroke: #dfdcd5;
-      fill: none;
-    }
-
-    &-above {
-      opacity: .9;
-      transition: all .9s;
-      stroke: $lightGreen;
-      stroke-dasharray:  .0010 360;
-    }
-
-    &-above {
-      &--html {
-        stroke-dasharray: 300 360;
-      }
-      &--css {
-        stroke-dasharray: 200 360;
-      }
-      &--js {
-        stroke-dasharray: 92 360;
-      }
-      &--jquery {
-        stroke-dasharray: 120 360;
-      }
-      &--svg {
-        stroke-dasharray: 40 360;
-      }
-      &--php {
-        stroke-dasharray: 20 360;
-      }
-      &--mySQL {
-        stroke-dasharray: 180 360;
-      }
-      &--postgres {
-        stroke-dasharray: 120 360;
-      }
-      &--nodeJS {
-        stroke-dasharray: 60 360;
-      }
-      &--mongo {
-        stroke-dasharray: 50 360;
-      }
-      &--git {
-        stroke-dasharray: 200 360;
-      }
-      &--gulp {
-        stroke-dasharray: 240 360;
-      }
-      &--webpack {
-        stroke-dasharray: 60 360;
-      }
-      &--bower {
-        stroke-dasharray: 250 360;
-      }
-      &--yarn {
-        stroke-dasharray: 280 360;
-      }
-    }
-  }
+    position: relative;
 }
 
+.skill__title {
+    position: absolute;
+    @include centered(both);
+    padding: 20px;
+    color: $greenHover;
+    font-size: $smallFont;
+    font-weight: $mediumWeight;
+    text-align: center;
+}
 
+.skills-group__title {
+    color: $greenHover;
+    font-size: 28px;
+    font-weight: $mediumWeight;
+    margin-bottom: 15px;
+    @include desctop() {
+        margin-bottom: .8rem;
+    }
+    @include tablets() {
+        text-align: center;
+        font-size: 21px;
+    }
+    @include phones() {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.skill__circle {
+    display: block;
+    height: 110px;
+    width: 110px;
+    fill: none;
+    stroke-width: 18;
+    &-under {
+        stroke: #dfdcd5;
+        fill: none;
+        @include desctop() {
+            r: 45;
+        }
+    }
+    &-above {
+        opacity: .9;
+        transition: all .9s;
+        stroke: $lightGreen;
+        stroke-dasharray: .0010 360;
+        @include desctop() {
+            r: 45;
+            cy: 50%;
+            cx: 60%;
+        }
+    }
+    &-above {
+        &--html {
+            stroke-dasharray: 257 360;
+        }
+        &--css {
+            stroke-dasharray: 190 360;
+        }
+        &--js {
+            stroke-dasharray: 92 360;
+        }
+        &--jquery {
+            stroke-dasharray: 120 360;
+        }
+        &--svg {
+            stroke-dasharray: 40 360;
+        }
+        &--php {
+            stroke-dasharray: 20 360;
+        }
+        &--mySQL {
+            stroke-dasharray: 180 360;
+        }
+        &--postgres {
+            stroke-dasharray: 120 360;
+        }
+        &--nodeJS {
+            stroke-dasharray: 60 360;
+        }
+        &--mongo {
+            stroke-dasharray: 50 360;
+        }
+        &--git {
+            stroke-dasharray: 200 360;
+        }
+        &--gulp {
+            stroke-dasharray: 240 360;
+        }
+        &--webpack {
+            stroke-dasharray: 60 360;
+        }
+        &--bower {
+            stroke-dasharray: 250 360;
+        }
+        &--yarn {
+            stroke-dasharray: 280 360;
+        }
+    }
+}

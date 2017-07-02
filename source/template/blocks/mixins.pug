@@ -42,9 +42,8 @@ mixin blockTitle(title, status, modificator)
         h4.block-title
             span.block-title__text=title
 
-mixin skills(title, items)
+mixin skills(items)
     ul.skills__list
-        span.skills__title=title
         each item, modificator in items
             li.skills__item
                 .skill

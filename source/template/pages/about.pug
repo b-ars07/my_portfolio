@@ -10,7 +10,8 @@ block content
         .about__col.about__col--left
             +leftTriangle('about')
             .about__wrapper.about__wrapper--left
-                +sectionTitle('about_header', 'Обо мне', 'about')
+                .about__title
+                    +sectionTitle('about_header', 'Обо мне', 'about')
                 .about-me
                     .about-me__photo
                         img(src='assets/img/ava.jpg')
@@ -27,31 +28,38 @@ block content
                     .about-me__info
                         p
                             | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    +skills('Frontend',{
-                        html: 'HTML5',
-                        css: 'CSS3',
-                        js: 'JavaScript',
-                        jquery: 'jQuery',
-                        svg: 'SVG'
-                    })
-                    +skills('Backend',{
-                        php: 'PHP',
-                        mySQL: 'MySQL',
-                        postgres: 'PostgreSQL',
-                        nodeJS: 'Node.JS',
-                        mongo: 'MongoDB'
-                    })
-                    +skills('Workflow',{
-                        git: 'Git',
-                        gulp: 'Gulp',
-                        bower: 'Bower',
-                        yarn: 'Yarn',
-                        webpack: 'webpack'
-                    })
+                    ul.skills-group
+                        li.skills-group__item
+                                .skills-group__title Frontend
+                                +skills({
+                                    html: 'HTML5',
+                                    css: 'CSS3',
+                                    js: 'JavaScript',
+                                    jquery: 'jQuery',
+                                    svg: 'SVG'
+                                })
+                        li.skills-group__item
+                                .skills-group__title Backend        
+                                +skills({
+                                    php: 'PHP',
+                                    mySQL: 'MySQL',
+                                    postgres: 'PostgreSQL',
+                                    nodeJS: 'Node.JS',
+                                    mongo: 'MongoDB'
+                                })
+                        li.skills-group__item    
+                                .skills-group__title Workflow
+                                +skills({
+                                    git: 'Git',
+                                    gulp: 'Gulp',
+                                    bower: 'Bower',
+                                    yarn: 'Yarn',
+                                    webpack: 'webpack'
+                                })
     section.section.map
         .google-map#map
         .contacts-card
-            +blockTitle('Контакты')
+            +blockTitle('Контакты','line')
             ul.contacts
                 li.contacts__item
                     a.contacts__link.c-contacts__link--skype(href='skype:arsloko') arsloko

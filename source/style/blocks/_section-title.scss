@@ -9,9 +9,8 @@
     width: 100%;
     @include tablets() {
         @include centered(both);
-    }
-    @include phones() {
-        width: 60%;
+        width: 50%;
+        top: 44%;
     }
 }
 
@@ -51,7 +50,18 @@
 }
 
 .section-title--about {
-    flex: 45%;
+    width: 45%;
+    position: absolute;
+    top: -75%;
+    left: 0;
+    right: 0;
+    @include desctop() {
+        width: 100%;
+    }
+    @include tablets() {
+        position: static;
+        top: 0;
+    }
     .section-title__img {
         width: auto;
     }

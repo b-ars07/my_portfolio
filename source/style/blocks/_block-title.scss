@@ -40,6 +40,9 @@
     margin-bottom: rem(44px);
     font-weight: $regularWeight;
     line-height: 1.3;
+    @include desctop() {
+        margin-bottom: rem(39px);
+    }
     @include tablets() {
         margin-bottom: 21px;
     }
