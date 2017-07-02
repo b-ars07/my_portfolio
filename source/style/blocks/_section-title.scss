@@ -24,6 +24,7 @@
     text-transform: uppercase;
     @include centered();
     top: 56%;
+    min-width: 230px;
     @include tablets() {
         font-size: rem(48px);
         position: relative;
@@ -50,14 +51,11 @@
 }
 
 .section-title--about {
-    width: 45%;
+    width: 100%;
     position: absolute;
     top: -75%;
     left: 0;
     right: 0;
-    @include desctop() {
-        width: 100%;
-    }
     @include tablets() {
         position: static;
         top: 0;

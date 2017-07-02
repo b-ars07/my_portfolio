@@ -21,10 +21,13 @@
         margin-top: 1.5rem;
     }
     &__item {
-        margin-bottom: 30px;
+        margin-bottom: rem(-6px);
         list-style: none;
+        @include desctop() {
+            margin-bottom: rem(30px);
+        }
         @include tablets() {
-            margin-bottom: 40px;
+            margin-bottom: rem(40px);
         }
         @include phones() {
             margin-bottom: 0
@@ -106,10 +109,15 @@
 
 .skill__circle {
     display: block;
-    height: 110px;
-    width: 110px;
+    height: 120px;
+    width: 120px;
     fill: none;
-    stroke-width: 18;
+    stroke-width: 20;
+    @include desctop() {
+        width: 110px;
+        height: 110px;
+        stroke-width: 18;
+    }
     &-under {
         stroke: #dfdcd5;
         fill: none;

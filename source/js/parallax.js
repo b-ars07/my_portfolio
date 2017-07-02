@@ -37,7 +37,10 @@
     window.onscroll = function() {
         var wScroll = window.pageYOffset;
 
-        parallax.init(wScroll);
+        if ($('#paralaxScroll').length) {
+            parallax.init(wScroll);
+        }
+
 
     }
 })();

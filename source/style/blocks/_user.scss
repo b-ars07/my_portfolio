@@ -25,7 +25,10 @@
     }
 }
 
-//-Style for user-block in section of hero
+.user--welcome {
+    margin-bottom: rem(25px);
+}
+
 .user--header {
     color: $white;
     margin-bottom: rem(30px);

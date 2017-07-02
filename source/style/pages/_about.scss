@@ -7,8 +7,11 @@
 }
 
 .about__col {
-    width: 50%;
+    width: 100%;
     padding-bottom: rem(45px);
+    @include desctop() {
+        width: 50%;
+    }
 }
 
 .about__col--left {
@@ -92,10 +95,7 @@
 .about-me__photo {
     height: 390px;
     width: 100%;
-    margin-bottom: 40px;
-    @include desctop() {
-        margin-bottom: rem(32px);
-    }
+    margin-bottom: rem(32px);
     @include tablets() {
         height: 420px;
         margin-bottom: 2.7rem;
