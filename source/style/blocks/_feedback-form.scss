@@ -10,10 +10,12 @@
     width: 100%;
     @include tablets() {
         max-width: 349px;
-        margin-bottom: 100px;
+        margin-bottom: rem(100px);
+        min-height: 447px;
     }
     @include phones() {
         margin-bottom: rem(189px);
+        min-height: 430px;
     }
 }
 
@@ -92,6 +94,8 @@
 .feedback-buttons {
     display: flex;
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .feedback-button {
