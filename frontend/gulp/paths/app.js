@@ -3,5 +3,7 @@
 module.exports = [
     '../source/js/app.js',
     '../source/js/parallax.js',
+    '../source/js/blur-form.js',
     '../source/js/water.js'
+
 ];

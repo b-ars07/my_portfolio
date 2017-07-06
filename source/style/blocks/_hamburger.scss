@@ -23,8 +23,9 @@
         left: 0;
         border-radius: ($height-line / 2);
         transition: all $transition-time;
-        -webkit-transition: all $transition-time;
-        -moz-transition: all $transition-time;
+        @include phones() {
+            width: 26px;
+        }
         &.line-1 {
             top: 0;
         }
@@ -52,6 +53,9 @@
     &.active {
         .line-1 {
             transform: translateY($translateY) translateX($translateX) rotate($rotation);
+            @include phones() {
+                transform: translateY(5.5px) translateX(0) rotate(45deg);
+            }
         }
         .line-2 {
             opacity: 0;

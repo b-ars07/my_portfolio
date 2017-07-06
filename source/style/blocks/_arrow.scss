@@ -19,6 +19,7 @@
         }
     }
     &--feedback {
+        position: relative;
         margin: 0 auto;
         transform: rotate(180deg);
         @include tablets() {

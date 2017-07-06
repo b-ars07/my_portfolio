@@ -186,13 +186,16 @@
     height: 27px;
     fill: $white;
     @include centered('both');
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .works-slider-arrow__img--top {
     left: 43%;
+    top: 42%;
     transform: rotate(-180deg);
     @include tablets() {
         left: 44.5%;
-        top: 42%;
     }
 }
