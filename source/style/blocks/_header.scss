@@ -1,0 +1,55 @@
+.header {
+  background: url('../img/bg-header.png') no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+
+  &:after {
+    background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+    content: "";
+    height: 248px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.header__inner {
+    z-index: 2;
+    padding: 30px;
+  }
+
+.header__portfolio,
+.header__blog {
+    position: absolute;
+    margin: 0 auto;
+    max-width: 1175px;
+    max-height: 313px;
+    width: 100%;
+    opacity: .13;
+    fill: $white;
+    top: -37px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+.header__content {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    @include centered(y);
+    top: 46%;
+}
+
+.header--blog {
+  height: 430px;
+  padding: 14px 30px;
+
+
+  .header__content {
+    position: relative;
+    transform: none;
+    margin-top: 30px;
+  }
+}

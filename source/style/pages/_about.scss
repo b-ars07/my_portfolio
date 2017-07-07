@@ -1,0 +1,46 @@
+.about {
+  display: flex;
+}
+
+.about__col {
+  width: 50%;
+  position: relative;
+}
+
+.about__col--left {
+    background: $bgAboutLeft;
+}
+
+.about__col--right {
+    background: $bgAboutRight;
+}
+
+.about__wrapper {
+  max-width: 900px;
+}
+
+.about__wrapper--left {
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+.about__wrapper--right {
+      margin-right: auto;
+      padding: 20px 40px;
+    }
+
+.about-me {
+  max-width: 443px;
+  flex: 54%;
+}
+
+.about-me__photo {
+    height: 390px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+  }

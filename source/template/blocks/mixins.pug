@@ -1,0 +1,80 @@
+mixin ul (className, modificator, items)
+        if modificator
+            ul(class=`${className} ${className}--${modificator}`)
+                each link, item in items
+                    li(class=`${className}__item`)
+                        a(class=`${className}__link` href=`${link}` target='_blank')
+                            svg(class=`${className}__icon ${className}__icon--${item}`)
+                                use(xlink:href="assets/img/sprite.svg#" + item)
+        else
+            ul(class=`${className}`)
+                each link, item in items
+                    li(class=`${className}__item`)
+                        a(class=`${className}__link` href=`${link}` target='_blank')
+                            svg(class=`${className}__icon ${className}__icon--${item}`)
+                                use(xlink:href="assets/img/sprite.svg#" + item)
+
+mixin nav(className, items)
+    nav(class=`${className}`)
+        ul(class=`${className}__list`)
+            each link, item in items
+                li(class=`${className}__item`)
+                    a(class=`${className}__link`, href=`${link}`)=item
+
+mixin sectionTitle(svg, title, modificator)
+    .section-title(class=`section-title--${modificator}`)
+        svg.section-title__img
+            use(xlink:href="assets/img/sprite.svg#" + svg)
+        h2.section-title__text=title
+
+mixin blockTitle(title, status, modificator)
+    if status=='line' && modificator
+        h4.block-title--line(class=`block-title--${modificator}`)
+            span.block-title__text=title
+    else if modificator
+        h4(class=`block-title--${modificator}`)
+            span.block-title__text=title
+    else
+        h4.block-title
+            span.block-title__text=title
+
+mixin skills(title, items)
+    ul.skills__list
+        span.skills__title=title
+        each item, modificator in items
+            li.skills__item
+                .skill
+                    svg.skill__circle
+                        circle.skill__circle-under(cx="50%" cy="50%" r=50)
+                        circle.skill__circle-above(class=`skill__circle-above--${modificator}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                    span.skill__title=item
+
+mixin leftTriangle(modificator)
+    svg.triangle.triangle__left(class=`triangle--${modificator}` viewbox="0 0 1000 110" preserveAspectRatio="none")
+        polygon(points="0,0 0,110 1000, 110")
+
+mixin rightTriangle(modificator)
+    svg.triangle.triangle__right(class=`triangle--${modificator}` viewbox="0 0 1000 110" preserveAspectRatio="none")
+        polygon(points="0,110 1000,110 1000,0")
+
+mixin arrow(modificator)
+    svg.arrow#arrow(class=`arrow--${modificator}` viewBox="0 0 25.18 16.164")
+        use(xlink:href="assets/img/sprite.svg#arrow_down")
+
+mixin form(className, items, textarea)
+    form(class=`${className}`, method='post', action='')
+        each type, item in items
+            fieldset(class=`${className}__item`)
+                label(class=`${className}__label`)
+                    input(class=`${className}__input`, name=type, type=type,  placeholder=item, required)
+        each type, item in textarea
+            fieldset(class=`${className}__item`)
+                label(class=`${className}__lebel`)
+                    textarea(class=`${className}__textarea`, name=type, type=type,  placeholder=item)
+
+mixin checkbox(item, text, type, value)
+    div(class=`checkbox`)
+        div(class=`checkbox__elem checkbox__elem--${type}`)
+            input(class=`checkbox__input checkbox__${item}`, value=value, name=item, type=type)
+            label(class=`checkbox__label`)
+        p(class=`checkbox__text`)=text

@@ -1,0 +1,105 @@
+.skills {
+
+  &__item {
+    display: inline-block;
+    list-style: none;
+    margin-right: 37px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    color: #566358;
+    display: block;
+    font-family: 'roboto', sans-serif;
+    font-size: 28px;
+    font-weight: $mediumWeight;
+    margin-bottom: 20px;
+  }
+}
+
+
+.skill {
+  position: relative;
+
+  &__title {
+    color: $greenHover;
+    @include centered();
+    font-family: 'roboto', sans-serif;
+    font-size: 13px;
+    font-weight: $mediumWeight;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__circle {
+    display: block;
+    height: 120px;
+    width: 120px;
+    fill: none;
+    stroke-width: 20;
+
+    &-under {
+      stroke: #dfdcd5;
+      fill: none;
+    }
+
+    &-above {
+      opacity: .9;
+      transition: all .9s;
+      stroke: $lightGreen;
+      stroke-dasharray:  .0010 360;
+    }
+
+    &-above {
+      &--html {
+        stroke-dasharray: 300 360;
+      }
+      &--css {
+        stroke-dasharray: 200 360;
+      }
+      &--js {
+        stroke-dasharray: 92 360;
+      }
+      &--jquery {
+        stroke-dasharray: 120 360;
+      }
+      &--svg {
+        stroke-dasharray: 40 360;
+      }
+      &--php {
+        stroke-dasharray: 20 360;
+      }
+      &--mySQL {
+        stroke-dasharray: 180 360;
+      }
+      &--postgres {
+        stroke-dasharray: 120 360;
+      }
+      &--nodeJS {
+        stroke-dasharray: 60 360;
+      }
+      &--mongo {
+        stroke-dasharray: 50 360;
+      }
+      &--git {
+        stroke-dasharray: 200 360;
+      }
+      &--gulp {
+        stroke-dasharray: 240 360;
+      }
+      &--webpack {
+        stroke-dasharray: 60 360;
+      }
+      &--bower {
+        stroke-dasharray: 250 360;
+      }
+      &--yarn {
+        stroke-dasharray: 280 360;
+      }
+    }
+  }
+}
+
+

@@ -1,5 +1,10 @@
-body {
-  margin: 0;
-}
+//-Helpers
+@import 'helpers/*';
 
-@import 'common/greating';
+//-Blocks
+@import "blocks/*";
+
+//-Pages
+@import "pages/*";
+
+

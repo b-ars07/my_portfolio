@@ -1,0 +1,71 @@
+//-Style for social icons
+
+.social {
+  display: inline-flex;
+
+}
+
+.social__item {
+    display: inline-flex;
+    margin-left: 27px;
+    vertical-align: middle;
+
+    &:first-child {
+      margin-left: 0;
+    }
+}
+
+.social__link {
+    display: block;
+  }
+
+.social__icon {
+  max-height: 22px;
+  max-width: 31px;
+  opacity: .5;
+  vertical-align: top;
+  fill: #ffffff;
+  transition: all $transition-time;
+
+  &:hover {
+    fill: $greenHover;
+    opacity: 1;
+  }
+}
+.social__icon_github {
+      max-height: 22px;
+      max-width: 26px;
+}
+.social__icon_in {
+      max-width: 24px;
+      max-height: 22px;
+}
+
+
+//-Style for social icons in section header
+.social--header {
+  position: relative;
+  z-index: 2;
+
+  .social__icon {
+    fill: $white;
+    opacity: 1;
+
+    &:hover {
+      fill: $greenHover;
+    }
+  }
+}
+
+//-Style for social icons in section footer
+.social--footer {
+  .social__icon {
+    fill: $white;
+    opacity: .5;
+
+    &:hover {
+      fill: $white;
+      opacity: 1;
+    }
+  }
+}

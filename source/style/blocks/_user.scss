@@ -1,0 +1,37 @@
+.user {
+  &__photo {
+    border-radius: 50%;
+    height: 141px;
+    margin: 0 auto 15px;
+    width: 141px;
+    display: block;
+  }
+
+  &__name {
+    color: $white;
+    font-size: 28px;
+    font-weight: $mediumWeight;
+    line-height: 1.1;
+    margin-bottom: 9px;
+  }
+
+  &__prof {
+    color: $white;
+    font-size: $middleFont;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: .8;
+  }
+}
+
+
+//-Style for user-block in section of hero
+.user--header {
+  color: $white;
+  .user__name {
+    font-size: 35px;
+  }
+  .user__prof {
+    font-weight: $lightWeight;
+  }
+}

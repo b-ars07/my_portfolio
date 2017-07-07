@@ -1,0 +1,37 @@
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if ($axis == 'both') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if $axis == 'full' {
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+  }
+}

@@ -1,0 +1,29 @@
+.copyright {
+  background: transparent;
+  bottom: 0;
+  height: $copyrightHeight;
+  padding: 9px 0 12px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+
+  &--about,
+  &--works,
+  &--blog {
+    background: rgba($lightGreen, .85);
+  }
+
+  &--index-page {
+    position: initial;
+
+  }
+
+  &__info {
+    @include roboto;
+    color: $white;
+    font-size: $middleFont;
+    font-weight: $lightWeight;
+    line-height: 1.5;
+  }
+}
