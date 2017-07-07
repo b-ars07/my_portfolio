@@ -198,4 +198,8 @@
     @include tablets() {
         left: 44.5%;
     }
+    @include phones() {
+        left: 39%;
+        top: 37%;
+    }
 }

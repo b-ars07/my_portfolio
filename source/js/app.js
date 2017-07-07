@@ -1,59 +1,41 @@
-var arrow = (function() {
-    return {
-        init: function() {
-            const scrollHeight = $('.js-section-content').offset().top;
+const
+    blur = require('./blur-form'),
+    parallax = require('./parallax'),
+    arrow = require('./arrow'),
+    flip = require('./flip'),
+    hamburger = require('./hamburger'),
+    blogNav = require('./blog');
 
-            $('.arrow').on('click', function() {
+//blur effect form
+if ($('#feedbackForm').length) {
+    blur.set();
+}
 
-                $('body').animate({
-                    scrollTop: scrollHeight
-                }, 1800);
-
-                return false;
-            });
-        }
+window.onresize = function() {
+    if ($('#feedbackForm').length) {
+        blur.set();
     }
-})();
+}
 
-$(function() {
-    if ($('.arrow').length) {
-        arrow.init();
+//parralax header
+window.onscroll = function() {
+    var wScroll = window.pageYOffset;
+
+    if ($('#paralaxScroll').length) {
+        parallax.init(wScroll);
     }
-});
+}
 
-$(function() {
-    var
-        auth_btn = $('.welcome__auth-btn'),
-        main_btn = $('.welcome-menu-auth__item:first-child'),
-        card = $('.card__wrapper');
+//arrow animation
+if ($('.arrow').length) {
+    arrow.init();
+}
 
-    auth_btn.on('click', function(evt) {
-        evt.preventDefault();
+//flip animation
+flip();
 
-        var _this = $(this);
+//hamburger
+hamburger();
 
-        _this.toggleClass('active');
-        setTimeout(function() {
-            card.toggleClass('active');
-        }, 400);
-    });
-
-    main_btn.on('click', function(evt) {
-        evt.preventDefault();
-        setTimeout(function() {
-            card.toggleClass('active');
-        }, 400);
-
-    });
-});
-
-$(function() {
-    var hamburger = $('#hamburger-icon');
-
-    hamburger.on('click', function(evt) {
-        evt.preventDefault();
-
-        hamburger.toggleClass('active');
-        return false;
-    });
-});
+//blogNav
+blogNav();

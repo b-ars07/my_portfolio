@@ -27,8 +27,8 @@
         }
         @include phones() {
             position: relative;
-            top: rem(-149px);
-            left: rem(4px);
+            top: -155px;
+            left: 4px;
         }
     }
 }

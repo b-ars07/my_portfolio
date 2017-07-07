@@ -48,6 +48,24 @@
             left: rem(146px);
         }
     }
+    &--works {
+        &:after {
+            left: 85px;
+            bottom: -11px;
+        }
+    }
+    &--blog {
+        &:after {
+            @include tablets() {
+                bottom: rem(-11px);
+                left: rem(48px);
+            }
+            @include phones() {
+                bottom: rem(-19px);
+                left: rem(33px);
+            }
+        }
+    }
 }
 
 .section-title--about {
@@ -112,13 +130,17 @@
     .section-title__text {
         color: $white;
         left: 0;
-        margin-bottom: 63px;
+        margin-bottom: rem(45px);
         position: relative;
         top: 0;
         transform: none;
         @include tablets() {
-            margin-bottom: rem(91px);
-            top: rem(27px);
+            margin-bottom: rem(23px);
+            top: rem(-2px);
+            left: rem(-2px);
+        }
+        @include phones() {
+            margin-bottom: rem(31px);
         }
         &:before,
         &:after {

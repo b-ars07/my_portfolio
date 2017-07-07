@@ -10,12 +10,15 @@
 
 .block-title--blog {
     color: $blockTitleColor;
-    font-size: rem(35px);
+    font-size: 35px;
     @include sansusWebssimo;
     text-align: left;
     font-weight: $regularWeight;
     line-height: 1;
     margin-bottom: rem(28px);
+    @include tablets() {
+        margin-bottom: rem(8px);
+    }
 }
 
 .block-title__text {
