@@ -4,7 +4,7 @@ const
     arrow = require('./arrow'),
     flip = require('./flip'),
     hamburger = require('./hamburger'),
-    blogNav = require('./blog');
+    blogMenu = require('./blog');
 
 //blur effect form
 if ($('#feedbackForm').length) {
@@ -38,4 +38,4 @@ flip();
 hamburger();
 
 //blogNav
-blogNav();
+blogMenu.init();

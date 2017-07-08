@@ -27,7 +27,7 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             $: path.resolve(__dirname, '../frontend/node_modules/jquery'),
-            jQuery: '../frontend/node_modules/jquery'
+            jQuery: path.resolve(__dirname, '../frontend/node_modules/jquery'),
         })
         //new FaviconsWebpackPlugin('./favicon.png')
     ]

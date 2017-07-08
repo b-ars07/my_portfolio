@@ -1,75 +1,76 @@
-var blogNav = function() {
-    var
-        article = document.querySelector('.blog-article__item'),
-        nav_item = document.querySelector('.js-blog-sidebar__item'),
-        nav_wrap = document.querySelector('.js-blog-sidebar'),
+'use strict';
+var blogMenu = (function() {
+    var $article = $('.blog-article__item'),
+        $item = $('.js-blog-sidebar__item'),
+        $menu = $('.js-blog-sidebar__list'),
+        $wrapMenu = $('.js-blog-sidebar'),
+        body = document.body,
         article_position = [],
-        offsetHeight = 200,
+        offsetHeight = 80,
 
-        _articlePosition = function(el) {
+        _positionArticle = function(el) {
             var len = el.length;
-
             for (var i = 0; i < len; i++) {
                 article_position[i] = {};
                 article_position[i].top = el.eq(i).offset().top - offsetHeight;
-                article_position[i].bottom = el.eq(i).offset().top + el.eq(i).innerHeight();
+                article_position[i].bottom = article_position[i].top + el.eq(i).innerHeight();
             }
         },
-        _fixNav = function() {
-            var scroll = window.pageYOffset;
 
-            if (scroll < article.offset().top) {
-                nav_wrap.removeClass('fixed');
+        _fixMenu = function() {
+            var scroll = window.pageYOffset,
+                width = $wrapMenu.width();
+            if (scroll < $article.offset().top) {
+                $menu.removeClass('fixed');
             } else {
-                nav_wrap.addClass('fixed');
+                $menu.addClass('fixed');
             }
         },
+
         _scrollPage = function() {
             var scroll = window.pageYOffset;
-
             for (var i = 0; i < article_position.length; i++) {
-                if (scroll >= article_position[i].top && article_position[i].bottom >= scroll) {
-                    nav_item.eq(i)
-                        .addClass('blog-sidebar__item--active').siblings()
-                        .removeClass('blog-sidebar__item--active');
+                if (scroll >= article_position[i].top && scroll <= article_position[i].bottom) {
+                    $item.eq(i).addClass('blog-sidebar__item--active').siblings().removeClass('blog-sidebar__item--active');
+                    console.log(i);
                 }
             }
         },
-        _menuOnClick = function(evt) {
-            evt.preventDefault();
 
-            var target = evt.target;
-            var index = target.index();
-            var sectionOffset = article.eq(index).offset().top;
+        _click = function(evt) {
+            var index = $(evt.target).index();
+            var sectionOffset = $article.eq(index).offset().top;
 
             $(document).off('scroll', _scrollPage);
-            $('body').animate({
+
+            $('body, html').animate({
                 'scrollTop': sectionOffset
             }, function() {
-                target.addClass('blog-sidebar__item--active').siblings()
+                $(evt.target).addClass('blog-sidebar__item--active').siblings()
                     .removeClass('blog-sidebar__item--active');
                 $(document).on('scroll', _scrollPage);
             });
-
         },
+
         addListener = function() {
-            $('.js-blog-sidebar__list').on('click', _menuOnClick);
+            $menu.on('click', _click);
 
             $(document).on('scroll', _scrollPage);
-            $(document).on('scroll', _fixNav);
+            $(document).on('scroll', _fixMenu);
 
-            $(window).on('load', function(evt) {
-                article_position(article);
+            $(window).on('load', function() {
+                _positionArticle($article);
             });
 
-            $(window).on('resize', function(evt) {
-                article_position(article);
-            });
+            $(window).on('resize', function() {
+                _positionArticle($article);
+                _fixMenu();
+            })
         };
 
     return {
         init: addListener
     }
-}
+})();
 
-module.exports = blogNav;
+module.exports = blogMenu;
