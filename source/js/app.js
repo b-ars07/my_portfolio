@@ -38,4 +38,6 @@ flip();
 hamburger();
 
 //blogNav
-blogMenu.init();
+if ($('#blog').length) {
+    blogMenu.init();
+}
