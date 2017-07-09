@@ -1,7 +1,7 @@
 var hamburger = (function() {
     var hamburger = $('#hamburger-icon'),
-        navigation = $('js-navigation'),
-        menu = $('.navigation');
+        navigation = $('.js-navigation'),
+        menu = $('.main-navigation');
 
     hamburger.on('click', function(evt) {
         evt.preventDefault();
@@ -16,6 +16,7 @@ var hamburger = (function() {
             menu.toggleClass('open');
         }, 500);
         navigation.toggleClass('open');
+        $('body').toggleClass('active');
 
 
         return false;

@@ -13,14 +13,12 @@ html {
     width: 100%;
     font-size: $rootSize;
     -webkit-font-smoothing: antialiased;
-    // @include tablets() {
-    //     $rootSize: 15px;
-    //     font-size: $rootSize
-    // }
-    // @include phones() {
-    //     $rootSize: 14px;
-    //     font-size: $rootSize
-    // }
+}
+
+body {
+    &.active {
+        overflow: hidden;
+    }
 }
 
 h1,

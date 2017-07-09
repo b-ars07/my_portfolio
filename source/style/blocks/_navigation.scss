@@ -5,7 +5,6 @@
     z-index: -10;
     padding: 2rem;
     text-align: center;
-    position: fixed;
     background-color: rgba(#6c9c5a, .85);
     &.open {
         opacity: 1;
@@ -16,8 +15,6 @@
 .main-navigation {
     height: 100vh;
     position: relative;
-    text-align: center;
-    @include centered(both);
     @include tablets {
         padding-top: 45px;
     }
@@ -31,9 +28,19 @@
 }
 
 .main-navigation__item {
-    display: block;
-    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
     opacity: 0;
+    @include tablets() {
+        font-size: 49px;
+        position: relative;
+        transform: translate(0, 0);
+        left: 0;
+    }
+    @include phones() {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
 }
 
 .open {
@@ -53,8 +60,6 @@
 }
 
 .main-navigation__link {
-    display: inline-block;
-    padding: 45px 0;
     color: $white;
     position: relative;
     cursor: pointer;
@@ -64,6 +69,7 @@
     line-height: 1.5;
     text-transform: uppercase;
     text-decoration: none;
+    padding-bottom: 45px;
     transition: all .5s ease-in-out;
     &:after {
         content: '';
