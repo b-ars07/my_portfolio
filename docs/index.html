@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru_RU">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Главная|Арсений Березин frontend developer</title>
     <meta content="Arseniy Berezin" name="author">
@@ -12,147 +11,138 @@
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/foundation.js" defer></script>
-    <script src="assets/js/app.bundle.js" defer></script>
-    <!--[if lt IE 9]>
+    <script src="assets/js/app.bundle.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <section class="section welcome">
-            <div class="welcome-background" id="welcome-background">
-                <canvas class="welcome-background-canvas"></canvas>
-            </div>
-            <button class="welcome__auth-btn">Авторизоваться</button>
-            <div class="card__wrapper">
-                <section class="card">
-                    <div class="card__welcome card__welcome--active">
-                        <div class="card__content">
-                            <div class="user js-user user--welcome"><img class="user__photo" src="assets/img/ava.jpg" />
-                                <h1 class="user__name">Березин Арсений</h1>
-                                <p class="user__prof">Личный сайт веб разработчика</p>
-                            </div>
-                            <ul class="social">
-                                <li class="social__item">
-                                    <a class="social__link" href="https://vk.com/ars_34" target="_blank">
-                                        <svg class="social__icon social__icon--vk">
+      <section class="section welcome">
+        <div class="welcome-background" id="welcome-background">
+          <canvas class="welcome-background-canvas"></canvas>
+        </div>
+        <button class="welcome__auth-btn">Авторизоваться</button>
+        <div class="card__wrapper">
+          <section class="card">
+            <div class="card__welcome card__welcome--active">
+              <div class="card__content">
+                <div class="user js-user user--welcome"><img class="user__photo" src="assets/img/ava.jpg"/>
+                  <h1 class="user__name">Березин Арсений</h1>
+                  <p class="user__prof">Личный сайт веб разработчика</p>
+                </div>
+                <ul class="social">
+                  <li class="social__item"><a class="social__link" href="https://vk.com/ars_34" target="_blank">
+                      <svg class="social__icon social__icon--vk">
                         <use xlink:href="assets/img/sprite.svg#vk"></use>
-                      </svg></a>
-                                </li>
-                                <li class="social__item">
-                                    <a class="social__link" href="https://github.com/b-ars07" target="_blank">
-                                        <svg class="social__icon social__icon--github">
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://github.com/b-ars07" target="_blank">
+                      <svg class="social__icon social__icon--github">
                         <use xlink:href="assets/img/sprite.svg#github"></use>
-                      </svg></a>
-                                </li>
-                                <li class="social__item">
-                                    <a class="social__link" href="https://www.linkedin.com/in/arseny-berezin-b58567113/" target="_blank">
-                                        <svg class="social__icon social__icon--in">
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://www.linkedin.com/in/arseny-berezin-b58567113/" target="_blank">
+                      <svg class="social__icon social__icon--in">
                         <use xlink:href="assets/img/sprite.svg#in"></use>
-                      </svg></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card__nav">
-                            <nav class="welcome-menu">
-                                <ul class="welcome-menu__list">
-                                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./works.html">Мои работы</a></li>
-                                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./about.html">Обо мне</a></li>
-                                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./blog.html">Блог</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="card__auth">
-                        <div class="card__content">
-                            <h4 class="block-title--auth block-title--line"><span class="block-title__text">Авторизуйтесь</span></h4>
-                            <form class="form-authorization" method="post" action="">
-                                <fieldset class="form-authorization__item">
-                                    <label class="form-authorization__label">
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="card__nav">
+                <nav class="welcome-menu">
+                  <ul class="welcome-menu__list">
+                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./works.html">Мои работы</a></li>
+                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./about.html">Обо мне</a></li>
+                    <li class="welcome-menu__item"><a class="welcome-menu__link" href="./blog.html">Блог</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="card__auth">
+              <div class="card__content">
+                <h4 class="block-title--auth block-title--line"><span class="block-title__text">Авторизуйтесь</span></h4>
+                <form class="form-authorization" method="post" action="">
+                  <fieldset class="form-authorization__item">
+                    <label class="form-authorization__label">
                       <input class="form-authorization__input" name="text" type="text" placeholder="Логин" required="required"/>
                     </label>
-                                </fieldset>
-                                <fieldset class="form-authorization__item">
-                                    <label class="form-authorization__label">
+                  </fieldset>
+                  <fieldset class="form-authorization__item">
+                    <label class="form-authorization__label">
                       <input class="form-authorization__input" name="password" type="password" placeholder="Пароль" required="required"/>
                     </label>
-                                </fieldset>
-                            </form>
-                            <div class="checkbox">
-                                <div class="checkbox__elem checkbox__elem--checkbox">
-                                    <input class="checkbox__input checkbox__person" name="person" type="checkbox" />
-                                    <label class="checkbox__label"></label>
-                                </div>
-                                <p class="checkbox__text">Я человек</p>
-                            </div>
-                            <p class="card__content-text">Вы точно не робот?</p>
-                            <div class="card__content-radio">
-                                <div class="checkbox">
-                                    <div class="checkbox__elem checkbox__elem--radio">
-                                        <input class="checkbox__input checkbox__radio" value="1" name="radio" type="radio" />
-                                        <label class="checkbox__label"></label>
-                                    </div>
-                                    <p class="checkbox__text">Да</p>
-                                </div>
-                                <div class="checkbox">
-                                    <div class="checkbox__elem checkbox__elem--radio">
-                                        <input class="checkbox__input checkbox__radio" value="0" name="radio" type="radio" />
-                                        <label class="checkbox__label"></label>
-                                    </div>
-                                    <p class="checkbox__text">Не уверен (O_O)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <nav class="welcome-menu-auth">
-                            <ul class="welcome-menu-auth__list">
-                                <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">На главную</a></li>
-                                <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">Войти</a></li>
-                            </ul>
-                        </nav>
+                  </fieldset>
+                </form>
+                <div class="checkbox">
+                  <div class="checkbox__elem checkbox__elem--checkbox">
+                    <input class="checkbox__input checkbox__person" name="person" type="checkbox"/>
+                    <label class="checkbox__label"></label>
+                  </div>
+                  <p class="checkbox__text">Я человек</p>
+                </div>
+                <p class="card__content-text">Вы точно не робот?</p>
+                <div class="card__content-radio">
+                  <div class="checkbox">
+                    <div class="checkbox__elem checkbox__elem--radio">
+                      <input class="checkbox__input checkbox__radio" value="1" name="radio" type="radio"/>
+                      <label class="checkbox__label"></label>
                     </div>
-                </section>
+                    <p class="checkbox__text">Да</p>
+                  </div>
+                  <div class="checkbox">
+                    <div class="checkbox__elem checkbox__elem--radio">
+                      <input class="checkbox__input checkbox__radio" value="0" name="radio" type="radio"/>
+                      <label class="checkbox__label"></label>
+                    </div>
+                    <p class="checkbox__text">Не уверен (O_O)</p>
+                  </div>
+                </div>
+              </div>
+              <nav class="welcome-menu-auth">
+                <ul class="welcome-menu-auth__list">
+                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">На главную</a></li>
+                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">Войти</a></li>
+                </ul>
+              </nav>
             </div>
+          </section>
+        </div>
+      </section>
+      <footer class="footer-index">
+        <section class="section copyright copyright--index-page">
+          <p class="copyright__info">© Березин Арсений | Создано с любовью в LoftSchool | 2017</p>
         </section>
-        <footer class="footer-index">
-            <section class="section copyright copyright--index-page">
-                <p class="copyright__info">© Березин Арсений | Создано с любовью в LoftSchool | 2017</p>
-            </section>
-        </footer>
+      </footer>
     </div>
     <div class="navigation js-navigation">
-        <nav class="main-navigation">
-            <ul class="main-navigation__list">
-                <li class="main-navigation__item"><a class="main-navigation__link" href="./works.html">Мои работы</a></li>
-                <li class="main-navigation__item"><a class="main-navigation__link" href="./blog.html">Блог</a></li>
-                <li class="main-navigation__item"><a class="main-navigation__link" href="./about.html">Обо мне</a></li>
-                <li class="main-navigation__item"><a class="main-navigation__link" href="./index.html">Авторизация</a></li>
-            </ul>
-        </nav>
+      <nav class="main-navigation">
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./works.html">Мои работы</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./blog.html">Блог</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./about.html">Обо мне</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./index.html">Авторизация</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="preloader">
-        <div class="preloader__spinner">
-            <div class="preloader__percents"><span class="preloader__count">0%</span></div>
-            <div class="preloader__img">
-                <div class="preloader__svg">
-                    <div class="preloader__svg-line">
-                        <svg class="svg-line">
+    <div class="preloader"> 
+      <div class="preloader__spinner">
+        <div class="preloader__percents"><span class="preloader__count">0%</span></div>
+        <div class="preloader__img">
+          <div class="preloader__svg">
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
                 <use xlink:href="assets/img/sprite.svg#preloader"></use>
               </svg>
-                    </div>
-                    <div class="preloader__svg-line">
-                        <svg class="svg-line">
-                <use xlink:href="assets/img/sprite.svg#preloader"></use>
-              </svg>
-                    </div>
-                    <div class="preloader__svg-line">
-                        <svg class="svg-line">
-                <use xlink:href="assets/img/sprite.svg#preloader"></use>
-              </svg>
-                    </div>
-                </div>
             </div>
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
+                <use xlink:href="assets/img/sprite.svg#preloader"></use>
+              </svg>
+            </div>
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
+                <use xlink:href="assets/img/sprite.svg#preloader"></use>
+              </svg>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
