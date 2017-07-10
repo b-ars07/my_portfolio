@@ -10,14 +10,14 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/foundation.js" defer></script>
-    <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.bundle.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="wrapper">
       <section class="section header header--blog" id="paralaxScroll">
-        <div class="header-background js-bg-header"><img class="header-background__img js-header-background__img" src="assets/img/bg-header.png"/></div>
+        <div class="header-background header-background--blog js-bg-header"><img class="header-background__img js-header-background__img" src="assets/img/bg-header.png"/></div>
         <div class="section__wrapper">
           <ul class="social social--header">
             <li class="social__item"><a class="social__link" href="https://vk.com/ars_34" target="_blank">
@@ -33,14 +33,14 @@
                   <use xlink:href="assets/img/sprite.svg#in"></use>
                 </svg></a></li>
           </ul>
-          <div class="hamburger"><a id="hamburger-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></a></div>
+          <div class="hamburger js-hamburger"><a id="hamburger-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></a></div>
           <div class="header__content">
             <div class="user--header js-user"><img class="user__photo" src="assets/img/ava.jpg"/></div>
-            <div class="section-title section-title--blog js-user">
-              <svg class="js-header-title section-title__img" viewBox="0 0 302.193 208.012">
+            <div class="section-title section-title--blog">
+              <svg class="section-title__img" viewBox="0 0 302.193 208.012">
                 <use xlink:href="assets/img/sprite.svg#blog_header"></use>
               </svg>
-              <h2 class="section-title__text">Блог</h2>
+              <h2 class="section-title__text section-title__text--blog js-header-title">Блог</h2>
               <p class="section-title__subtext">Статьи которые я написал</p>
             </div>
           </div>
@@ -56,13 +56,13 @@
         <svg class="triangle triangle__right triangle--blog" viewbox="0 0 1000 110" preserveAspectRatio="none">
           <polygon points="0,110 1000,110 1000,0"></polygon>
         </svg>
-        <div class="section__wrapper blog__inner">
-          <aside class="blog-sidebar">
+        <div class="section__wrapper blog__inner" id="blog">
+          <aside class="blog-sidebar js-blog-sidebar">
             <ul class="blog-sidebar__list js-blog-sidebar__list">
-              <li class="blog-sidebar__item js-blog-sidebar__item blog-sidebar__item--active"><a class="blog-sidebar__link">Самое важное в SASS</a></li>
-              <li class="blog-sidebar__item js-blog-sidebar__item"><a class="blog-sidebar__link">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
-              <li class="blog-sidebar__item js-blog-sidebar__item"><a class="blog-sidebar__link">Что такое Flexbox?</a></li>
-              <li class="blog-sidebar__item js-blog-sidebar__item"><a class="blog-sidebar__link">Антигерой CSS-разметки — свойство «display: table»</a></li>
+              <li class="blog-sidebar__item js-blog-sidebar__item blog-sidebar__item--active">Самое важное в SASS</li>
+              <li class="blog-sidebar__item js-blog-sidebar__item">Приёмы в вёрстке, без которых не обходится ни один сайт</li>
+              <li class="blog-sidebar__item js-blog-sidebar__item">Что такое Flexbox?</li>
+              <li class="blog-sidebar__item js-blog-sidebar__item">Антигерой CSS-разметки — свойство «display: table»</li>
             </ul>
           </aside>
           <div class="blog-article">
@@ -137,6 +137,40 @@
       <section class="section copyright copyright--blog">
         <p class="copyright__info">© Березин Арсений | Создано с любовью в LoftSchool | 2017</p>
       </section>
+    </div>
+    <div class="navigation js-navigation">
+      <nav class="main-navigation">
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./works.html">Мои работы</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./blog.html">Блог</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./about.html">Обо мне</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="./index.html">Авторизация</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="preloader"> 
+      <div class="preloader__spinner">
+        <div class="preloader__percents"><span class="preloader__count">0%</span></div>
+        <div class="preloader__img">
+          <div class="preloader__svg">
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
+                <use xlink:href="assets/img/sprite.svg#preloader"></use>
+              </svg>
+            </div>
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
+                <use xlink:href="assets/img/sprite.svg#preloader"></use>
+              </svg>
+            </div>
+            <div class="preloader__svg-line">
+              <svg class="svg-line">
+                <use xlink:href="assets/img/sprite.svg#preloader"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
