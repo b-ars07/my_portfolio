@@ -1,67 +1,201 @@
+.works-slider {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+    min-height: 750px;
+    @include tablets() {
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    @include phones() {
+        min-height: 573px;
+    }
+}
+
+.works-slider__desc {
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    @include tablets() {
+        width: 100%;
+        padding: rem(39px) rem(0px) rem(60px) rem(0px);
+    }
+    @include phones() {
+        padding: rem(29px) rem(0px) rem(30px) rem(0px);
+    }
+}
+
+.works-slider__technologies {
+    color: $greenHover;
+    font-size: $middleFont;
+    font-weight: $mediumWeight;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: rem(58px);
+    @include roboto;
+    @include tablets() {
+        margin-bottom: rem(38px);
+    }
+    @include phones() {
+        align-self: stretch;
+        margin-bottom: rem(14px);
+    }
+}
+
+.works-slider__link {
+    display: inline-block;
+    position: relative;
+    background: $lightGreen;
+    padding: rem(13px) rem(18px);
+    color: $white;
+    font-size: $middleFont;
+    font-weight: $mediumWeight;
+    border-radius: 20px;
+    overflow: hidden;
+    @include roboto;
+    @include phones() {
+        padding: rem(10px) rem(14px);
+    }
+    &:hover,
+    &:focus {
+        background: darken($lightGreen, 10%);
+    }
+}
+
+.works-slider__link-text {
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.3;
+}
+
+.works-slider__link-icon {
+    position: absolute;
+    left: 0;
+    max-width: 20px;
+    max-height: 20px;
+    fill: $white;
+    @include centered('y');
+}
+
 .works-slider__image-wrapper {
-  padding: 66px 120px 50px;
+    display: flex;
+    height: 70%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: rem(114px) rem(64px) rem(100px) rem(57px);
+    background-color: #e1e4d7;
+    @include tablets() {
+        width: 100%;
+        order: -1;
+        padding: 7.125rem 5.7rem 2.25rem 5rem;
+    }
+    @include phones() {
+        padding: rem(49px) rem(33px) rem(47px) rem(37px);
+    }
 }
 
 .works-slider__image {
-  width: 100%;
-  height: 320px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    display: block;
+    max-height: 311px;
+    max-width: 479px;
+    width: 100%;
+    height: 100%;
+    @include tablets() {
+        position: static;
+        max-height: 100%;
+        max-width: 100%;
+    }
 }
 
 .works-slider-list {
-  display: flex;
-  list-style: none;
+    display: flex;
+    height: 30%;
+    width: 50%;
+    list-style: none;
+    @include tablets() {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .works-slider-list__item {
-  width: 50%;
-  padding: 30px 15px;
-  position: relative;
-  list-style: none;
-
-  &:after {
-    content: '';
-    background-color: rgba(176, 183, 170, 0.7);
-    bottom:0;
-    left:0;
-    right:0;
-    top:0;
-    position: absolute;
-  }
-
-  &:last-child:after {
-    background-color: rgba(147, 153, 141, 0.7);
-  }
+    position: relative;
+    width: 50%;
+    padding: rem(30px) rem(15px);
+    list-style: none;
+    @include tablets() {
+        padding: rem(15px) rem(49px);
+    }
+    @include phones() {
+        padding: rem(7px) rem(20px);
+    }
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background-color: rgba(176, 183, 170, 0.7);
+    }
+    &:last-child:after {
+        background-color: rgba(147, 153, 141, 0.7);
+    }
 }
 
 .works-slider-list__image {
-  width: 100%;
-  height: 226px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 226px;
+    @include tablets() {
+        max-height: 180px;
+    }
+    @include phones() {
+        max-height: 130px;
+    }
+    @include smallPhones() {
+        max-height: 80px;
+    }
 }
 
 .works-slider-arrow {
-  cursor: pointer;
-  position: absolute;
-  z-index: 100;
-  bottom:0;
-  left:0;
-  right:0;
-  top:0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 100;
+    width: 100%;
+    max-width: 300px;
+    max-height: 226px;
+    height: 100%;
+    @include tablets() {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 .works-slider-arrow__img {
-  @include centered('both');
-  width: 43px;
-  height: 27px;
-  fill: $white;
+    width: 43px;
+    height: 27px;
+    fill: $white;
+    @include centered('both');
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .works-slider-arrow__img--top {
-  transform: rotate(-180deg);
+    left: 43%;
+    top: 42%;
+    transform: rotate(-180deg);
+    @include tablets() {
+        left: 44.5%;
+    }
 }
-

@@ -1,90 +1,121 @@
-.feedback {
-  border-radius: 5px;
-  margin: 0 auto;
-  margin-bottom: 70px;
-  max-width: 380px;
-  overflow: hidden;
-  width: 100%;
+.feedback__wrapper {
+    position: relative;
+    z-index: 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    max-width: 380px;
+    min-height: 461px;
+    overflow: hidden;
+    width: 100%;
+    @include tablets() {
+        max-width: 349px;
+        margin-bottom: rem(100px);
+        min-height: 447px;
+    }
+    @include phones() {
+        margin-bottom: rem(189px);
+        min-height: 430px;
+    }
+}
+
+.feedback__background {
+    filter: blur(20px);
+    background-image: url('../img/bg-works.png');
+    @include centered(full);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .feedback__inner {
-  //-background-color: rgba(255, 255, 255, 0.15);
-  background-color: rgba(#dadbd6,.6);
-  position: relative;
-  padding: 30px 20px 20px;
+    // background-color: rgba(#dadbd6, .6);
+    position: relative;
+    z-index: 0;
+    padding: rem(30px) rem(20px) rem(30px);
+    @include phones() {
+        padding: rem(37px) rem(8px) rem(14px) rem(18px);
+        text-align: center;
+        text-align: -webkit-center;
+    }
 }
 
 .feedback-form__item {
-  border: none;
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 0;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+    border: none;
+    margin: 0;
+    margin-bottom: rem(20px);
+    padding: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    @include phones() {
+        margin-bottom: rem(19px);
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .feedback-form__input,
 .feedback-form__textarea {
-  background-color: rgba($white, .85);
-  border: 1px solid $white;
-  border-radius: 30px;
-  color: $darkGrey;
-  font-size: $middleFont;
-  line-height: 1;
-  outline: none;
-  overflow: hidden;
-  padding: 16px 20px;
-  @include roboto;
-  width: 100%;
-
-  &::-webkit-input-placeholder {
-    @include roboto;
+    background-color: rgba($white, .85);
+    border: 1px solid $white;
+    border-radius: 30px;
     color: $darkGrey;
-    opacity: .5;
-  }
-
-  &:focus {
+    font-size: $middleFont;
+    line-height: 1;
     outline: none;
-    border: 1px solid #6c9c5a;
-
-    &::-webkit-input-placeholder {
-      opacity: 0;
+    overflow: hidden;
+    padding: rem(12px) rem(18px);
+    @include roboto;
+    width: 100%;
+    @include phones() {
+        padding: rem(9px) rem(14px);
     }
-  }
+    &::-webkit-input-placeholder {
+        @include roboto;
+        color: $darkGrey;
+        opacity: .5;
+    }
+    &:focus {
+        outline: none;
+        border: 1px solid #6c9c5a;
+        &::-webkit-input-placeholder {
+            opacity: 0;
+        }
+    }
 }
 
 .feedback-form__textarea {
-  height: 140px;
-  resize: none;
+    height: 140px;
+    resize: none;
 }
 
 .feedback-buttons {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .feedback-button {
-  width: 50%;
-  color: $white;
-  display: inline-block;
-  border: none;
-  outline: none;
-  padding: 15px;
-  font-size: $middleFont;
-  cursor: pointer;
-  text-align: center;
-  position: relative;
+    width: 50%;
+    color: $white;
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: $middleFont;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
 }
 
 .feedback-button--send {
-  background-color: $lightGreen;
-  border-right: 2px solid rgba(#dee3e7, .5);
-
+    background-color: $lightGreen;
+    border-right: 2px solid rgba(#dee3e7, .5);
 }
 
 .feedback-button--clear {
-  background-color: $greenHover;
+    background-color: $greenHover;
 }
-

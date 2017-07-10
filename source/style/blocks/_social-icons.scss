@@ -10,6 +10,10 @@
     margin-left: 27px;
     vertical-align: middle;
 
+  @include phones() {
+    margin-left: 29px;
+  }
+
     &:first-child {
       margin-left: 0;
     }
@@ -20,8 +24,8 @@
   }
 
 .social__icon {
-  max-height: 22px;
-  max-width: 31px;
+  height: 22px;
+  width: 31px;
   opacity: .5;
   vertical-align: top;
   fill: #ffffff;
@@ -51,6 +55,21 @@
     fill: $white;
     opacity: 1;
 
+      @include phones() {
+         max-width: 24px;
+         max-height: 17px;
+
+           &--github {
+             max-width: 21px;
+             max-height: 17px;
+
+          }
+           &--in {
+            max-width: 19px;
+            max-height: 17px;
+          }
+  }
+
     &:hover {
       fill: $greenHover;
     }
@@ -59,9 +78,25 @@
 
 //-Style for social icons in section footer
 .social--footer {
+  align-items: center;
   .social__icon {
     fill: $white;
     opacity: .5;
+
+    @include phones() {
+      width: 31px;
+      height: 17px;
+
+      &--github {
+        width: 26px;
+        height: 22px;
+      }
+
+      &--in {
+        width: 24px;
+        height: 22px;
+      }
+    }
 
     &:hover {
       fill: $white;

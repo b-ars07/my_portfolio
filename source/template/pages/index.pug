@@ -7,12 +7,14 @@ block variables
 
 block content
     section.section.welcome
+        .welcome-background
+            canvas.welcome-background-canvas
         button.welcome__auth-btn Авторизоваться
         .card__wrapper
             section.card
                 .card__welcome.card__welcome--active
                     .card__content
-                        +user()
+                        +user('welcome')
                         +ul('social', '',
                         {
                             vk: "https://vk.com/ars_34",
@@ -40,9 +42,9 @@ block content
                         .card__content-radio
                             +checkbox('radio','Да','radio','1')
                             +checkbox('radio','Не уверен (O_O)','radio','0')
-                    +nav('welcome-menu',
+                    +nav('welcome-menu-auth',
                         {
-                          'На главную':'./index.html',
+                          'На главную':'',
                           'Войти':''
                         })
 block footer

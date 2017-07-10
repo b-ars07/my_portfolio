@@ -1,60 +1,67 @@
 .hamburger {
-  cursor: pointer;
-  float: right;
-  position: relative;
-  z-index: 2;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    z-index: 2;
 }
-.hamburger-icon {
-  display:block;
-  height:$height-icon;
-  position:relative;
-  width:$width-line;
 
-  &:hover {
-    .hamburger-icon__line--top,
-    .hamburger-icon__line--middle,
-    .hamburger-icon__line--bottom {
-      background: $greenHover;
+#hamburger-icon {
+    width: $width-line;
+    height: $height-icon;
+    position: relative;
+    display: block;
+    @include phones() {
+        width: 26px;
+        height: 23px;
     }
-  }
-
-  &__line {
-    background:$white;
-    border-radius:($height-line / 2);
-    display:block;
-    height:$height-line;
-    left:0;
-    position:absolute;
-    transition: all $transition-time;
-    width:$width-line;
-
-    &--top {
-      top:0;
+    .line {
+        display: block;
+        background: $white;
+        width: $width-line;
+        height: $height-line;
+        position: absolute;
+        left: 0;
+        border-radius: ($height-line / 2);
+        transition: all $transition-time;
+        @include phones() {
+            width: 26px;
+        }
+        &.line-1 {
+            top: 0;
+        }
+        &.line-2 {
+            top: 50%;
+        }
+        &.line-3 {
+            top: 100%;
+        }
     }
-    &--middle {
-      top:50%;
+    &:hover,
+    &:focus {
+        .line-1 {
+            transform: translateY($height-line / 2 * -1);
+            background: $greenHover;
+        }
+        .line-2 {
+            background: $greenHover;
+        }
+        .line-3 {
+            transform: translateY($height-line / 2);
+            background: $greenHover;
+        }
     }
-    &--bottom {
-      top:100%;
+    &.active {
+        .line-1 {
+            transform: translateY($translateY) translateX($translateX) rotate($rotation);
+            @include phones() {
+                transform: translateY(5.5px) translateX(0) rotate(45deg);
+            }
+        }
+        .line-2 {
+            opacity: 0;
+        }
+        .line-3 {
+            transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+        }
     }
-  }
-  &:hover, &:focus {
-    &--top {
-      transform: translateY($height-line / 2 * -1);
-    }
-    &--bottom {
-      transform: translateY($height-line / 2);
-    }
-  }
-  &.active {
-    &--top {
-      transform: translateY($translateY) translateX($translateX) rotate($rotation);
-    }
-    &--middle {
-      opacity:0;
-    }
-    &--bottom {
-      transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
-    }
-  }
 }
