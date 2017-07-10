@@ -50,8 +50,8 @@
     }
     &--works {
         &:after {
-            left: 85px;
-            bottom: -11px;
+            left: 50%;
+            bottom: rem(-11px);
         }
     }
     &--blog {
@@ -79,7 +79,7 @@
         top: 0;
     }
     .section-title__img {
-        width: auto;
+        width: 100%;
     }
 }
 

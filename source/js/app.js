@@ -4,7 +4,11 @@ const
     arrow = require('./arrow'),
     flip = require('./flip'),
     hamburger = require('./hamburger'),
-    blogMenu = require('./blog');
+    blogMenu = require('./blog'),
+    preloader = require('./preloader'),
+    slider = require('./slider'),
+    form = require('./form'),
+    skills = require('./skills');
 
 //blur effect form
 if ($('#feedbackForm').length) {
@@ -35,9 +39,27 @@ if ($('.arrow').length) {
 flip();
 
 //hamburger
-hamburger();
+if ($('#hamburger-icon').length) {
+    hamburger();
+}
+
 
 //blogNav
 if ($('#blog').length) {
     blogMenu.init();
+}
+
+preloader.init();
+
+//Works slider
+if ($('#slider').length) {
+    slider.init();
+}
+
+if ($('#feedbackForm').length) {
+    form();
+}
+
+if ($('#skills').length) {
+    skills.init();
 }

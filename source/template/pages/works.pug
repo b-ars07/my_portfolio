@@ -12,29 +12,47 @@ block content
             +leftTriangle('works')
             +rightTriangle('works')
             +sectionTitle('works_header','Мои работы','works')
-            .works-slider
-                .works-slider__desc
-                    +blockTitle('Сайт школы онлайн Образования','line', '')
-                    p.works-slider__technologies HTML , CSS, JAVASCRIPT
-                    a.works-slider__link(href='https://www.loftschool.com' target='_blank')
-                        span.works-slider__link-text Посмотреть сайт
-                            svg.works-slider__link-icon
-                                use(xlink:href="assets/img/sprite.svg#link")
-
-                
-                .works-slider__image-wrapper
-                    img.works-slider__image(src='assets/img/work-1.png')
-                ul.works-slider-list
-                    li.works-slider-list__item
-                        img.works-slider-list__image(src='assets/img/work-2.png')
-                        a.works-slider-arrow
-                            svg.works-slider-arrow__img
-                                use(xlink:href="assets/img/sprite.svg#arrow_down")
-                    li.works-slider-list__item
-                        img.works-slider-list__image(src='assets/img/work-3.png')
-                        a.works-slider-arrow
-                            svg.works-slider-arrow__img.works-slider-arrow__img--top
-                                use(xlink:href="assets/img/sprite.svg#arrow_down")
+            .works-slider#slider
+                .works-slider__col--left
+                    .works-slider__wrapper.works-slider__wrapper--left
+                        .works-slider__image-wrapper.js-slider__image-wrapper
+                            img.works-slider__image.js-works-slider__image(src='assets/img/work-1.png', alt='project-image', title='project-image')
+                        .works-slider__desc
+                            +blockTitle('Сайт школы онлайн Образования','line', 'works-slider')
+                            p.works-slider__technologies.js-slider-tehnologes HTML , CSS, JAVASCRIPT
+                            a.works-slider__link.js-slider-site(href='https://www.loftschool.com' target='_blank')
+                                span.works-slider__link-text Посмотреть сайт
+                                    svg.works-slider__link-icon
+                                        use(xlink:href="assets/img/sprite.svg#link")
+                .works-slider__col--right
+                    .works-slider__wrapper.works-slider__wrapper--right
+                        .slider
+                            a.slider__link.js-slider-btn--left
+                                ul.slider__list.js-slider__list
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-1.png', data-title='my website', data-skills='HTML5, CSS3, PUG, SCSS, WEBPACK, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-1.png', alt='resume', title='resume')
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-2.png', data-title='ITLoft', data-skills='HTML5, CSS3, SASS, GULP, JAVASCRIPT', data-link='#')
+                                        img.slider__image(src='assets/img/work-2.png', title='loftblog')
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-3.png', data-title='Yoga', data-skills='HTML5, CSS3, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-3.png', title='Yoga')
+                                    li.slider__item.js-slider__item.active(data-full='assets/img/work-1.png', data-title='Loftschool', data-skills='HTML5, CSS3, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-1.png', title='loftschool')
+                                .slider-arrow
+                                    svg.slider-arrow__img
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
+                            a.slider__link.js-slider-btn--right
+                                ul.slider__list.js-slider__list
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-1.png', data-title='my website', data-skills='HTML5, CSS3, PUG, SCSS, WEBPACK, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-1.png', alt='resume', title='resume')
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-2.png', data-title='ITLoft', data-skills='HTML5, CSS3, SASS, GULP, JAVASCRIPT', data-link='#')
+                                        img.slider__image(src='assets/img/work-2.png', title='loftblog')
+                                    li.slider__item.js-slider__item(data-full='assets/img/work-3.png', data-title='Yoga', data-skills='HTML5, CSS3, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-3.png', title='Yoga')
+                                    li.slider__item.js-slider__item.active(data-full='assets/img/work-1.png', data-title='Loftschool', data-skills='HTML5, CSS3, JQUERY', data-link='#')
+                                        img.slider__image(src='assets/img/work-1.png', title='loftschool')
+                                .slider-arrow.slider-arrow--top
+                                    svg.slider-arrow__img
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         section.section.reviews
             img(src="assets/img/leaf1.png" alt="leaf 1").leaf.leaf1
@@ -62,23 +80,26 @@ block content
                         .reviews-person__info
                             p.reviews-person__name Сабанцев Владимир
                             p.reviews-person__prof преподаватель Loftschool
-            .feedback__wrapper.js-feedback-wrapper#feedbackForm
+            form.feedback__wrapper.js-feedback-wrapper#feedbackForm
                     .feedback__background.js-feedback-background
                     .feedback
                         .feedback__inner
                             +blockTitle('Связаться со мной','line','works')
-                            +form('feedback-form',
-                            {
-                                'Имя': 'text',
-                                'Email': 'email'
-                            },
-                            {
-                                'Ваше сообщение': 'textarea'
-                            })
+                            .feedback-form
+                                .feedback-form__item
+                                    label.feedback-form__label
+                                        input.feedback-form__input(name='name', type='text', placeholder='Имя', required)
+                                .feedback-form__item
+                                    label.feedback-form__label
+                                        input.feedback-form__input(name='email', type='email', placeholder='Email', required)
+                                .feedback-form__item
+                                    label.feedback-form__label
+                                        textarea.feedback-form__textarea(name='text', placeholder='Ваше сообщение', required)
                         .feedback-buttons
-                            button.feedback-button.feedback-button--send(type='submit') Отправить
-                            button.feedback-button.feedback-button--clear(type='button') Очистить
+                            button(type='submit').feedback-button.feedback-button--send Отправить
+                            button(type='reset').feedback-button.feedback-button--clear Очистить
             +arrow('feedback')
 block footer
     +footer()
     +copyright('works')
+    +popup()

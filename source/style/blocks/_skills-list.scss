@@ -136,51 +136,201 @@
             cx: 60%;
         }
     }
-    &-above {
+}
+
+.skills__item.active {
+    .skill__circle-above {
         &--html {
-            stroke-dasharray: 257 360;
+            animation: html 2s ease forwards;
         }
         &--css {
-            stroke-dasharray: 190 360;
+            animation: css 2s ease forwards;
+            animation-delay: .5s;
         }
         &--js {
-            stroke-dasharray: 92 360;
+            animation: js 2s ease forwards;
+            animation-delay: 1s;
         }
         &--jquery {
-            stroke-dasharray: 120 360;
+            animation: jquery 2s ease forwards;
+            animation-delay: 1.5s;
         }
         &--svg {
-            stroke-dasharray: 40 360;
+            animation: svg 2s ease forwards;
+            animation-delay: 1.5s;
         }
         &--php {
-            stroke-dasharray: 20 360;
+            animation: php 2s ease forwards;
         }
         &--mySQL {
-            stroke-dasharray: 180 360;
+            animation: mySQL 2s ease forwards;
+            animation-delay: .5s;
         }
         &--postgres {
-            stroke-dasharray: 120 360;
+            animation: postgres 2s ease forwards;
+            animation-delay: 1s;
         }
         &--nodeJS {
-            stroke-dasharray: 60 360;
+            animation: nodejs 2s ease forwards;
+            animation-delay: 1s;
         }
         &--mongo {
-            stroke-dasharray: 50 360;
+            animation: mongo 2s ease forwards;
+            animation-delay: 1.5s;
         }
         &--git {
-            stroke-dasharray: 200 360;
+            animation: git 2s ease forwards;
         }
         &--gulp {
-            stroke-dasharray: 240 360;
+            animation: gulp 2s ease forwards;
+            animation-delay: .5s;
         }
         &--webpack {
-            stroke-dasharray: 60 360;
+            animation: webpack 2s ease forwards;
+            animation-delay: 1s;
         }
         &--bower {
-            stroke-dasharray: 250 360;
+            animation: bower 2s ease forwards;
+            animation-delay: 1.5s;
         }
         &--yarn {
-            stroke-dasharray: 280 360;
+            animation: yarn 2s ease forwards;
+            animation-delay: 1.5s;
         }
+    }
+}
+
+@keyframes html {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 300 360;
+    }
+}
+
+@keyframes css {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 250 360;
+    }
+}
+
+@keyframes js {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 120 360;
+    }
+}
+
+@keyframes jquery {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 130 360;
+    }
+}
+
+@keyframes svg {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 90 360;
+    }
+}
+
+@keyframes php {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 40 360;
+    }
+}
+
+@keyframes mySQL {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 130 360;
+    }
+}
+
+@keyframes postgres {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 130 360;
+    }
+}
+
+@keyframes nodejs {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 60 360;
+    }
+}
+
+@keyframes mongo {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 80 360;
+    }
+}
+
+@keyframes git {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 240 360;
+    }
+}
+
+@keyframes gulp {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 240 360;
+    }
+}
+
+@keyframes webpack {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 120 360;
+    }
+}
+
+@keyframes bower {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 260 360;
+    }
+}
+
+@keyframes yarn {
+    from {
+        stroke-dasharray: 0 360;
+    }
+    to {
+        stroke-dasharray: 230 360;
     }
 }
