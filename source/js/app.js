@@ -8,7 +8,8 @@ const
     preloader = require('./preloader'),
     slider = require('./slider'),
     form = require('./form'),
-    skills = require('./skills');
+    skills = require('./skills'),
+    map = require('./map');
 
 //blur effect form
 if ($('#feedbackForm').length) {
@@ -62,4 +63,8 @@ if ($('#feedbackForm').length) {
 
 if ($('#skills').length) {
     skills.init();
+}
+
+if ($('#map').length) {
+    map.init();
 }
