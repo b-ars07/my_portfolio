@@ -72,7 +72,7 @@
         position: relative;
         left: 0;
         height: 388px;
-        padding: 7.125rem 5.7rem 2.25rem 5rem;
+        padding: 0;
     }
     @include phones() {
         padding: rem(49px) rem(33px) rem(47px) rem(37px);
@@ -86,6 +86,10 @@
     @include tablets() {
         max-width: 80%;
         max-height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 

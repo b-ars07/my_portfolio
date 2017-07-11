@@ -32,7 +32,6 @@ var blogMenu = (function() {
             for (var i = 0; i < article_position.length; i++) {
                 if (scroll >= article_position[i].top && scroll <= article_position[i].bottom) {
                     $item.eq(i).addClass('blog-sidebar__item--active').siblings().removeClass('blog-sidebar__item--active');
-                    console.log(i);
                 }
             }
         },
@@ -52,7 +51,7 @@ var blogMenu = (function() {
             });
         },
 
-        addListener = function() {
+        _addListener = function() {
             $menu.on('click', _click);
 
             $(document).on('scroll', _scrollPage);
@@ -65,11 +64,17 @@ var blogMenu = (function() {
             $(window).on('resize', function() {
                 _positionArticle($article);
                 _fixMenu();
-            })
+            });
+
+            $('.js-blog-article__handler').on('click', function(evt) {
+                evt.preventDefault();
+
+                $(this).parents('.t-blog-article').toggleClass('close');
+            });
         };
 
     return {
-        init: addListener
+        init: _addListener
     }
 })();
 

@@ -246,17 +246,17 @@ window.initMap = function() {
     Maps.initMap();
 };
 
-var Routes = {
+var Load = {
     init: function() {
         Maps.load();
     }
 };
 
-var App = {
+var googleMap = {
     init: function() {
-        Routes.init();
+        Load.init();
     }
 };
 
 
-module.exports = App;
+module.exports = googleMap;

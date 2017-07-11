@@ -63,16 +63,16 @@ mixin arrow(modificator)
     svg.arrow#arrow(class=`arrow--${modificator}` viewBox="0 0 25.18 16.164")
         use(xlink:href="assets/img/sprite.svg#arrow_down")
 
-mixin form(className, items, textarea)
-    form(class=`${className}`, method='post', action='')
-        each type, item in items
-            fieldset(class=`${className}__item`)
-                label(class=`${className}__label`)
-                    input(class=`${className}__input`, name=type, type=type,  placeholder=item, required)
-        each type, item in textarea
-            fieldset(class=`${className}__item`)
-                label(class=`${className}__lebel`)
-                    textarea(class=`${className}__textarea`, name=type, type=type,  placeholder=item)
+//- mixin form(className, id, items, textarea)
+//-     form(class=`${className}`, id=`${id}`, method='post', action='')
+//-         each type, item in items
+//-             fieldset(class=`${className}__item`)
+//-                 label(class=`${className}__label`)
+//-                     input(class=`${className}__input`, name=type, type=type,  placeholder=item, required)
+//-         each type, item in textarea
+//-             fieldset(class=`${className}__item`)
+//-                 label(class=`${className}__lebel`)
+//-                     textarea(class=`${className}__textarea`, name=type, type=type,  placeholder=item)
 
 mixin checkbox(item, text, type, value)
     div(class=`checkbox`)

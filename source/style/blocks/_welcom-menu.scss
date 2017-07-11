@@ -26,9 +26,6 @@
         border-bottom-right-radius: 5px;
         flex: 1 1 25%;
     }
-    &:hover {
-        background-color: #4e8839;
-    }
     &:before {
         background-color: #dee3e7;
         bottom: 0;
@@ -43,11 +40,17 @@
 
 .welcome-menu__link,
 .welcome-menu-auth__link {
+    background-color: #6c9c5a;
+    border: none;
     color: #fff;
+    cursor: pointer;
     display: block;
     flex: 100%;
     font-size: 16px;
     font-weight: 500;
     line-height: 2;
     padding: rem(6px);
+    &:hover {
+        background-color: #4e8839;
+    }
 }

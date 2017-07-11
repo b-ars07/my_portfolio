@@ -87,3 +87,9 @@
         bottom: rem(-6px);
     }
 }
+
+.block-title--about {
+    &:after {
+        left: 50%;
+    }
+}

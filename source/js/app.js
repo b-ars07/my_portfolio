@@ -57,9 +57,8 @@ if ($('#slider').length) {
     slider.init();
 }
 
-if ($('#feedbackForm').length) {
-    form();
-}
+
+form.init();
 
 if ($('#skills').length) {
     skills.init();

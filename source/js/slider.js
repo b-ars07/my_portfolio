@@ -104,7 +104,6 @@ var slider = (function() {
             title.text(data.title[slide]);
             skills.text(data.skills[slide]);
             link.attr('href', data.link[slide]);
-            console.log(data);
         };
 
         this.setDefaults = function() {
