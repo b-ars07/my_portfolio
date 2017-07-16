@@ -1,0 +1,43 @@
+include blocks/mixins
+include blocks/user
+include blocks/header
+include blocks/header-blog
+include blocks/footer
+include blocks/copyright
+include blocks/navigation
+include blocks/preloader
+include blocks/popup
+include _mixins
+
+block variables
+
+doctype html
+html(lang="ru_RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="Arseniy Berezin" name="author")
+        meta(content="`${description}`" name="description")
+        meta(content="`${keywords}`" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+        //- favicon block start
+        //- favicon block end
+
+        link(rel='stylesheet' href='assets/css/foundation.css')
+        link(rel='stylesheet' href='assets/css/app.css')
+        script(src='assets/js/foundation.js' defer)
+        script(src='assets/js/app.bundle.js' defer)
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+    body
+        .wrapper
+            block content
+            block footer
+
+        +navigation()
+        +preloader()
