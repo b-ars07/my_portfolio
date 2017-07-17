@@ -1,7 +1,7 @@
 {
-    "name": "loftschool-nodejs-builder",
+    "name": "Berezin Portfolio",
     "version": "0.0.2",
-    "author": "krabaton",
+    "author": "Arseniy",
     "license": "ISC",
     "scripts": {
         "start": "set NODE_ENV=development&& gulp",
