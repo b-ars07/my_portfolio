@@ -29,27 +29,25 @@ block content
                         .slider
                             a.slider__link.js-slider-btn--left
                                 ul.slider__list.js-slider__list
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-1.png', data-title='my website', data-skills='HTML5, CSS3, PUG, SCSS, WEBPACK, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-1.png', alt='resume', title='resume')
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-2.png', data-title='ITLoft', data-skills='HTML5, CSS3, SASS, GULP, JAVASCRIPT', data-link='#')
-                                        img.slider__image(src='assets/img/work-2.png', title='loftblog')
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-3.png', data-title='Yoga', data-skills='HTML5, CSS3, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-3.png', title='Yoga')
-                                    li.slider__item.js-slider__item.active(data-full='assets/img/work-1.png', data-title='Loftschool', data-skills='HTML5, CSS3, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-1.png', title='loftschool')
+                                    each item in items
+                                        li.slider__item.js-slider__item(data-full=`${item.picture}`,
+                                                                        data-title=`${item.name}`, 
+                                                                        data-skills=`${item.tech}`, 
+                                                                        data-link=`${item.link}`
+                                         )
+                                            img.slider__image(src=`${item.picture}`)
                                 .slider-arrow
                                     svg.slider-arrow__img
                                         use(xlink:href="assets/img/sprite.svg#arrow_down")
                             a.slider__link.js-slider-btn--right
                                 ul.slider__list.js-slider__list
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-1.png', data-title='my website', data-skills='HTML5, CSS3, PUG, SCSS, WEBPACK, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-1.png', alt='resume', title='resume')
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-2.png', data-title='ITLoft', data-skills='HTML5, CSS3, SASS, GULP, JAVASCRIPT', data-link='#')
-                                        img.slider__image(src='assets/img/work-2.png', title='loftblog')
-                                    li.slider__item.js-slider__item(data-full='assets/img/work-3.png', data-title='Yoga', data-skills='HTML5, CSS3, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-3.png', title='Yoga')
-                                    li.slider__item.js-slider__item.active(data-full='assets/img/work-1.png', data-title='Loftschool', data-skills='HTML5, CSS3, JQUERY', data-link='#')
-                                        img.slider__image(src='assets/img/work-1.png', title='loftschool')
+                                    each item in items
+                                        li.slider__item.js-slider__item(data-full=`${item.picture}`,
+                                                                        data-title=`${item.name}`, 
+                                                                        data-skills=`${item.tech}`, 
+                                                                        data-link=`${item.link}`
+                                         )
+                                            img.slider__image(src=`${item.picture}`)
                                 .slider-arrow.slider-arrow--top
                                     svg.slider-arrow__img
                                         use(xlink:href="assets/img/sprite.svg#arrow_down")
