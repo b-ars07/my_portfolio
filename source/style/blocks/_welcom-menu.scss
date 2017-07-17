@@ -15,6 +15,9 @@
     &:first-child {
         border-bottom-left-radius: 5px;
         flex: 1 1 40%;
+        &:before {
+            content: none;
+        }
     }
     &:nth-child(2) {
         flex: 1 1 33%;
@@ -22,9 +25,6 @@
     &:last-child {
         border-bottom-right-radius: 5px;
         flex: 1 1 25%;
-    }
-    &:hover {
-        background-color: #4e8839;
     }
     &:before {
         background-color: #dee3e7;
@@ -35,19 +35,22 @@
         position: absolute;
         top: 0;
         width: 2px;
-        &:first-child {
-            content: none;
-        }
     }
 }
 
 .welcome-menu__link,
 .welcome-menu-auth__link {
+    background-color: #6c9c5a;
+    border: none;
     color: #fff;
+    cursor: pointer;
     display: block;
     flex: 100%;
     font-size: 16px;
     font-weight: 500;
     line-height: 2;
     padding: rem(6px);
+    &:hover {
+        background-color: #4e8839;
+    }
 }

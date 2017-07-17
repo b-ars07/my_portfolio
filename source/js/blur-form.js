@@ -1,39 +1,29 @@
-(function() {
-    var blur = (function() {
-        var
-            wrapper = document.querySelector('.js-feedback-wrapper'),
-            form = document.querySelector('.js-feedback-background'),
-            cWidth = document.body.clientWidth;
+var blur = (function() {
+    var
+        wrapper = document.querySelector('.js-feedback-wrapper'),
+        form = document.querySelector('.js-feedback-background'),
+        cWidth = document.body.clientWidth;
 
-        return {
-            set: function() {
-                var
-                    imgWidth = document.querySelector('.js-reviews-background').offsetWidth,
-                    posLeft = -wrapper.offsetLeft,
-                    posTop = -wrapper.offsetTop + 70,
-                    blurCSS = form.style;
+    return {
+        set: function() {
+            var
+                imgWidth = document.querySelector('.js-reviews-background').offsetWidth,
+                posLeft = -wrapper.offsetLeft,
+                posTop = -wrapper.offsetTop + 70,
+                blurCSS = form.style;
 
-                if (cWidth <= 1800) {
-                    posTop = -wrapper.offsetTop + 70;
-                }
-                if (cWidth <= 768) {
-                    posTop = -wrapper.offsetTop + 43;
-                }
-
-                blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
-                blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
-
+            if (cWidth <= 1800) {
+                posTop = -wrapper.offsetTop + 70;
             }
-        }
-    })();
+            if (cWidth <= 768) {
+                posTop = -wrapper.offsetTop + 43;
+            }
 
-    if ($('#feedbackForm').length) {
-        blur.set();
-    }
+            blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
+            blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
 
-    window.onresize = function() {
-        if ($('#feedbackForm').length) {
-            blur.set();
         }
     }
 })();
+
+module.exports = blur;

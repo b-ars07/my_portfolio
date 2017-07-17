@@ -2,7 +2,7 @@
     cursor: pointer;
     float: right;
     position: relative;
-    z-index: 2;
+    z-index: 11;
 }
 
 #hamburger-icon {
@@ -31,9 +31,15 @@
         }
         &.line-2 {
             top: 50%;
+            @include tablets() {
+                top: 40%;
+            }
         }
         &.line-3 {
             top: 100%;
+            @include tablets() {
+                top: 85%;
+            }
         }
     }
     &:hover,
@@ -53,8 +59,11 @@
     &.active {
         .line-1 {
             transform: translateY($translateY) translateX($translateX) rotate($rotation);
+            @include tablets() {
+                transform: translateY(12.5px) translateX(0) rotate(45deg);
+            }
             @include phones() {
-                transform: translateY(5.5px) translateX(0) rotate(45deg);
+                transform: translateY(2.5px) translateX(0) rotate(45deg);
             }
         }
         .line-2 {

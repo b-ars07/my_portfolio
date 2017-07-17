@@ -22,11 +22,10 @@
     @include phones() {
         padding: rem(19px) rem(10px) rem(17px);
         flex-direction: column;
-    }
-    @include phones() {
-        height: 315px;
+        height: 290px;
         display: flex;
         flex-flow: column nowrap;
+        bottom: 58px;
     }
     &__item {
         display: inline-flex;

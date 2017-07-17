@@ -7,7 +7,7 @@ block variables
 
 block content
     section.section.welcome
-        .welcome-background
+        .welcome-background#welcome-background
             canvas.welcome-background-canvas
         button.welcome__auth-btn Авторизоваться
         .card__wrapper
@@ -27,26 +27,30 @@ block content
                         'Обо мне': './about.html',
                         'Блог': './blog.html'
                         })
-                .card__auth
+                        
+                form.card__auth#authForm(method='POST', action='login')
                     .card__content
                         +blockTitle('Авторизуйтесь','line','auth')
-                        +form('form-authorization',
-                            {
-                                'Логин':'text',
-                                'Пароль':'password'
-                            },
-                            {}
-                        )
+                        .form-authorization__valid-text.js-valid-text
+                        .form-authorization
+                            .form-authorization__item
+                                label.form-authorization-form__label
+                                    input.form-authorization__input(name='login', type='text', placeholder='Логин', required)
+                            .form-authorization__item
+                                label.form-authorization__label
+                                    input.form-authorization__input(name='password', type='password', placeholder='Пароль', required)
                         +checkbox('person', 'Я человек', 'checkbox')
                         p.card__content-text Вы точно не робот?
                         .card__content-radio
                             +checkbox('radio','Да','radio','1')
                             +checkbox('radio','Не уверен (O_O)','radio','0')
-                    +nav('welcome-menu-auth',
-                        {
-                          'На главную':'',
-                          'Войти':''
-                        })
+                    .welcome-menu-auth
+                        ul.welcome-menu-auth__list
+                            li.welcome-menu-auth__item
+                                a.welcome-menu-auth__link.js-authorization На главную
+                            li.welcome-menu-auth__item
+                                button.welcome-menu-auth__link(type='submit') Войти
+
 block footer
     footer.footer-index
         +copyright('index-page')

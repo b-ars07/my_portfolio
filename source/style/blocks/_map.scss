@@ -1,52 +1,47 @@
 .map {
-  background: url('../img/map.png') no-repeat center/cover;
-  height: 977px;
-  position: relative;
-  width: 100%;
-  z-index: 10;
-  display: flex;
+    background: url('../img/map.png') no-repeat center/cover;
+    height: 977px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    display: flex;
 }
 
 .google-map {
-  width: 100%;
+    width: 100%;
 }
 
 .contacts-card {
-  background: rgba(#f4f5f0, .85);
-  @include centered();
-  top: 41%;
-  padding: 35px 40px;
+    background: rgba(#f4f5f0, .85);
+    @include centered();
+    top: 41%;
+    padding: 35px 40px;
 }
 
 .contacts {
-  list-style: none;
-
-  &__item {
-    margin-bottom: 20px;
-    line-height: 1.4;
-
-    &:last-child {
-      margin-bottom: 0;
+    list-style: none;
+    &__item {
+        margin-bottom: 20px;
+        line-height: 1.4;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 24px;
-    max-height: 24px;
-    fill: $lightGreen;
-  }
-
-  &__link {
-    color: #455a64;
-    position: relative;
-    display: block;
-    font-size: $middleFont;
-    font-weight: $mediumWeight;
-    opacity: .8;
-    padding-left: 34px;
-    
-  }
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 24px;
+        max-height: 24px;
+        fill: $lightGreen;
+    }
+    &__link {
+        color: #455a64;
+        position: relative;
+        display: block;
+        font-size: $middleFont;
+        font-weight: $mediumWeight;
+        opacity: .8;
+        padding-left: 34px;
+    }
 }

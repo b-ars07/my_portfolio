@@ -10,17 +10,18 @@ block content
     section.section.blog.js-section-content
         +leftTriangle('blog')
         +rightTriangle('blog')
-        .section__wrapper.blog__inner
-            aside.blog-sidebar
+        .section__wrapper.blog__inner#blog
+            aside.blog-sidebar.js-blog-sidebar
+              .blog-sidebar__inner.js-blog-sidebar__inner
                 ul.blog-sidebar__list.js-blog-sidebar__list
                     li.blog-sidebar__item.js-blog-sidebar__item.blog-sidebar__item--active
-                        a.blog-sidebar__link Самое важное в SASS
+                        | Самое важное в SASS
                     li.blog-sidebar__item.js-blog-sidebar__item
-                        a.blog-sidebar__link Приёмы в вёрстке, без которых не обходится ни один сайт
+                        | Приёмы в вёрстке, без которых не обходится ни один сайт
                     li.blog-sidebar__item.js-blog-sidebar__item
-                        a.blog-sidebar__link Что такое Flexbox?
+                        | Что такое Flexbox?
                     li.blog-sidebar__item.js-blog-sidebar__item
-                        a.blog-sidebar__link Антигерой CSS-разметки — свойство «display: table»
+                        | Антигерой CSS-разметки — свойство «display: table»
             .blog-article
 
                 article.blog-article__item
@@ -29,6 +30,7 @@ block content
                         p.blog-article__text
                             | Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
                             | Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                            <p data-height="265" data-theme-id="0" data-slug-hash="XgoKLP" data-default-tab="css,result" data-user="b-ars07" data-embed-version="2" data-pen-title="Social Icons vision 3D" class="codepen">See the Pen <a href="https://codepen.io/b-ars07/pen/XgoKLP/">Social Icons vision 3D</a> by Arseniy Berezin (<a href="https://codepen.io/b-ars07">@b-ars07</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                 article.blog-article__item
                         +blockTitle('Самое важное в SASS','','blog')
                         .blog-article__date 22 ноября 2016
@@ -63,3 +65,16 @@ block content
 block footer
     +footer()
     +copyright('blog')
+    .t-blog-article.close
+                .t-blog-article__wrapper
+                    a.t-blog-article__handler.js-blog-article__handler
+                    ul.blog-sidebar__list.js-blog-sidebar__list
+                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item.blog-sidebar__item--active
+                            | Самое важное в SASS
+                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
+                            | Приёмы в вёрстке, без которых не обходится ни один сайт
+                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
+                            | Что такое Flexbox?
+                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
+                            | Антигерой CSS-разметки — свойство «display: table»
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

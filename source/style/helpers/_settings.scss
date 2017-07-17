@@ -13,12 +13,11 @@ html {
     width: 100%;
     font-size: $rootSize;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    @include tablets() {
-        $rootSize: 15px;
-    }
-    @include phones() {
-        $rootSize: 14px;
+}
+
+body {
+    &.active {
+        overflow: hidden;
     }
 }
 
@@ -39,6 +38,7 @@ img {
 a {
     outline: none;
     text-decoration: none;
+    cursor: pointer;
     &:hover,
     &:active,
     &:focus {

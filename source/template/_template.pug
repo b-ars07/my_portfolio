@@ -4,6 +4,9 @@ include blocks/header
 include blocks/header-blog
 include blocks/footer
 include blocks/copyright
+include blocks/navigation
+include blocks/preloader
+include blocks/popup
 
 block variables
 
@@ -24,7 +27,7 @@ html(lang="ru_RU")
         link(rel='stylesheet' href='assets/css/foundation.css')
         link(rel='stylesheet' href='assets/css/app.css')
         script(src='assets/js/foundation.js' defer)
-        script(src='assets/js/app.js' defer)
+        script(src='assets/js/app.bundle.js' defer)
 
         <!--[if lt IE 9]>
         script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
@@ -35,3 +38,5 @@ html(lang="ru_RU")
             block content
             block footer
 
+        +navigation()
+        +preloader()
