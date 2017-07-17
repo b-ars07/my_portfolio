@@ -38,7 +38,6 @@ router.post('/', function(req, res) {
             .trim()
             .slice(0, 500) + `\n Отправлено с: <${req.body.email}>`
     };
-    // console.log(transporter);
     //отправляем почту
     transporter.sendMail(mailOptions, function(error, info) {
 

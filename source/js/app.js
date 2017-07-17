@@ -103,7 +103,6 @@ function prepareSendLogin(e) {
         login: formLogin.login.value,
         password: formLogin.password.value
     };
-    console.log(data);
     const url = '/';
 
     prepareSend(formLogin, url, data, 'POST', data => {

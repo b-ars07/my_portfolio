@@ -64,7 +64,6 @@ function prepareSendPost(e) {
         date: $this.find('[name="date"]').val(),
         text: $this.find('[name="text"]').val()
     };
-    console.log(formBlog);
     prepareSend(formBlog, url, data);
 }
 

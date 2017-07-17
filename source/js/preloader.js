@@ -25,7 +25,6 @@ var preloader = (function() {
         './assets/img/water-maps.jpg'
     ];
 
-    //console.log(imgPath);
 
     webGLImg.forEach(function(src, i, arr) {
         imgPath.push(arr[i]);
@@ -50,9 +49,6 @@ var preloader = (function() {
                     src: img
                 }
             });
-
-            //console.log(fakeImages);
-
 
 
             fakeImages.on('load error', function() {
