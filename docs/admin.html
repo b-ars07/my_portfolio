@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Панель управления</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <script src="assets/js/foundation.js" defer></script>
+    <script src="assets/js/admin.bundle.js" defer></script>
+  </head>
+  <body>
+    <div class="admin">
+      <header class="admin-header">
+        <div class="header__title">Панель администрирования</div><a class="admin-header__link" href="/">Вернуться на сайт</a>
+      </header>
+      <div class="tabs">
+        <nav class="tabs__nav">
+          <ul class="tabs__controls">
+            <li class="tabs__control active" data-item="about"><a class="tabs__link" href="#">Обо мне</a></li>
+            <li class="tabs__control" data-item="blog"><a class="tabs__link" href="#">Блог</a></li>
+            <li class="tabs__control" data-item="works"><a class="tabs__link" href="#">Мои работы</a></li>
+          </ul>
+        </nav>
+        <ul class="tabs__contents">
+          <li class="tabs__content tabs__content_about active">
+            <div class="tabs__container">
+              <div class="tabs__title">Страница «Обо мне»</div>
+              <form class="admin-form admin-form_location_about" action="/admin/about" method="post" id="skills">
+                <div class="admin-form__button">
+                  <button class="button button_action_save">
+                    <div class="button__text">Cохранить</div>
+                  </button>
+                </div>
+                <div class="popup" id="popup"><a class="popup__wrapper js-close-popup"></a>
+                  <div class="popup-content">
+                    <p class="popup-content__text">Сообщение отправлено</p><a class="popup-content__close js-close-popup">Закрыть</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li class="tabs__content tabs__content_blog">
+            <div class="tabs__container">
+              <div class="tabs__title">Страница «Блог»</div>
+              <form class="admin-form admin-form_location_blog" id="form-blog">
+                <div class="admin-form__title">Добавить запись</div>
+                <input class="admin-form__input" type="text" name="title" placeholder="Название">
+                <input class="admin-form__input" type="date" name="date">
+                <textarea class="admin-form__textarea" name="text" placeholder="Содержание"></textarea>
+                <div class="admin-form__button">
+                  <button class="button button_action_save" type="submit">
+                    <div class="button__text">Добавить</div>
+                  </button>
+                </div>
+                <div class="popup" id="popup"><a class="popup__wrapper js-close-popup"></a>
+                  <div class="popup-content">
+                    <p class="popup-content__text">Сообщение отправлено</p><a class="popup-content__close js-close-popup">Закрыть</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li class="tabs__content tabs__content_works">
+            <div class="tabs__container">
+              <div class="tabs__title">Страница «Мои работы»</div>
+              <form class="admin-form admin-form_location_works" method="POST" enctype="multipart/form-data" id="upload">
+                <div class="admin-form__title">Добавить работу</div>
+                <input class="admin-form__input" type="text" name="name" placeholder="Название проекта" id="project-title">
+                <input class="admin-form__input" type="text" name="tech" placeholder="Технологии" id="project-tech">
+                <input class="admin-form__input" type="text" name="link" placeholder="Cсылка" id="project-link">
+                <label class="admin-form__label">
+                  <input class="admin-form__file" type="file" name="photo" accept="image/*" id="project-file">
+                  <div class="admin-form__file-fake">Загрузить картинку</div>
+                </label>
+                <div class="admin-form__button">
+                  <button class="button button_action_save" type="submit">
+                    <div class="button__text">Добавить</div>
+                  </button>
+                </div>
+                <div class="status"></div>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
