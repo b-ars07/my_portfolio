@@ -1,24 +1,64 @@
 .header {
-  background: url('../img/bg-header.png') no-repeat center/cover;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-
-  &:after {
-    background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
-    content: "";
-    height: 248px;
-    left: 0;
-    position: absolute;
-    top: 0;
+    height: 100vh;
+    position: relative;
     width: 100%;
-  }
+    min-height: 600px;
+    @include desctop() {
+        min-height: 600px;
+        height: auto;
+    }
+    @include tablets() {
+        min-height: 510px;
+        background: url('../img/bg-header.png') no-repeat center/cover;
+    }
+    @include phones() {
+        min-height: 555px;
+    }
+}
+
+.header-background {
+    @include centered(full);
+    z-index: 0;
+    height: 1272px;
+    overflow: hidden;
+    @include tablets() {
+        // height: 650px;
+        display: none;
+    }
+    &:after {
+        background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+        content: "";
+        height: 248px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.header-background__img {
+    max-width: 180%;
+    display: block;
+    margin: 0 auto;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include tablets() {
+        height: 100%;
+    }
 }
 
 .header__inner {
     z-index: 2;
     padding: 30px;
-  }
+    @include tablets() {
+        padding: 29px 29px 29px 30px;
+    }
+    @include smallPhones() {
+        padding: 11px 15px;
+    }
+}
 
 .header__portfolio,
 .header__blog {
@@ -29,27 +69,32 @@
     width: 100%;
     opacity: .13;
     fill: $white;
-    top: -37px;
     left: 0;
     right: 0;
     z-index: -1;
-  }
+    @include phones() {
+        display: none;
+    }
+}
+
 .header__content {
     width: 100%;
     text-align: center;
     left: 0;
     @include centered(y);
-    top: 46%;
+    top: 48%;
 }
 
 .header--blog {
-  height: 430px;
-  padding: 14px 30px;
-
-
-  .header__content {
-    position: relative;
-    transform: none;
-    margin-top: 30px;
-  }
+    height: 405px;
+    min-height: 405px;
+    padding: 14px 30px;
+    @include tablets() {
+        background: url('../img/bg-header.png') no-repeat center/cover;
+    }
+    .header__content {
+        position: relative;
+        transform: none;
+        margin-top: 30px;
+    }
 }

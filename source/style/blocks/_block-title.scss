@@ -1,62 +1,86 @@
 .block-title {
-  color: $blockTitleColor;
-  font-size: 35px;
-  @include sansusWebssimo;
-  text-align: center;
-  font-weight: $regularWeight;
-  line-height: 1;
-  margin-bottom: 20px;
+    color: $blockTitleColor;
+    font-size: rem(35px);
+    @include sansusWebssimo;
+    text-align: center;
+    font-weight: $regularWeight;
+    line-height: 1;
+    margin-bottom: rem(20px);
 }
 
 .block-title--blog {
-  color: $blockTitleColor;
-  font-size: 35px;
-  @include sansusWebssimo;
-  text-align: left;
-  font-weight: $regularWeight;
-  line-height: 1;
-  margin-bottom: 28px;
+    color: $blockTitleColor;
+    font-size: rem(35px);
+    @include sansusWebssimo;
+    text-align: left;
+    font-weight: $regularWeight;
+    line-height: 1;
+    margin-bottom: rem(28px);
 }
 
 .block-title__text {
     max-width: 320px;
     display: inline-block;
     margin: 0 auto;
+    @include tablets() {
+        font-size: rem(35px);
+        max-width: 496px;
+    }
+    @include phones() {
+        font-size: rem(21px);
+    }
 }
 
 .block-title--line {
     color: $blockTitleColor;
-    font-size: 35px;
+    font-size: rem(35px);
     @include sansusWebssimo;
     position: relative;
     text-align: center;
-    margin-bottom: 44px;
+    margin-bottom: rem(31px);
     font-weight: $regularWeight;
-    line-height: 1;
-
+    line-height: 1.3;
+    @include desctop() {
+        margin-bottom: rem(39px);
+    }
+    @include tablets() {
+        margin-bottom: 21px;
+    }
+    @include phones() {
+        margin-bottom: rem(32px);
+        max-width: 191px;
+        font-size: rem(21px);
+    }
     &__text {
-      max-width: 253px;
-      display: inline-block;
-      margin: 0 auto;
-      padding-bottom: 28px;
+        max-width: 253px;
+        display: inline-block;
+        margin: 0 auto;
+        padding-bottom: rem(28px);
     }
-
     &:after {
-      background: $sectionTitleColor;
-      content: '';
-      height: 3px;
-      left: 50%;
-      position: absolute;
-      transform: translate(-50%);
-      width: 89px;
-      bottom: -23px;
+        background: $blockTitleColor;
+        content: '';
+        height: 3px;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%);
+        width: 89px;
+        bottom: rem(-23px);
+        @include tablets() {
+            bottom: rem(-7px);
+        }
+        @include phones() {
+            width: 89px;
+            bottom: rem(-13px);
+            left: rem(98px);
+        }
     }
-  }
+}
 
 .block-title--auth {
-  color: $white;
-
-  &:after {
-    background: $white;
-  }
+    color: $white;
+    &:after {
+        background: $white;
+        bottom: rem(-6px);
+    }
 }

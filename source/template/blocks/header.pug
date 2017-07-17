@@ -1,7 +1,9 @@
 include hamburger
 
 mixin header(svgName)
-    section.section.header
+    section.section.header#paralaxScroll
+        .header-background.js-bg-header
+            img.header-background__img.js-header-background__img(src='assets/img/bg-header.png')
         .section__wrapper.header__inner
             +ul('social', 'header',
             {
@@ -11,7 +13,7 @@ mixin header(svgName)
             })
             +hamburger()
             .header__content
-                svg(class=`header__${svgName}`, viewBox="0 0 1175.495 313.961")
+                svg.js-header-title(class=`header__${svgName}`, viewBox="0 0 1175.495 313.961")
                     use(xlink:href="assets/img/sprite.svg#" + `${svgName}_header`)
                 +user('header')
             +arrow('header')

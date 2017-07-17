@@ -1,5 +1,7 @@
 mixin header-blog()
-    section.section.header.header--blog
+    section.section.header.header--blog#paralaxScroll
+        .header-background.js-bg-header
+            img.header-background__img.js-header-background__img(src='assets/img/bg-header.png')
         .section__wrapper
             +ul('social', 'header',
             {
@@ -9,9 +11,11 @@ mixin header-blog()
             })
             +hamburger()
             .header__content
-                img.user__photo(src="assets/img/ava.jpg")
-                .section-title.section-title--blog
-                    svg(class='section-title__img', viewBox="0 0 302.193 208.012")
+                .user--header.js-user
+                    img.user__photo(src="assets/img/ava.jpg")
+                .section-title.section-title--blog.js-user
+                    svg.js-header-title(class='section-title__img', viewBox="0 0 302.193 208.012")
                         use(xlink:href="assets/img/sprite.svg#blog_header")
                     h2.section-title__text Блог
                     p.section-title__subtext Статьи которые я написал
+            +arrow('blog')

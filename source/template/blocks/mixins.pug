@@ -29,7 +29,10 @@ mixin sectionTitle(svg, title, modificator)
 
 mixin blockTitle(title, status, modificator)
     if status=='line' && modificator
-        h4.block-title--line(class=`block-title--${modificator}`)
+        h4(class=`block-title--${modificator} block-title--line`)
+            span.block-title__text=title 
+    else if status == 'line'
+        h4.block-title--line
             span.block-title__text=title
     else if modificator
         h4(class=`block-title--${modificator}`)
@@ -38,9 +41,8 @@ mixin blockTitle(title, status, modificator)
         h4.block-title
             span.block-title__text=title
 
-mixin skills(title, items)
+mixin skills(items)
     ul.skills__list
-        span.skills__title=title
         each item, modificator in items
             li.skills__item
                 .skill

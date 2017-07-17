@@ -1,70 +1,82 @@
 .card {
-  background-color: rgba(#122620, .6);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 5px;
-  height: 426px;
-  position: relative;
-  transition: 0.6s;
-  width: 394px;
+    background-color: rgba(#122620, .6);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 5px;
+    height: 426px;
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    width: 393px;
+    @include desctop() {
+        width: 377px;
+        height: 393px;
+    }
+    @include tablets() {
+        width: 344px;
+    }
+    @include phones() {
+        width: 300px;
+    }
 }
 
 .card__wrapper {
     display: block;
     margin: auto;
-    overflow: hidden;
-    padding-top: 55px;
+    padding-top: rem(55px);
     text-align: center;
-
-    &--active .card{
-      transform: rotateY(180deg);
+    @include tablets() {
+        padding-top: rem(212px);
     }
-  }
-
-.card__nav {
-  position: absolute;
-  bottom: 0;
-  left:0;
-  right:0;
+    @include phones() {
+        padding-top: rem(35px);
+    }
+    &.active .card {
+        transform: rotateY(180deg);
+    }
 }
 
-.card__welcome, .card__auth {
+.card__nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card__welcome,
+.card__auth {
     backface-visibility: hidden;
     @include centered(full);
-  }
+}
 
 .card__welcome {
     transform: rotateY(0deg);
     z-index: 2;
-  }
+}
 
 .card__auth {
-    display: none;
-    transform: rotateY(0deg);
-  }
+    transform: rotateY(180deg);
+}
 
 .card__content {
     padding: 38px 20px;
-  }
+}
 
 .card__content-text {
-  color: rgba($white, .8);
-  font-weight: $hardWeight;
-  margin-bottom: 20px;
+    color: rgba($white, .8);
+    font-weight: $hardWeight;
+    margin-bottom: 20px;
 }
 
 .card__content-radio {
     display: flex;
     justify-content: center;
-
     .checkbox {
-      margin-bottom: 0;
-      margin-right: 40px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+        margin-bottom: 0;
+        margin-right: 40px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
-  }
-
+}
