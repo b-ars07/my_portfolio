@@ -26,7 +26,10 @@
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
     "jquery": "~3.2.1",
+    "mongoose": "^4.11.3",
     "normalize.css": "~7.0.0"
   }
 }

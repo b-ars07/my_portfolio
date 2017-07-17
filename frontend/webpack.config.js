@@ -6,7 +6,8 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         app: ['./js/app.js', './js/water.js'],
-        //common:['./bower_components/jquery/dist/jquery.min.js']
+        admin: './js/admin.js'
+            //common:['./bower_components/jquery/dist/jquery.min.js']
     },
     output: {
         //publicPath: '',
