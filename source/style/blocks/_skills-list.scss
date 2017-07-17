@@ -1,336 +1,260 @@
+// .skills {
+//     margin-top: rem(5px);
+//     .about-me__info {
+//         @include tablets() {
+//             width: 71%;
+//             margin: 0 auto;
+//         }
+//         @include phones() {
+//             width: 100%;
+//         }
+//     }
+// }
+// .skills-group {
+//     margin-top: 47px;
+//     @include tablets() {
+//         margin-top: 42px;
+//         margin-bottom: -40px;
+//     }
+//     @include phones() {
+//         margin-top: 1.5rem;
+//     }
+//     &__item {
+//         margin-bottom: rem(-6px);
+//         list-style: none;
+//         @include desctop() {
+//             margin-bottom: rem(30px);
+//         }
+//         @include tablets() {
+//             margin-bottom: rem(40px);
+//         }
+//         @include phones() {
+//             margin-bottom: 0
+//         }
+//     }
+// }
+// .skills__item {
+//     display: inline-block;
+//     list-style: none;
+//     margin-right: rem(37px);
+//     margin-bottom: rem(40px);
+//     @include desctop() {
+//         margin-right: 1.6rem;
+//     }
+//     @include tablets() {
+//         margin-bottom: 2.5rem;
+//         margin-right: rem(37px);
+//     }
+// }
+// .skills__title {
+//     color: #566358;
+//     display: block;
+//     font-family: 'roboto', sans-serif;
+//     font-size: rem(28px);
+//     font-weight: $mediumWeight;
+//     margin-bottom: rem(15px);
+//     @include tablets() {
+//         text-align: center;
+//         font-size: 21px;
+//     }
+//     @include phones() {
+//         font-size: 1.5rem;
+//         margin-bottom: 1.2rem;
+//     }
+// }
+// .skills__list {
+//     margin-right: -2.3125rem;
+//     @include tablets() {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: center;
+//     }
+// }
+// .skill {
+//     position: relative;
+// }
+// .skill__title {
+//     position: absolute;
+//     @include centered(both);
+//     padding: 20px;
+//     color: $greenHover;
+//     font-size: $smallFont;
+//     font-weight: $mediumWeight;
+//     text-align: center;
+// }
+// .skills-group__title {
+//     color: $greenHover;
+//     font-size: 28px;
+//     font-weight: $mediumWeight;
+//     margin-bottom: 15px;
+//     @include desctop() {
+//         margin-bottom: .8rem;
+//     }
+//     @include tablets() {
+//         text-align: center;
+//         font-size: 21px;
+//     }
+//     @include phones() {
+//         font-size: 1.5rem;
+//         margin-bottom: 1.2rem;
+//     }
+// }
+// .skill__circle {
+//     display: block;
+//     height: 120px;
+//     width: 120px;
+//     fill: none;
+//     stroke-width: 20;
+//     @include desctop() {
+//         width: 110px;
+//         height: 110px;
+//         stroke-width: 18;
+//     }
+//     &-under {
+//         stroke: #dfdcd5;
+//         fill: none;
+//         @include desctop() {
+//             r: 45;
+//         }
+//     }
+//     &-above {
+//         opacity: .9;
+//         transition: all .9s;
+//         stroke: $lightGreen;
+//         stroke-dasharray: .0010 360;
+//         @include desctop() {
+//             r: 45;
+//             cy: 50%;
+//             cx: 60%;
+//         }
+//     }
+// }
 .skills {
-    margin-top: rem(5px);
-    .about-me__info {
-        @include tablets() {
-            width: 71%;
-            margin: 0 auto;
-        }
-        @include phones() {
-            width: 100%;
-        }
+    list-style: none;
+}
+
+.skill-section {
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+        align-items: center;
     }
 }
 
-.skills-group {
-    margin-top: 47px;
-    @include tablets() {
-        margin-top: 42px;
-        margin-bottom: -40px;
-    }
-    @include phones() {
-        margin-top: 1.5rem;
-    }
-    &__item {
-        margin-bottom: rem(-6px);
-        list-style: none;
-        @include desctop() {
-            margin-bottom: rem(30px);
-        }
-        @include tablets() {
-            margin-bottom: rem(40px);
-        }
-        @include phones() {
-            margin-bottom: 0
-        }
-    }
+.skill-section__title {
+    @include roboto;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.skill-section__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: -40px;
+}
+
+.skill-section__item {
+    margin-left: 40px;
+    margin-bottom: 10px;
 }
 
 .skills__item {
-    display: inline-block;
-    list-style: none;
-    margin-right: rem(37px);
-    margin-bottom: rem(40px);
-    @include desctop() {
-        margin-right: 1.6rem;
-    }
-    @include tablets() {
-        margin-bottom: 2.5rem;
-        margin-right: rem(37px);
-    }
-}
-
-.skills__title {
-    color: #566358;
-    display: block;
-    font-family: 'roboto', sans-serif;
-    font-size: rem(28px);
-    font-weight: $mediumWeight;
-    margin-bottom: rem(15px);
-    @include tablets() {
-        text-align: center;
-        font-size: 21px;
-    }
-    @include phones() {
-        font-size: 1.5rem;
-        margin-bottom: 1.2rem;
-    }
-}
-
-.skills__list {
-    margin-right: -2.3125rem;
-    @include tablets() {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
     }
 }
 
 .skill {
+    width: 100px;
+    height: 100px;
     position: relative;
-}
-
-.skill__title {
-    position: absolute;
-    @include centered(both);
-    padding: 20px;
-    color: $greenHover;
-    font-size: $smallFont;
-    font-weight: $mediumWeight;
-    text-align: center;
-}
-
-.skills-group__title {
-    color: $greenHover;
-    font-size: 28px;
-    font-weight: $mediumWeight;
-    margin-bottom: 15px;
-    @include desctop() {
-        margin-bottom: .8rem;
-    }
-    @include tablets() {
-        text-align: center;
-        font-size: 21px;
-    }
-    @include phones() {
-        font-size: 1.5rem;
-        margin-bottom: 1.2rem;
+    &.animate {
+        .circle-0 {
+            stroke-dasharray: .001 282.6;
+        }
+        .circle-10 {
+            stroke-dasharray: 28.26 282.6;
+        }
+        .circle-15 {
+            stroke-dasharray: 42.39 282.6;
+        }
+        .circle-20 {
+            stroke-dasharray: 56.52 282.6;
+        }
+        .circle-25 {
+            stroke-dasharray: 70.65 282.6;
+        }
+        .circle-30 {
+            stroke-dasharray: 84.78 282.6;
+        }
+        .circle-35 {
+            stroke-dasharray: 98.91 282.6;
+        }
+        .circle-40 {
+            stroke-dasharray: 113.04 282.6;
+        }
+        .circle-45 {
+            stroke-dasharray: 127.17 282.6;
+        }
+        .circle-50 {
+            stroke-dasharray: 141.3 282.6;
+        }
+        .circle-55 {
+            stroke-dasharray: 155.43 282.6;
+        }
+        .circle-60 {
+            stroke-dasharray: 169.56 282.6;
+        }
+        .circle-65 {
+            stroke-dasharray: 183.69 282.6;
+        }
+        .circle-70 {
+            stroke-dasharray: 197.82 282.6;
+        }
+        .circle-75 {
+            stroke-dasharray: 211.95 282.6;
+        }
+        .circle-80 {
+            stroke-dasharray: 226.08 282.6;
+        }
+        .circle-85 {
+            stroke-dasharray: 240.21 282.6;
+        }
+        .circle-90 {
+            stroke-dasharray: 254.34 282.6;
+        }
+        .circle-95 {
+            stroke-dasharray: 268.47 282.6;
+        }
+        .circle-100 {
+            stroke-dasharray: 282.6 282.6;
+        }
     }
 }
 
 .skill__circle {
-    display: block;
-    height: 120px;
-    width: 120px;
     fill: none;
     stroke-width: 20;
-    @include desctop() {
-        width: 110px;
-        height: 110px;
-        stroke-width: 18;
-    }
-    &-under {
-        stroke: #dfdcd5;
-        fill: none;
-        @include desctop() {
-            r: 45;
-        }
-    }
-    &-above {
-        opacity: .9;
-        transition: all .9s;
-        stroke: $lightGreen;
-        stroke-dasharray: .0010 360;
-        @include desctop() {
-            r: 45;
-            cy: 50%;
-            cx: 60%;
-        }
-    }
 }
 
-.skills__item.active {
-    .skill__circle-above {
-        &--html {
-            animation: html 2s ease forwards;
-        }
-        &--css {
-            animation: css 2s ease forwards;
-            animation-delay: .5s;
-        }
-        &--js {
-            animation: js 2s ease forwards;
-            animation-delay: 1s;
-        }
-        &--jquery {
-            animation: jquery 2s ease forwards;
-            animation-delay: 1.5s;
-        }
-        &--svg {
-            animation: svg 2s ease forwards;
-            animation-delay: 1.5s;
-        }
-        &--php {
-            animation: php 2s ease forwards;
-        }
-        &--mySQL {
-            animation: mySQL 2s ease forwards;
-            animation-delay: .5s;
-        }
-        &--postgres {
-            animation: postgres 2s ease forwards;
-            animation-delay: 1s;
-        }
-        &--nodeJS {
-            animation: nodejs 2s ease forwards;
-            animation-delay: 1s;
-        }
-        &--mongo {
-            animation: mongo 2s ease forwards;
-            animation-delay: 1.5s;
-        }
-        &--git {
-            animation: git 2s ease forwards;
-        }
-        &--gulp {
-            animation: gulp 2s ease forwards;
-            animation-delay: .5s;
-        }
-        &--webpack {
-            animation: webpack 2s ease forwards;
-            animation-delay: 1s;
-        }
-        &--bower {
-            animation: bower 2s ease forwards;
-            animation-delay: 1.5s;
-        }
-        &--yarn {
-            animation: yarn 2s ease forwards;
-            animation-delay: 1.5s;
-        }
-    }
+.skill__circle-first {
+    stroke: #dfdcd5
 }
 
-@keyframes html {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 300 360;
-    }
+.skill__circle-second {
+    stroke: $lightGreen;
+    stroke-dasharray: .0010 282.6;
+    transition: all 1s;
 }
 
-@keyframes css {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 250 360;
-    }
-}
-
-@keyframes js {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 120 360;
-    }
-}
-
-@keyframes jquery {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 130 360;
-    }
-}
-
-@keyframes svg {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 90 360;
-    }
-}
-
-@keyframes php {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 40 360;
-    }
-}
-
-@keyframes mySQL {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 130 360;
-    }
-}
-
-@keyframes postgres {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 130 360;
-    }
-}
-
-@keyframes nodejs {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 60 360;
-    }
-}
-
-@keyframes mongo {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 80 360;
-    }
-}
-
-@keyframes git {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 240 360;
-    }
-}
-
-@keyframes gulp {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 240 360;
-    }
-}
-
-@keyframes webpack {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 120 360;
-    }
-}
-
-@keyframes bower {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 260 360;
-    }
-}
-
-@keyframes yarn {
-    from {
-        stroke-dasharray: 0 360;
-    }
-    to {
-        stroke-dasharray: 230 360;
-    }
+.skill__name {
+    @include roboto;
+    color: $greenHover;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

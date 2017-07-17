@@ -14,54 +14,19 @@ block content
             aside.blog-sidebar.js-blog-sidebar
               .blog-sidebar__inner.js-blog-sidebar__inner
                 ul.blog-sidebar__list.js-blog-sidebar__list
-                    li.blog-sidebar__item.js-blog-sidebar__item.blog-sidebar__item--active
-                        | Самое важное в SASS
-                    li.blog-sidebar__item.js-blog-sidebar__item
-                        | Приёмы в вёрстке, без которых не обходится ни один сайт
-                    li.blog-sidebar__item.js-blog-sidebar__item
-                        | Что такое Flexbox?
-                    li.blog-sidebar__item.js-blog-sidebar__item
-                        | Антигерой CSS-разметки — свойство «display: table»
+                    each item in items
+                        li.blog-sidebar__item.js-blog-sidebar__item=item.title
+                            
             .blog-article
-
-                article.blog-article__item
-                        +blockTitle('Самое важное в SASS','','blog')
-                        .blog-article__date 22 ноября 2016
-                        p.blog-article__text
-                            | Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                            | Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                            <p data-height="265" data-theme-id="0" data-slug-hash="XgoKLP" data-default-tab="css,result" data-user="b-ars07" data-embed-version="2" data-pen-title="Social Icons vision 3D" class="codepen">See the Pen <a href="https://codepen.io/b-ars07/pen/XgoKLP/">Social Icons vision 3D</a> by Arseniy Berezin (<a href="https://codepen.io/b-ars07">@b-ars07</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                article.blog-article__item
-                        +blockTitle('Самое важное в SASS','','blog')
-                        .blog-article__date 22 ноября 2016
-                        p.blog-article__text
-                            | Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                            | Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                article.blog-article__item
-                        +blockTitle('Что такое Flexbox?','','blog')
-                        .blog-article__date 06 мая 2017
-                        p.blog-article__text
-                            | Flexbox по праву можно назвать удачной попыткой решения огромного спектра проблем при построении лейаутов в css. Но прежде чем перейти к его описанию, давайте выясним, что же не так со способами верстки, которыми мы пользуемся сейчас?
-                            br
-                            | Любой верстальщик знает несколько путей выровнять что-либо по вертикали или сделать 3-х колоночный макет с резиновой средней колонкой. Но давайте признаем, что все эти способы довольно странные, похожи на хак, подходят не во всех случаях, сложны для восприятия и не работают при несоблюдении определенных магических условий, которые сложились исторически.
-                article.blog-article__item
-                        +blockTitle('Антигерой CSS-разметки — свойство «display: table»','','blog')
-                        .blog-article__date 06 мая 2017
-                        p.blog-article__text
-                            | Использование таблицы в разметке — щекотливая тема. Для многих веб-разработчиков табличная вёрстка — табу. Хотя существует множество доводов против этого, большинство разработчиков не могут внятно объяснить, почему нельзя использовать табличную разметку, кроме того, что «таблицы — это плохо».
-                            br
-                            | Прилипающий подвал должен соответствовать двум требованиям:
-                            br
-                            br
-                            ul(style="padding-left: 40px;")
-                                li Подвал должен прилипать к низу страницы, когда основного контента слишком мало, чтобы заполнить всю страницу по высоте.
-                                li Подвал должен следовать в потоке как обычно, если объём контента превышает высоту страницы.
-                            br
-                            br
-                            | Если вы когда-нибудь искали решение этой задачи, то вам, возможно, попадались эти полезные варианты от Chris Coyier и Ryan Fait.
-
-                            | Эти решения отлично работают, но у них есть один недостаток: подвал должен быть фиксированной высоты. Эту проблему можно обойти средствами JavaScript, но я всё же предпочитаю использовать для этого CSS. С помощью display: table можно сделать прилипающий подвал с динамической высотой.
-
+                ul.posts__list
+                    each index in items
+                        - var date = new Date(index.date).toLocaleDateString('ru',{ year: 'numeric', month: '2-digit', day: '2-digit'});
+                        li.posts__item
+                            article.blog-article__item
+                                    h4.block-title--blog
+                                        span.block-title__text= index.title
+                                    .blog-article__date=date
+                                    p.blog-article__text=index.body
 block footer
     +footer()
     +copyright('blog')
@@ -69,12 +34,6 @@ block footer
                 .t-blog-article__wrapper
                     a.t-blog-article__handler.js-blog-article__handler
                     ul.blog-sidebar__list.js-blog-sidebar__list
-                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item.blog-sidebar__item--active
-                            | Самое важное в SASS
-                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
-                            | Приёмы в вёрстке, без которых не обходится ни один сайт
-                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
-                            | Что такое Flexbox?
-                        li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item
-                            | Антигерой CSS-разметки — свойство «display: table»
+                        each item in items
+                            li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item=item.title
     <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

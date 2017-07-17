@@ -19,15 +19,15 @@ block content
                     .tabs__container
                         .tabs__title Страница «Обо мне»
                         form(action="/admin/about" method="post").admin-form.admin-form_location_about#skills
-                            //- each val in items
-                            //-     .admin-skills
-                            //-         .admin-skills__title= val.section
-                            //-         ul.admin-skills__list
-                            //-             each lineSkill in val.items
-                            //-                 li.admin-skills__item
-                            //-                     label.admin-form__label
-                            //-                         .admin-form__label-text= lineSkill.name
-                            //-                         input(type="text" name=`${lineSkill.name}` value=`${lineSkill.value}`).admin-form__input
+                            each val in items
+                                .admin-skills
+                                    .admin-skills__title= val.section
+                                    ul.admin-skills__list
+                                        each lineSkill in val.items
+                                            li.admin-skills__item
+                                                label.admin-form__label
+                                                    .admin-form__label-text= lineSkill.name
+                                                    input(type="text" name=`${lineSkill.name}` value=`${lineSkill.value}`).admin-form__input
                             .admin-form__button
                                 button.button.button_action_save
                                     .button__text Cохранить
@@ -58,4 +58,4 @@ block content
                             .admin-form__button
                                 button(type="submit").button.button_action_save
                                     .button__text Добавить
-                            .status
+                            +popup()

@@ -12,6 +12,9 @@
     @include desctop() {
         width: 50%;
     }
+    @include tablets() {
+        width: 100%;
+    }
 }
 
 .about__col--left {

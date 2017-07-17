@@ -81,23 +81,24 @@ block content
                             p.reviews-person__name Сабанцев Владимир
                             p.reviews-person__prof преподаватель Loftschool
             form.feedback__wrapper.js-feedback-wrapper#feedbackForm
-                    .feedback__background.js-feedback-background
-                    .feedback
-                        .feedback__inner
-                            +blockTitle('Связаться со мной','line','works')
-                            .feedback-form
-                                .feedback-form__item
-                                    label.feedback-form__label
-                                        input.feedback-form__input(name='name', type='text', placeholder='Имя', required)
-                                .feedback-form__item
-                                    label.feedback-form__label
-                                        input.feedback-form__input(name='email', type='email', placeholder='Email', required)
-                                .feedback-form__item
-                                    label.feedback-form__label
-                                        textarea.feedback-form__textarea(name='text', placeholder='Ваше сообщение', required)
-                        .feedback-buttons
-                            button(type='submit').feedback-button.feedback-button--send Отправить
-                            button(type='reset').feedback-button.feedback-button--clear Очистить
+                +popup()
+                .feedback__background.js-feedback-background
+                .feedback
+                    .feedback__inner
+                        +blockTitle('Связаться со мной','line','works')
+                        .feedback-form
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    input.feedback-form__input(name='name', type='text', placeholder='Имя', required)
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    input.feedback-form__input(name='email', type='email', placeholder='Email', required)
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    textarea.feedback-form__textarea(name='text', placeholder='Ваше сообщение', required)
+                    .feedback-buttons
+                        button(type='submit').feedback-button.feedback-button--send Отправить
+                        button(type='reset').feedback-button.feedback-button--clear Очистить
             +arrow('feedback')
 block footer
     +footer()

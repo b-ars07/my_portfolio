@@ -87,15 +87,15 @@ router.post('/addpost', isAdmin, (req, res) => {
             return res.json({ status: 'Запись успешно добавлена' });
         }, e => {
             //если есть ошибки, то получаем их список и так же передаем в шаблон
-            // const error = Object
-            //     .keys(e.errors)
-            //     .map(key => e.errors[key].message)
-            //     .join(', ');
+            const error = Object
+                .keys(e.errors)
+                .map(key => e.errors[key].message)
+                .join(', ');
 
-            //   //обрабатываем шаблон и отправляем его в браузер
-            // res.json({
-            //   status: 'При добавление записи произошла ошибка: ' + error
-            // });
+            //обрабатываем шаблон и отправляем его в браузер
+            res.json({
+                status: 'При добавление записи произошла ошибка: ' + error
+            });
         });
 });
 

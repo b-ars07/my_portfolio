@@ -1,127 +1,95 @@
-'use strict';
+import fileUpload from './upload';
+import prepareSend from './prepareSend';
 
-var admin = (function() {
-    $('.tabs__link').on('click', function(evt) {
-        evt.preventDefault();
-        var item = $(this).closest('.tabs__control'),
-            contentItem = $('.tabs__content'),
-            itemData = item.data('item');
+$('.tabs__link').on('click', function(e) {
+    e.preventDefault();
+    var item = $(this).closest('.tabs__control'),
+        contentItem = $('.tabs__content'),
+        itemData = item.data('item');
 
-        contentItem.filter('.tabs__content_' + itemData).add(item).addClass('active').siblings().removeClass('active');
+    contentItem
+        .filter('.tabs__content_' + itemData)
+        .add(item)
+        .addClass('active')
+        .siblings()
+        .removeClass('active');
+});
+
+const inputFile = document.querySelector('#project-file');
+var fileFake = document.querySelector('.admin-form__file-fake');
+
+inputFile.addEventListener('change', function() {
+    const fileName = this.files[0].name;
+    fileFake.innerHTML = fileName;
+});
+
+const formUpload = document.querySelector('#upload');
+
+formUpload.addEventListener('submit', prepareSendFile);
+
+function prepareSendFile(e) {
+    e.preventDefault();
+    let resultContainer = formUpload.querySelector('#popup');
+    $(resultContainer).show();
+    let textContent = resultContainer.querySelector('.popup-content__text');
+    let formData = new FormData();
+    let file = document.querySelector('#project-file').files[0];
+    let name = document.querySelector('#project-title').value;
+    let tech = document.querySelector('#project-tech').value;
+    let link = document.querySelector('#project-link').value;
+
+    formData.append('photo', file, file.name);
+    formData.append('name', name);
+    formData.append('tech', tech);
+    formData.append('link', link);
+
+    textContent.innerHTML = 'Uploading...';
+    fileUpload('/admin/upload', formData, function(data) {
+        textContent.innerHTML = data;
+        fileFake.innerHTML = 'Загрузить картинку';
+        formUpload.reset();
+    });
+}
+
+const formBlog = document.querySelector('#form-blog');
+
+$(formBlog).on('submit', prepareSendPost);
+
+function prepareSendPost(e) {
+    e.preventDefault();
+    const $this = $(this);
+    const url = '/admin/addpost';
+    let data = {
+        title: $this.find('[name="title"]').val(),
+        date: $this.find('[name="date"]').val(),
+        text: $this.find('[name="text"]').val()
+    };
+    console.log(formBlog);
+    prepareSend(formBlog, url, data);
+}
+
+const formSkills = document.querySelector('#skills');
+
+formSkills.addEventListener('submit', prepareSendSkills);
+
+function prepareSendSkills(e) {
+    e.preventDefault();
+    let data = {};
+    const url = '/admin/update';
+    const itemsElement = document.querySelectorAll('.admin-skills__title');
+    itemsElement.forEach(i => {
+        let inputs = i.parentNode.querySelectorAll('INPUT');
+        data[i.textContent] = [];
+        inputs.forEach(input => {
+            data[i.textContent].push({ name: input.name, value: input.value });
+        });
     });
 
-    var inputFile = document.querySelector('#project-file');
-    var fileFake = document.querySelector('.admin-form__file-fake');
+    prepareSend(formSkills, url, data);
+}
 
-    function prepareSend(form, url, data, cb) {
-        console.log(form);
-        var resultContainer = form.find('#popup').show();
-        var textContainer = resultContainer.find('.popup-content__text');
-        textContainer.text('Отправка...');
-        sendAjaxJson(url, data, function(data) {
-            form.get(0).reset();
-            textContainer.text(data);
-            resultContainer.delay(1500).fadeOut(1500);
-            if (cb) {
-                cb(data);
-            }
-        });
-    }
+$('.js-close-popup').on('click', function(e) {
+    e.preventDefault();
 
-    var sendAjaxJson = function(url, data, cb) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function(e) {
-            var result = void 0;
-            try {
-                result = JSON.parse(xhr.responseText);
-            } catch (e) {
-                cb('Извините, ошибка в данных ');
-            }
-            cb(result.status);
-        };
-        xhr.send(JSON.stringify(data));
-    }
-
-    var upload = function(url, data) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
-
-        xhr.onload = function(e) {
-            var result = JSON.parse(xhr.responseText);
-            cb(result.status);
-        };
-
-        xhr.send(data);
-    }
-
-    inputFile.addEventListener('change', function() {
-        var fileName = this.files[0].name;
-        fileFake.innerHTML = fileName;
-    });
-
-    var formUpload = document.querySelector('#upload');
-
-    formUpload.addEventListener('submit', prepareSendFile);
-
-    function prepareSendFile(evt) {
-        evt.preventDefault();
-        var resultContainer = formUpload.querySelector('.status');
-        var formData = new FormData();
-        var file = document.querySelector('#project-file').files[0];
-        var name = document.querySelector('#project-title').value;
-        var tech = document.querySelector('#project-tech').value;
-        var link = document.querySelector('#project-link').value;
-
-        formData.append('photo', file, file.name);
-        formData.append('name', name);
-        formData.append('tech', tech);
-        formData.append('link', link);
-
-        resultContainer.innerHTML = 'Uploading...';
-        fileUpload('/admin/upload', formData, function(data) {
-            resultContainer.innerHTML = data;
-            fileFake.innerHTML = 'Загрузить картинку';
-            formUpload.reset();
-        });
-    }
-
-    var formBlog = $('#form-blog');
-
-    formBlog.on('submit', prepareSendPost);
-
-    function prepareSendPost(evt) {
-        evt.preventDefault();
-        var $this = $(this);
-        var url = '/admin/addpost';
-        var data = {
-            title: $this.find('[name="title"]').val(),
-            date: $this.find('[name="date"]').val(),
-            text: $this.find('[name="text"]').val()
-        };
-        prepareSend(formBlog, url, data);
-    }
-
-    var formSkills = document.querySelector('#skills');
-
-    formSkills.addEventListener('submit', prepareSendSkills);
-
-    function prepareSendSkills(e) {
-        e.preventDefault();
-        var data = {};
-        var url = '/admin/update';
-        var itemsElement = document.querySelectorAll('.admin-skills__title');
-        itemsElement.forEach(function(i) {
-            var inputs = i.parentNode.querySelectorAll('INPUT');
-            data[i.textContent] = [];
-            inputs.forEach(function(input) {
-                data[i.textContent].push({ name: input.name, value: input.value });
-            });
-        });
-
-
-
-        prepareSend($(formSkills), url, data);
-    }
-})();
+    $(this).closest('#popup').fadeOut(500);
+});

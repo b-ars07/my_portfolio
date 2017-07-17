@@ -11,7 +11,7 @@
     width: 393px;
     @include desctop() {
         width: 377px;
-        height: 393px;
+        min-height: 393px;
     }
     @include tablets() {
         width: 344px;

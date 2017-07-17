@@ -24,10 +24,11 @@ block content
                         'Блог': './blog'
                         })
                         
-                form.card__auth#authForm(method='POST', action='login')
+                form.card__auth#authForm(method='POST')
+                    +popup()
                     .card__content
                         +blockTitle('Авторизуйтесь','line','auth')
-                        .form-authorization__valid-text.js-valid-text
+                        .form-authorization__valid-text.status.js-valid-text
                         .form-authorization
                             .form-authorization__item
                                 label.form-authorization-form__label
@@ -50,3 +51,4 @@ block content
 block footer
     footer.footer-index
         +copyright('index-page')
+        

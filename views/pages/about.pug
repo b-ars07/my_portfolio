@@ -28,34 +28,20 @@ block content
                     .about-me__info
                         p
                             | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    ul.skills-group#skills
-                        li.skills-group__item
-                                .skills-group__title Frontend
-                                +skills({
-                                    html: 'HTML5',
-                                    css: 'CSS3',
-                                    js: 'JavaScript',
-                                    jquery: 'jQuery',
-                                    svg: 'SVG'
-                                })
-                        li.skills-group__item
-                                .skills-group__title Backend        
-                                +skills({
-                                    php: 'PHP',
-                                    mySQL: 'MySQL',
-                                    postgres: 'PostgreSQL',
-                                    nodeJS: 'Node.JS',
-                                    mongo: 'MongoDB'
-                                })
-                        li.skills-group__item    
-                                .skills-group__title Workflow
-                                +skills({
-                                    git: 'Git',
-                                    gulp: 'Gulp',
-                                    bower: 'Bower',
-                                    yarn: 'Yarn',
-                                    webpack: 'webpack'
-                                })
+                    ul.skills
+                        each skillName in items
+                            li.skills__item
+                                .skill-section
+                                    .skill-section__title= skillName.section
+                                    ul.skill-section__list
+                                        each skill in skillName.items
+                                            li.skill-section__item
+                                                .skill
+                                                    svg.skill__circle(viewbox='0 0 110 110')
+                                                        circle.skill__circle-first(r='45', cx='50%', cy='50%', fill='none')
+                                                        circle(class=`skill__circle-second circle-${skill.value}` r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)')
+                                                        .skill__name= skill.name
+
     section.section.map
         .google-map#map
         .contacts-card

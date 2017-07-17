@@ -22,19 +22,19 @@ const uploadDir = path.join(__dirname, config.upload);
 //подключаем модули
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://root:12345@ds149481.mlab.com:49481/portfolio_data')
+mongoose.connect('mongodb://admin:webadvpass@ds161022.mlab.com:61022/portfolio')
     .catch(e => {
         console.error(e);
         throw e;
     });
-//mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
-//    user: config.db.user,
-//    pass: config.db.password
-//  })
-//  .catch(e => {
-//   console.error(e);
-//   throw e;
-//  });
+// mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+//         user: config.db.user,
+//         pass: config.db.password
+//     })
+//     .catch(e => {
+//         console.error(e);
+//         throw e;
+//     });
 
 require('./models/db-close');
 //подключаем модели(сущности, описывающие коллекции базы данных)
@@ -42,6 +42,7 @@ require('./models/blog');
 require('./models/works');
 require('./models/skills');
 require('./models/user');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -71,7 +72,6 @@ app.use(express.static(path.join(__dirname, currentStatic)));
 app.use('/', require('./routes/index'));
 app.use('/about', require('./routes/about'));
 app.use('/works', require('./routes/works'));
-app.use('/auth', require('./routes/auth'));
 app.use('/blog', require('./routes/blog'));
 app.use('/admin', require('./routes/admin'));
 
