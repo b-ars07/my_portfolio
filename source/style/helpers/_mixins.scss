@@ -1,37 +1,57 @@
-.clearfix {
-  &:before,
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
+@function rem($size) {
+    $remSize: $size / $rootSize;
+    @return #{$remSize}rem;
+}
+
+@mixin desctop() {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptops() {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablets() {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phones() {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin smallPhones() {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
 }
 
 @mixin centered($axis: 'both') {
-  position: absolute;
-
-  @if ($axis == 'both') {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  @if $axis == 'x' {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @if $axis == 'y' {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  @if $axis == 'full' {
-    bottom:0;
-    left:0;
-    right:0;
-    top:0;
-  }
+    position: absolute;
+    @if ($axis=='both') {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @if $axis=='x' {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $axis=='y' {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if $axis=='full' {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
 }

@@ -1,18 +1,19 @@
 .about-me {
-  color: $blockTitleColor;
-  font-size: $middleFont;
-  line-height: 1.8;
-
-  &__info {
     color: $blockTitleColor;
-    padding: 0 5px;
-    margin-bottom: 56px;
-  }
-  p {
-    padding-bottom: 10px;
-
-    &:last-child {
-      padding-bottom: 0;
+    font-size: $middleFont;
+    line-height: 1.8;
+    &__info {
+        color: $blockTitleColor;
+        padding: 0 rem(5px);
+        margin-bottom: rem(66px);
+        @include desctop() {
+            margin-bottom: rem(39px);
+        }
     }
-  }
+    p {
+        padding-bottom: rem(10px);
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
 }

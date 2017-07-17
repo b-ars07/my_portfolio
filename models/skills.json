@@ -1,0 +1,45 @@
+[{
+        "name": "Frontend",
+        "items": [{
+                "name": "HTML",
+                "value": 90
+            },
+            {
+                "name": "CSS",
+                "value": 90
+            },
+            {
+                "name": "javascript",
+                "value": 80
+            }
+        ]
+    },
+    {
+        "name": "Backend",
+        "items": [{
+                "name": "Node.js",
+                "value": 80
+            },
+            {
+                "name": "Mongo.db",
+                "value": 45
+            }
+        ]
+    },
+    {
+        "name": "Workflow",
+        "items": [{
+                "name": "Gulp.js",
+                "value": 80
+            },
+            {
+                "name": "Bower",
+                "value": 95
+            },
+            {
+                "name": "Webpack",
+                "value": 45
+            }
+        ]
+    }
+]

@@ -1,31 +1,52 @@
 .arrow {
-  display: block;
-  opacity: .7;
-  fill: $white;
-  width: 26px;
-  height: 16px;
-  cursor: pointer;
-  z-index: 11;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
-
-  &--header {
-    position: absolute;
-    @include centered(x);
-    bottom: 70px;
-  }
-  &--feedback {
-    margin: 0 auto;
-    transform: rotate(180deg);
-  }
+    display: block;
+    opacity: .7;
+    fill: $white;
+    width: 26px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 11;
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+    &--header {
+        position: absolute;
+        @include centered(x);
+        bottom: 70px;
+        @include tablets() {
+            bottom: 50px;
+        }
+    }
+    &--feedback {
+        position: relative;
+        margin: 0 auto;
+        transform: rotate(180deg);
+        @include tablets() {
+            position: relative;
+        }
+        @include phones() {
+            position: relative;
+            top: -155px;
+            left: 4px;
+        }
+    }
 }
 
 .arrow--slider {
-  width: 43px;
-  height: 27px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
-  opacity: 1;
+    width: 43px;
+    height: 27px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+    opacity: 1;
+}
+
+.arrow--blog {
+    position: absolute;
+    @include centered(x);
+    bottom: 70px;
+    display: none;
+    @include tablets() {
+        display: block;
+        bottom: 50px;
+    }
 }

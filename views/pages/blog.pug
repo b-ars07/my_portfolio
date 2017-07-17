@@ -1,0 +1,39 @@
+extends ../_template
+
+block variables
+    -
+        var
+        title = title = 'Блог|Арсений Березин frontend developer'
+
+block content
+    +header-blog()
+    section.section.blog.js-section-content
+        +leftTriangle('blog')
+        +rightTriangle('blog')
+        .section__wrapper.blog__inner#blog
+            aside.blog-sidebar.js-blog-sidebar
+              .blog-sidebar__inner.js-blog-sidebar__inner
+                ul.blog-sidebar__list.js-blog-sidebar__list
+                    each item in items
+                        li.blog-sidebar__item.js-blog-sidebar__item=item.title
+                            
+            .blog-article
+                ul.posts__list
+                    each index in items
+                        - var date = new Date(index.date).toLocaleDateString('ru',{ year: 'numeric', month: '2-digit', day: '2-digit'});
+                        li.posts__item
+                            article.blog-article__item
+                                    h4.block-title--blog
+                                        span.block-title__text= index.title
+                                    .blog-article__date=date
+                                    p.blog-article__text=index.body
+block footer
+    +footer()
+    +copyright('blog')
+    .t-blog-article.close
+                .t-blog-article__wrapper
+                    a.t-blog-article__handler.js-blog-article__handler
+                    ul.blog-sidebar__list.js-blog-sidebar__list
+                        each item in items
+                            li.blog-sidebar__item.blog-sidebar__item--tab.js-blog-sidebar__item=item.title
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

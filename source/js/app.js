@@ -1,25 +1,119 @@
-var arrow = (function () {
-  return {
-    init: function () {
-        const scrollHeight = $('.js-section-content').offset().top;
+import prepareSend from './prepareSend';
 
-        $('.arrow').on('click', function () {
+const
+    blur = require('./blur-form'),
+    parallax = require('./parallax'),
+    arrow = require('./arrow'),
+    flip = require('./flip'),
+    hamburger = require('./hamburger'),
+    blogMenu = require('./blog'),
+    preloader = require('./preloader'),
+    slider = require('./slider'),
+    // form = require('./form'),
+    skills = require('./skills'),
+    map = require('./map');
 
-            $('body').animate({
-                scrollTop: scrollHeight
-            }, 1800);
+//blur effect form
+if ($('#feedbackForm').length) {
+    blur.set();
+}
 
-            return false;
-        });
+window.onresize = function() {
+    if ($('#feedbackForm').length) {
+        blur.set();
     }
-  }
-})();
+}
 
-$(function () {
-  if ($('.arrow').length) {
+//parralax header
+window.onscroll = function() {
+    var wScroll = window.pageYOffset;
+
+    if ($('#paralaxScroll').length) {
+        parallax.init(wScroll);
+    }
+}
+
+//arrow animation
+if ($('.arrow').length) {
     arrow.init();
-  }
+}
+
+//flip animation
+flip();
+
+//hamburger
+if ($('#hamburger-icon').length) {
+    hamburger();
+}
+
+
+//blogNav
+if ($('#blog').length) {
+    blogMenu.init();
+}
+
+preloader.init();
+
+//Works slider
+if ($('#slider').length) {
+    slider.init();
+}
+
+
+//form();
+
+if ($('.skills').length) {
+    skills.init();
+}
+
+if ($('#map').length) {
+    map.init();
+}
+
+
+
+
+var formMail = document.querySelector('#feedbackForm'),
+    formLogin = document.querySelector('#authForm'),
+    popup = $('#popup');
+popup.hide();
+
+if (formMail) {
+    formMail.addEventListener('submit', prepareSendMail);
+}
+if (formLogin) {
+    formLogin.addEventListener('submit', prepareSendLogin);
+}
+
+function prepareSendMail(e) {
+    e.preventDefault();
+    const data = {
+        name: formMail.name.value,
+        email: formMail.email.value,
+        text: formMail.text.value
+    };
+    const url = '/works';
+
+    prepareSend(formMail, url, data);
+}
+
+function prepareSendLogin(e) {
+    e.preventDefault();
+    const data = {
+        login: formLogin.login.value,
+        password: formLogin.password.value
+    };
+    const url = '/';
+
+    prepareSend(formLogin, url, data, 'POST', data => {
+        if (data === 'Авторизация успешна!') {
+            location.href = '/admin';
+        }
+    });
+}
+
+$('.js-close-popup').on('click', function(e) {
+    e.preventDefault();
+
+    $(this).closest('#popup').fadeOut(500);
 });
-
-
-

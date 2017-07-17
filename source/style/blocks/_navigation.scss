@@ -1,0 +1,123 @@
+.navigation {
+    opacity: 0;
+    display: none;
+    @include centered(full);
+    z-index: -10;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(#6c9c5a, .85);
+    &.open {
+        display: block;
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+.main-navigation {
+    height: 100vh;
+    position: relative;
+    @include tablets {
+        padding-top: 45px;
+    }
+}
+
+.main-navigation__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include centered(both);
+}
+
+.main-navigation__item {
+    display: inline-block;
+    margin-bottom: 20px;
+    opacity: 0;
+    @include tablets() {
+        font-size: 49px;
+        position: relative;
+        transform: translate(0, 0);
+        left: 0;
+    }
+    @include phones() {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.open {
+    .main-navigation__item {
+        animation: fadeInRight .5s ease forwards;
+        animation-delay: .2s;
+        &:nth-of-type(2) {
+            animation-delay: .35s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: .40s;
+        }
+        &:nth-of-type(4) {
+            animation-delay: .45s;
+        }
+    }
+}
+
+.main-navigation__link {
+    color: $white;
+    position: relative;
+    cursor: pointer;
+    @include sansusWebssimo;
+    font-size: rem(63px);
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 45px;
+    transition: all .5s ease-in-out;
+    &:after {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 3px;
+        background-color: $white;
+        position: absolute;
+        bottom: 30px;
+        @include centered(x);
+        transition: all .5s ease-in-out;
+    }
+    &:hover {
+        color: $white;
+        &:after {
+            background-color: $white;
+        }
+    }
+    &:not(.main-navigation__link_active) {
+        &:after {
+            width: 0%;
+        }
+        &:hover:after {
+            width: 50%;
+        }
+    }
+    @include tablets {
+        font-size: 49px;
+        padding: 40px 0;
+        padding-bottom: 10px;
+        &:after {
+            bottom: 0;
+        }
+    }
+    @include phones {
+        font-size: 30px;
+        padding: 20px 0;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}

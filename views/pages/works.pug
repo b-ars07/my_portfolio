@@ -1,0 +1,104 @@
+extends ../_template
+
+block variables
+    -
+        var
+        title = title = 'Портфолио|Арсений Березин frontend developer'
+
+block content
+    .works__inner
+        +header('portfolio')
+        section.section.works.js-section-content
+            +leftTriangle('works')
+            +rightTriangle('works')
+            +sectionTitle('works_header','Мои работы','works')
+            .works-slider#slider
+                .works-slider__col--left
+                    .works-slider__wrapper.works-slider__wrapper--left
+                        .works-slider__image-wrapper.js-slider__image-wrapper
+                            img.works-slider__image.js-works-slider__image(src='../assets/img/work-1.png', alt='project-image', title='project-image')
+                        .works-slider__desc
+                            +blockTitle('Сайт школы онлайн Образования','line', 'works-slider')
+                            p.works-slider__technologies.js-slider-tehnologes HTML , CSS, JAVASCRIPT
+                            a.works-slider__link.js-slider-site(href='https://www.loftschool.com' target='_blank')
+                                span.works-slider__link-text Посмотреть сайт
+                                    svg.works-slider__link-icon
+                                        use(xlink:href="assets/img/sprite.svg#link")
+                .works-slider__col--right
+                    .works-slider__wrapper.works-slider__wrapper--right
+                        .slider
+                            a.slider__link.js-slider-btn--left
+                                ul.slider__list.js-slider__list
+                                    each item in items
+                                        li.slider__item.js-slider__item(data-full=`${item.picture}`,
+                                                                        data-title=`${item.name}`, 
+                                                                        data-skills=`${item.tech}`, 
+                                                                        data-link=`${item.link}`
+                                         )
+                                            img.slider__image(src=`${item.picture}`)
+                                .slider-arrow
+                                    svg.slider-arrow__img
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
+                            a.slider__link.js-slider-btn--right
+                                ul.slider__list.js-slider__list
+                                    each item in items
+                                        li.slider__item.js-slider__item(data-full=`${item.picture}`,
+                                                                        data-title=`${item.name}`, 
+                                                                        data-skills=`${item.tech}`, 
+                                                                        data-link=`${item.link}`
+                                         )
+                                            img.slider__image(src=`${item.picture}`)
+                                .slider-arrow.slider-arrow--top
+                                    svg.slider-arrow__img
+                                        use(xlink:href="assets/img/sprite.svg#arrow_down")
+
+        section.section.reviews
+            img(src="assets/img/leaf1.png" alt="leaf 1").leaf.leaf1
+            img(src="assets/img/leaf2.png" alt="leaf 2").leaf.leaf2
+            img(src="assets/img/leaf3.png" alt="leaf 3").leaf.leaf3
+            .reviews-background
+                img.reviews-background__img.js-reviews-background(src="assets/img/bg-works.png")
+            +sectionTitle('about_header', 'Что обо мне говорят', 'reviews')
+            ul.reviews__list
+                li.reviews__item
+                    .reviews-person
+                        img.reviews-person__image(src='assets/img/koval.png')
+                        p.reviews-person__text
+                            | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых
+                            | тяжелых испытаний и бессонных ночей!
+                        .reviews-person__info
+                            p.reviews-person__name Ковальчук Дмитрий
+                            p.reviews-person__prof - основатель Loftschool
+                li.reviews__item
+                    .reviews-person
+                        img.reviews-person__image(src='assets/img/saba.png')
+                        p.reviews-person__text
+                            | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых
+                            | браузерах!
+                        .reviews-person__info
+                            p.reviews-person__name Сабанцев Владимир
+                            p.reviews-person__prof преподаватель Loftschool
+            form.feedback__wrapper.js-feedback-wrapper#feedbackForm
+                +popup()
+                .feedback__background.js-feedback-background
+                .feedback
+                    .feedback__inner
+                        +blockTitle('Связаться со мной','line','works')
+                        .feedback-form
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    input.feedback-form__input(name='name', type='text', placeholder='Имя', required)
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    input.feedback-form__input(name='email', type='email', placeholder='Email', required)
+                            .feedback-form__item
+                                label.feedback-form__label
+                                    textarea.feedback-form__textarea(name='text', placeholder='Ваше сообщение', required)
+                    .feedback-buttons
+                        button(type='submit').feedback-button.feedback-button--send Отправить
+                        button(type='reset').feedback-button.feedback-button--clear Очистить
+            +arrow('feedback')
+block footer
+    +footer()
+    +copyright('works')
+    +popup()
