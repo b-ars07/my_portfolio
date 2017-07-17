@@ -54,21 +54,22 @@
                 </nav>
               </div>
             </div>
-            <div class="card__auth">
+            <form class="card__auth" id="authForm" method="POST" action="login">
               <div class="card__content">
                 <h4 class="block-title--auth block-title--line"><span class="block-title__text">Авторизуйтесь</span></h4>
-                <form class="form-authorization" method="post" action="">
-                  <fieldset class="form-authorization__item">
-                    <label class="form-authorization__label">
-                      <input class="form-authorization__input" name="text" type="text" placeholder="Логин" required="required"/>
+                <div class="form-authorization__valid-text js-valid-text"></div>
+                <div class="form-authorization">
+                  <div class="form-authorization__item">
+                    <label class="form-authorization-form__label">
+                      <input class="form-authorization__input" name="login" type="text" placeholder="Логин" required>
                     </label>
-                  </fieldset>
-                  <fieldset class="form-authorization__item">
+                  </div>
+                  <div class="form-authorization__item">
                     <label class="form-authorization__label">
-                      <input class="form-authorization__input" name="password" type="password" placeholder="Пароль" required="required"/>
+                      <input class="form-authorization__input" name="password" type="password" placeholder="Пароль" required>
                     </label>
-                  </fieldset>
-                </form>
+                  </div>
+                </div>
                 <div class="checkbox">
                   <div class="checkbox__elem checkbox__elem--checkbox">
                     <input class="checkbox__input checkbox__person" name="person" type="checkbox"/>
@@ -94,13 +95,15 @@
                   </div>
                 </div>
               </div>
-              <nav class="welcome-menu-auth">
+              <div class="welcome-menu-auth">
                 <ul class="welcome-menu-auth__list">
-                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">На главную</a></li>
-                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link" href="">Войти</a></li>
+                  <li class="welcome-menu-auth__item"><a class="welcome-menu-auth__link js-authorization">На главную</a></li>
+                  <li class="welcome-menu-auth__item">
+                    <button class="welcome-menu-auth__link" type="submit">Войти</button>
+                  </li>
                 </ul>
-              </nav>
-            </div>
+              </div>
+            </form>
           </section>
         </div>
       </section>
