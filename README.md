@@ -1,20 +1,33 @@
-#Сборка Loftschool 
+# Сайт-портфолио Березина Арсения
 
-Stack:
- - Gulp 4.0
- - nodemon
- 
-Getting started:
+> Автор: Березин Арсений.
 
-1. clone this repo
-2. cd path/to/
-3. npm install gulpjs/gulp-cli -g  // Install the latest Gulp CLI tools globally
-4. npm install
-6. run "npm start" command to start
+> Сборка проекта с помощью Gulp версии 4.0.
 
-### Примечание
-- добавлен модульный сборщик browserify
-- добавлен транспилер babel
-- добавлен nodemon
+## Старт проект
+
+##### Склонируйте репозиторий и перейдите в папку проекта
+```
+git clone https://github.com/b-ars07/my_portfolio.git
+```
+
+##### Перейдите в папку с проектом
+```
+cd my_portfolio
+```
 
 
+##### Установите модуль gulp-cli глобально
+```
+npm i gulp-cli -g
+```
+
+##### Установите модули локально
+```
+npm i
+```
+
+##### Запустите сборку проекта
+```
+gulp
+```

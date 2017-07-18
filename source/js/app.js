@@ -105,11 +105,21 @@ function prepareSendLogin(e) {
     };
     const url = '/';
 
-    prepareSend(formLogin, url, data, 'POST', data => {
-        if (data === 'Авторизация успешна!') {
-            location.href = '/admin';
-        }
-    });
+    if (!($(".checkbox__person").prop("checked") && $('input[name=radio]:checked', '#authForm').val() == 1)) {
+        $('#popup').show()
+        $(".popup-content__text").text('Вы робот, заходите позже');
+        $('#authForm').trigger('reset');
+        $('#popup').delay(1500).fadeOut(1000);
+
+    } else {
+        prepareSend(formLogin, url, data, 'POST', data => {
+            if (data === 'Авторизация успешна!') {
+                location.href = '/admin';
+            }
+        });
+    }
+
+
 }
 
 $('.js-close-popup').on('click', function(e) {
