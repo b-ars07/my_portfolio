@@ -17,7 +17,7 @@ block content
             ul.tabs__contents
                 li.tabs__content.tabs__content_about.active
                     .tabs__container
-                        .tabs__title Страница «Обо мне»
+                        .tabs__title Страница &laquo;Обо мне&raquo;
                         form(action="/admin/about" method="post").admin-form.admin-form_location_about#skills
                             each val in items
                                 .admin-skills
@@ -34,7 +34,7 @@ block content
                             +popup()
                 li.tabs__content.tabs__content_blog
                     .tabs__container
-                        .tabs__title Страница «Блог»
+                        .tabs__title Страница &laquo;Блог&raquo;
                         form.admin-form.admin-form_location_blog#form-blog
                             .admin-form__title Добавить запись
                             input(type="text" name="title" placeholder="Название").admin-form__input
@@ -46,7 +46,7 @@ block content
                             +popup()
                 li.tabs__content.tabs__content_works
                     .tabs__container
-                        .tabs__title Страница «Мои работы»
+                        .tabs__title Страница &laquo;Мои работы&raquo;
                         form(method="POST" enctype="multipart/form-data").admin-form.admin-form_location_works#upload
                             .admin-form__title Добавить работу
                             input(type="text" name="name" placeholder="Название проекта").admin-form__input#project-title
