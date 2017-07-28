@@ -34,9 +34,8 @@
     }
     .fixed {
         position: fixed;
-        position: fixed;
-        top: 3px;
-        width: 15.5%;
+        top: rem(5px);
+        width: 20%;
         @include desctop() {
             width: 18.4%;
         }
